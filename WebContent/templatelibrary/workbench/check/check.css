@@ -1,0 +1,64 @@
+.signin-img-th{
+		max-width:162px;
+	}
+	#signStatistics .fa{
+		float: left;
+		padding-left: 20px;
+		padding-top: 5px;
+	}
+	#signStatistics .normal .fa{
+		color: #72ACE3;
+	}
+	#signStatistics .abnormally .fa{
+		color: #aaa;
+	}
+	#signStatistics h2{
+		color: #000;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	#signStatistics .num{
+		color: #000;
+		font-size: 18px;
+		padding-left: 10px;
+	}
+	#signStatistics .start-mes{
+	    padding: 0 14px;
+	}
+	#signStatistics .sign-title{
+		font-size: 18px;
+		color: #000000;
+	}
+	#signGovern .table th{
+		text-align: center;
+	}
+	#signGovern input[type=checkbox]{
+		position: relative;
+		top: 2px;
+	}
+	#signGovern .time{
+		line-height: 30px;
+	}
+	#signGovern tr td:first{
+		vertical-align: middle;
+	}
+	#signGovern .p-relative{
+		position: relative;
+		cursor: pointer;
+	}
+	#signGovern .glyphicon.glyphicon-triangle-bottom{
+		position: absolute;
+		font-size: 12px;
+		top: 8px;
+	}
+	#signGovern .glyphicon.glyphicon-triangle-top{
+		position: absolute;
+		font-size: 12px;
+		top: 1px;
+	}
+	#signGovern .glyphicon.glyphicon-triangle-top.active{
+		color: #337ab7;
+	}
+	#signGovern .glyphicon.glyphicon-triangle-bottom.active{
+		color: #337ab7;
+	}

@@ -1,0 +1,96 @@
+<!--
+* INSPINIA - Responsive Admin Theme
+* Version 2.5
+*
+-->
+
+<!DOCTYPE html>
+<html ng-app="klxComponent">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>快来学产品-angularjs模板库</title>
+
+    <!-- Font awesome -->
+    <link href="../skin/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Bootstrap and Fonts -->
+    <link href="../skin/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
+    <link href="../skin/backconsole/css/loading-bar.css" rel="stylesheet" />
+    <link href="../skin/backconsole/css/angular-growl.min.css" rel="stylesheet" />
+
+    <!-- Main klxTemplate CSS files -->
+    <link href="../asserts/css/animate.css" rel="stylesheet">
+    <link id="loadBefore" href="../asserts/css/style.css" rel="stylesheet">
+    <link href="../asserts/css/securityworkbench.css" rel="stylesheet">
+
+
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+<body ng-controller="MainCtrl as main" class="{{$state.current.data.specialClass}}" landing-scrollspy id="page-top">
+
+<!-- Main view  -->
+<div ui-view></div>
+
+<!-- jQuery and Bootstrap -->
+<script src="../common/jquery/jquery-2.1.1.min.js"></script>
+<script src="../common/jquery-ui/jquery-ui.js"></script>
+<script src="../common/bootstrap/bootstrap-3.3.5.min.js"></script>
+
+<!-- jQuery md5 -->
+<script src="../common/jquery-md5/jQuery.md5.js"></script>
+
+<!-- MetsiMenu -->
+<script src="../common/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- SlimScroll -->
+<script src="../common/slimscroll/jquery.slimscroll.min.js"></script>
+
+
+<!-- Main Angular scripts-->
+
+<script src="../common/angularjs/angular-1.5.0.min.js"></script>
+<script src="../common/oclazyload/ocLazyLoad.min.js"></script>
+<script src="../common/angularjs/angular-ui-router.min.js"></script>
+<script src="../common/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+
+<script src="../common/angularjs/angular-messages.min.js"></script>
+<script src="../common/angularjs/angular-animate.min.js"></script>
+<script src="../common/angularjs/angular-resource.min.js"></script>
+<script src="../common/angularjs/ng-tasty-tpls.js"></script>
+<script src="../common/angularjs/angular-confirm-1.2.5.min.js"></script>
+<script src="../common/angularjs/loading-bar-0.9.min.js"></script>
+<script src="../common/angularjs/angular-growl.min.js"></script>
+<script src="../common/angularjs/angular-sanitize.min.js"></script>
+
+<script src="../asserts/js/plugin/angular-idle/angular-idle.js"></script>
+<script src="../asserts/js/plugin/formValidation/angular-translate-2.1.1.min.js"></script>
+<script src="../asserts/js/plugin/formValidation/angular-validation.min.js"></script>
+<script src="../asserts/js/plugin/formValidation/angular-translate-loader-static-files.min.js"></script>
+
+<!--<link rel="stylesheet" type="text/css" href="../asserts/js/plugin/codemirror/codemirror.css"/>
+<script src="../asserts/js/plugin/codemirror/CodeMirror.js" type="text/javascript" charset="utf-8"></script>
+<script src="../asserts/js/plugin/codemirror/ui-codemirror.js" type="text/javascript" charset="utf-8"></script>-->
+
+<!--
+ You need to include this script on any page that has a Google Map.
+ When using Google Maps on your own site you MUST signup for your own API key at:
+ https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+ After your sign up replace the key in the URL below..
+-->
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQTpXj82d8UpCi97wzo_nKXL7nYrd4G70"></script> -->
+
+<!-- Anglar App Script -->
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/controllers.js"></script>
+
+</body>
+</html>

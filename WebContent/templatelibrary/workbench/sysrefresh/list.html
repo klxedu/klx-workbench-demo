@@ -1,0 +1,52 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>这个是当前页的标题</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li>
+                <a>这里是一级菜单名</a>
+            </li>
+            <li class="active">
+                <strong>这里是二级菜单名</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                	<div class="ibox-content">
+                    	<span class="btn btn-success" ng-click="doRefresh()">全局刷新</span>
+                   </div>
+            </div>
+        </div>
+    </div>
+    <code>
+    	<strong>全局刷新实现</strong><br>
+    	<b>1、使用angularjs的$window对象，使用$window.location.reload();或是$window.location.href="xxx";</b><br>
+    	<b>2、使用js内置window对象，同上操作</b><br>
+    	<b>异步调用成功后刷新，代码如下:</b>
+    	<pre>
+angular.module('Module.sysrefresh',[]).controller("sysrefreshctrl",function($scope,$http,$window){
+	$scope.doRefresh = function(){
+		$http({
+			method : "get",
+			url    : "./workbench/sysrefresh/response.json"
+		})
+		.success(function(data){
+			console.log("response success,reload start");
+			$window.location.reload();
+//			$window.location.href="http://localhost/klx-workbench-demo/templatelibrary/index.html";
+		});
+	}
+});
+    	</pre>
+    </code>
+</div>

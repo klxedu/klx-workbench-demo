@@ -1,0 +1,50 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">主页</a>
+			</li>
+			<li>
+				<a>日期组件</a>
+			</li>
+			<li class="active">
+				<strong>日期组件示例</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div class="form-group" style="margin-bottom: 50px;">
+						<label class="col-sm-2 control-label" style="margin-top: 5px;">时间范围选择</label>
+		                <div class="col-sm-10">
+		                    <input date-range-picker class="form-control date-picker" type="text" ng-model="dateRange.date1" options='{separator: "~"}'/>
+		            	</div>
+		           </div>
+		            <div>
+						<pre>
+			            	<h3 class="text-danger">时间范围选择控件使用说明</h3>
+			            	<p>一、使用前准备</p>
+			            	<p>1.时间范围选择需要依赖daterangepicker模块，且需要加入以下js文件：moment.min.js,daterangepicker.js,angular-daterangepicker.js,daterangepicker-bs3.css</p>
+			            	<p>html中使用标签引入：&le;input date-range-picker class=&quot;form-control date-picker&quot; type=&quot;text&quot; ng-model=&quot;dateRange.date1&quot; options='{separator: &quot;~&quot;}'/&gt;</p>
+			            	<p>二、使用</p>
+							<p>1.作用域定义使用对象定义，如：$scope.dateRange={&quot;date1&quot;:&quot;&quot;};</p>
+							<p>2.options，对象，定义了日期选择控件的配置项，现在用到的有separator属性，含义是开始和结束日期的分隔符</p>
+							<p>3.获取日期选择对象，开始时间：$scope.dateRange.date1.startDate；结束时间：$scope.dateRange.date1.endDate</p>
+							<p>4.获取格式化日期字符串，使用momentJs方法，moment(日期对象).format(&quot;YYYY-MM-DD HH:mm:ss&quot;)</p>
+							<p>5.选择器赋值，可以直接赋值定义好格式的日期字符串，如：var date=&quot;2016-12-25 10:10:23&quot;;，也可以使用日期对象，如：var date=moment(&quot;2016-12-25 10:10:23&quot;,&quot;YYYY-MM-DD HH:mm:ss&quot;)。然后将日期值赋到对应的绑定值上即可$scope.dateRange={"date1":{"startDate":date}};</p>
+			            </pre>
+		            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

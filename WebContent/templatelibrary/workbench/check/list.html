@@ -1,0 +1,175 @@
+
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">这里是主页</a>
+			</li>
+			<li>
+				<a>这里是一级菜单名</a>
+			</li>
+			<li class="active">
+				<strong>这里是二级菜单名</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+<!-- 以上部分为标准头部 -->
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12 ibox-content row" style="margin: 0;">
+			<div class="table-responsive col-lg-10" id="signStatistics">
+				<h4>统计出勤管理</h4>
+				<table class="table table-gui table-chk table-bordered">
+					<tbody>
+						<tr class="normal">
+							<td rowspan="2">
+								<h2>签到1</h2>
+								<p class="time">时间：02/28 15:00-15:30</p>
+								<p>请假：1人</p>
+							</td>
+							<td><i class="fa fa-users"></i><span>出勤</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-in"></i><span>正常签到</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-out"></i><span>正常签退</span> <span class="num">0</span>人</td>
+						</tr>
+						<tr class="abnormally">
+							<td><i class="fa fa-users"></i><span>缺勤</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-in"></i><span class="start-mes">迟到</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-out"></i><span class="start-mes">早退</span> <span class="num">0</span>人</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table table-gui table-chk table-bordered">
+					<tbody>
+						<tr class="normal">
+							<td rowspan="2">
+								<h2>签到2</h2>
+								<p class="time">时间：02/28 15:00-15:30</p>
+								<p>请假：1人</p>
+							</td>
+							<td><i class="fa fa-users"></i><span>出勤</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-in"></i><span>正常签到</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-out"></i><span>正常签退</span> <span class="num">0</span>人</td>
+						</tr>
+						<tr class="abnormally">
+							<td><i class="fa fa-users"></i><span>缺勤</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-in"></i><span class="start-mes">迟到</span> <span class="num">0</span>人</td>
+							<td><i class="fa fa-sign-out"></i><span class="start-mes">早退</span> <span class="num">0</span>人</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12 ibox-content row" style="margin: 0;">
+			<div class="col-lg-10 table-responsive" id="signGovern">
+				<h4>管理出勤情况</h4>
+				<p class="text-center">
+					<button class="btn btn-success btn-sm pull-left">返回</button>
+					<span class="sign-title">签到1</span>
+				</p>
+				<div>
+					<span class="time">开始时间：02/15:00-03/16:00  结束时间：02/15:00-03/16:00</span>
+						<div class="form-inline pull-right">
+							<input type="text" class="form-control input-sm">
+							<button class="btn btn-sm btn-primary btn-search">搜索</button>
+						</div>
+				</div>
+				<table class="table table-striped">
+					<tr>
+						<th><span class="p-relative">学员
+								<i class="glyphicon glyphicon-triangle-bottom active"></i>
+								<i class="glyphicon glyphicon-triangle-top"></i>
+							</span>
+						</th>
+						<th><span class="p-relative">签到
+								<i class="glyphicon glyphicon-triangle-bottom"></i>
+								<i class="glyphicon glyphicon-triangle-top active"></i>
+							</span></th>
+						<th><span>迟到</span></th>
+						<th><span>签退</span></th>
+						<th><span>早退</span></th>
+						<th><span>缺勤</span></th>
+						<th><span>请假</span></th>
+					</tr>
+					<tr>
+						<td>胡教授</td>
+						<td>
+							<input type="checkbox" name="" id="" value="" ng-click="clickShow()"/>签到
+							<p>13:20</p>
+						</td>
+						<td><input type="checkbox" name="" id="" value="" />迟到</td>
+						<td><input type="checkbox" name="" id="" value="" />签退</td>
+						<td><input type="checkbox" name="" id="" value="" />早退</td>
+						<td><input type="checkbox" name="" id="" value="" />缺勤</td>
+						<td><input type="checkbox" name="" id="" value="" />请假</td>
+					</tr>
+					<tr>
+						<td>dj凯</td>
+						<td><input type="checkbox" name="" id="" value="" />签到</td>
+						<td><input type="checkbox" name="" id="" value="" />迟到</td>
+						<td><input type="checkbox" name="" id="" value="" />签退</td>
+						<td><input type="checkbox" name="" id="" value="" />早退</td>
+						<td><input type="checkbox" name="" id="" value="" />缺勤</td>
+						<td><input type="checkbox" name="" id="" value="" />请假</td>
+					</tr>
+					<tr>
+						<td>yannis</td>
+						<td><input type="checkbox" name="" id="" value="" />签到</td>
+						<td><input type="checkbox" name="" id="" value="" />迟到</td>
+						<td><input type="checkbox" name="" id="" value="" />签退</td>
+						<td><input type="checkbox" name="" id="" value="" />早退</td>
+						<td><input type="checkbox" name="" id="" value="" />缺勤</td>
+						<td><input type="checkbox" name="" id="" value="" />请假</td>
+					</tr>
+				</table>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12 ibox-content row" style="margin: 0;">
+			<div class="col-lg-10 table-responsive" id="signTimeslot">
+				<h4>设置签到时段</h4>
+				<table class="table">
+					<tr>
+						<th class="bor-r-n"></th>
+						<th class="bor-l-n bor-r-n"><span class="text-danger">*</span>开场签到</th>
+						<th class="bor-l-n">离场签退</th>
+						<th>状态</th>
+					</tr>
+					<tr ng-repeat="x in demoArray">
+						<td class="bor-r-n sign-title"><span upview-value model-str="x.name"></span></td>
+						<td class="bor-l-n bor-r-n">
+							<input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" />
+						</td>
+						<td class="bor-l-n">
+							<input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" />
+						</td>
+						<td><input type="checkbox" name="" id="" value="" />启用</td>
+					</tr>
+				</table>
+				{{demoArray}}
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modalBackdrop" ng-if="show">
+	<div class="sk-spinner sk-spinner-wave">
+        <div class="sk-rect1"></div>
+        <div class="sk-rect2"></div>
+        <div class="sk-rect3"></div>
+        <div class="sk-rect4"></div>
+        <div class="sk-rect5"></div>
+    </div>
+</div>

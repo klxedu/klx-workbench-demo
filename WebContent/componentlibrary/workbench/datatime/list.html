@@ -1,0 +1,77 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">主页</a>
+			</li>
+			<li>
+				<a>日期组件</a>
+			</li>
+			<li class="active">
+				<strong>日期组件示例</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div class="form-group" style="margin-bottom: 50px;">
+						<label class="col-sm-2 control-label" style="margin-top: 6px;">单个时间选择</label>
+		                <div class="col-sm-10">
+		                    <div ng-model='standardForm.date1' ng-time class="input-group date form_datetime" 
+		                    	data-date="standardForm.date1" 
+		                    	data-date-format="yyyy-MM-dd" 
+		                    	data-link-field="standardForm.date1" 
+		                    	start-view="2" 
+		                    	min="2" 
+		                    	max="4" 
+		                    	start-date="2016-01-01">
+								<input ng-model="standardForm.date1" class="form-control" size="16" readonly>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+							</div>
+		            	</div>
+		            </div>
+		            <div>
+						<pre>
+			            	<h3 class="text-danger">单个时间选择控件使用说明</h3>
+			            	<p>一、使用前准备</p>
+			            	<p>1.单日期需要依赖datatime.directive模块，且需要加入以下js文件：moment.min.js,bootstrap-datetimepicker.fr.js,bootstrap-datetimepicker.min.js,datatime.directive.js,bootstrap-datetimepicker.min.css</p>
+			            	<p>
+&lt;div ng-model='standardForm.date1' ng-time class=&quot;input-group date form_datetime&quot; 
+	data-date=&quot;standardForm.date1&quot; 
+	data-date-format=&quot;yyyy-MM-dd&quot; 
+	data-link-field=&quot;standardForm.date1&quot; 
+	start-view=&quot;2&quot; 
+	min=&quot;2&quot; 
+	max=&quot;4&quot; 
+	start-date=&quot;2016-01-01&quot;&gt;
+    &lt;input ng-model=&quot;standardForm.date1&quot; class=&quot;form-control&quot; size=&quot;16&quot; readonly&gt;
+    &lt;span class=&quot;input-group-addon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-remove&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;span class=&quot;input-group-addon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-th&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;/div&gt;
+			            	</p>
+			            	<p>二、使用</p>
+			            	<p>1.设置start-view="2" min="2" max="4" ，视图--0分钟，1小时，2天，3月，4年，start为开始视图</p>
+			            	<p>2.设置默认显示时间start-date，如不设置，则默认时间为今天</p>
+			            	<p>3.data-link-field可选择将使用值赋值指定input中（一般用于做表单提交）</p>
+			            	<p>4.data-date-format设置日期格式，可选值为 p, P, h, hh, i, ii, s, ss, d, dd, m, mm, M, MM, yy, yyyy 的任意组合</p>
+			            	<p>5.获取格式化日期字符串，使用momentJs方法，moment(日期对象).format(&quot;YYYY-MM-DD HH:mm:ss&quot;)</p>
+			            </pre>
+		            </div>
+		            <div>
+		            	<div ng-model="code" ui-codemirror ui-codemirror-opts="editorOptions"></div>
+		            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

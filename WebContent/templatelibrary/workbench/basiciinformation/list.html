@@ -1,0 +1,140 @@
+
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">这里是主页</a>
+			</li>
+			<li>
+				<a>这里是一级菜单名</a>
+			</li>
+			<li class="active">
+				<strong>这里是二级菜单名</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+<!-- 以上部分为标准头部 -->
+
+<div class="wrapper wrapper-content animated fadeInRight basicinfo">
+	<div class="row">
+		<div class="col-sm-12 ibox-content">
+			<form method="get" class="row form-horizontal">
+	            <div class="col-sm-6">
+	            	<div class="row">
+	            		<div class="col-sm-4">
+	            			<label class="control-label">名称：</label>
+	            		</div>
+	            		<div class="col-sm-8">
+	            			<input type="text" ng-model="a1" class="form-control">
+	            		</div>
+	            	</div>
+	            	<div class="hr-line-dashed"></div>
+	            	<div class="row">
+	            		<div class="col-sm-4">
+	            			<label class="control-label">职务：</label>
+	            		</div>
+	            		<div class="col-sm-8">
+	            			<input type="text" ng-model="b1" class="form-control">
+	            		</div>
+	            	</div>
+	            	<div class="hr-line-dashed"></div>
+	            	<div class="row">
+	            		<div class="col-sm-4">
+	            			<label class="control-label">教师类型：</label>
+	            		</div>
+	            		<div class="col-sm-8">
+	            			<select ng-model="c1" class="form-control">
+	            				<option value="">内部教师</option>
+	            				<option value="">外部教师</option>
+	            			</select>
+	            		</div>
+	            	</div>
+	            	<div class="hr-line-dashed"></div>
+	            	<div class="row">
+	            		<div class="col-sm-4">
+	            			<label class="control-label">最高学历：</label>
+	            		</div>
+	            		<div class="col-sm-8">
+	            			<input type="text" ng-model="aa" class="form-control">
+	            		</div>
+	            	</div>
+	            	<div class="hr-line-dashed"></div>
+	            	<div class="row">
+	            		<div class="col-sm-4">
+	            			<label class="control-label">毕业院校：</label>
+	            		</div>
+	            		<div class="col-sm-8">
+	            			<input type="text" ng-model="aa" class="form-control">
+	            		</div>
+	            	</div>
+	            	<div class="hr-line-dashed"></div>
+	            </div>
+	            <div class="col-sm-3 col-sm-offset-1 photo-img">
+	            	<div style="height: 294px;">
+	            		<img id="photoImg" class="img-responsive" src="asserts/css/patterns/a5.jpg"/>
+	            	</div>
+				    <div class="btn btn-info" ngf-select="uploadFilesss($files)" >选择并上传文件</div>
+	            </div>
+	            <div class="col-sm-12">
+	            	<div class="row">
+	            		<div class="col-sm-2">
+	            			<label class="control-label">擅长领域：</label>
+	            		</div>
+	            		<div class="col-sm-9" style="padding-bottom: 1px">
+	            			<select style="width: 100%" chosen multiple
+						          data-placeholder-text-single="'Choose a beer'"
+						          no-results-text="'Could not find any beers :('"
+						          ng-options="value as label for (value, label) in pets"
+						          ng-model="beer">
+						  	</select>
+	            		</div>
+	            	</div>	
+	            	<div class="hr-line-dashed"></div>
+	            	<div class="row">
+	            		<div class="col-sm-2">
+	            			<label class="control-label">指导院系：</label>
+	            		</div>
+	            		<div class="col-sm-9">
+	            			<select ng-model="c1" class="form-control">
+	            				<option value="">专业系</option>
+	            				<option value="">业余系</option>
+	            			</select>
+	            		</div>
+	            	</div>
+	            	<div class="hr-line-dashed"></div>
+	            	<div class="row">
+	            		<div class="col-sm-2">
+	            			<label class="control-label">是否可登陆：</label>
+	            		</div>
+	            		<div class="col-sm-9">
+	            			<label class="radio-inline"><input type=radio value="1" ng-model="radio" name="test_paper_way1"> 是 </label>
+					        <label class="radio-inline"><input type=radio value="2" ng-model="radio" name="test_paper_way1"> 否 </label>
+	            		</div>
+	            	</div>
+	            	<div class="row">
+            			<div class="col-sm-2" ng-class="{true:'active',false:'noactive'}[radio == 1]">
+            				<label class="control-label">账号：</label>
+            			</div>
+            			<div class="col-sm-9" ng-class="{true:'active',false:'noactive'}[radio == 1]">
+            				<input type="text" ng-model="aab" class="form-control">
+            			</div>
+            		</div>
+            		<div class="hr-line-dashed" ng-class="{true:'active',false:'noactive'}[radio == 1]"></div>
+					<div class="row">
+	            		<div class="col-sm-2">
+	            			<label class="control-label" ng-click="uploadFilesss()">简介：</label>
+            			</div>
+            			<div class="col-sm-9">
+            				<textarea class="form-control" rows="3"></textarea>
+            			</div>
+	            	</div>
+	            </div>
+	        </form>
+		</div>
+	</div>
+</div>

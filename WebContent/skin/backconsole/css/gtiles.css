@@ -1,0 +1,181 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  font-family: "Helvetica Neue";
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.breadcrumb {
+	margin-top: 20px;
+}
+.panel {
+	margin-bottom: 0px;
+}
+
+.panel-heading {
+	margin-bootom: 0px;
+}
+ 
+.page {
+	position: fixed;
+	bottom: 0px;
+	right: 30px;
+}
+
+.table label {
+	margin-bottom: 0px;
+}
+
+.page-list .pagination {
+	float: left;
+}
+
+.page-list .pagination span {
+	cursor: pointer;
+}
+
+.page-list .pagination .separate span {
+	cursor: default;
+	border-top: none;
+	border-bottom: none;
+}
+
+.page-list .pagination .separate span:hover {
+	background: none;
+}
+
+.page-list .page-total {
+	float: left;
+	margin-top: 20px;
+	height:28px;
+	border-left:none;
+	padding: 0px 5px;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span{
+	border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span{
+	border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.page-list .page-total input, .page-list .page-total select {
+	height: 28px;
+	border: 1px solid #ddd;
+	margin:0px 3px;
+}
+
+.page-list .page-total input {
+	width: 40px;
+	padding-left: 3px;
+}
+
+.page-list .page-total select {
+	width: 50px;
+}
+
+.glyphicon {
+	top: 0px;
+}
+.pagination>li>a, .pagination>li>span{
+	padding: 3px 12px;
+}
+
+
+/* 新增弹框 */
+#addModal .modal-content,
+#InterfaceModal .modal-content
+#editModal .modal-content,
+#copyModal .modal-content{
+	max-height:580px;
+}
+#InterfaceModal .modal-body,
+#addModal .modal-body,
+#editModal .modal-body,
+#copyModal .modal-body{
+	max-height:475px;
+	overflow-y:auto;
+}
+#addModal .modal-header,
+#addModal .modal-footer,
+#InterfaceModal .modal-header,
+#InterfaceModal .modal-footer,
+#editModal .modal-header,
+#editModal .modal-footer,
+#copyModal .modal-header,
+#copyModal .modal-footer{
+	padding: 10px;
+}
+
+/* .col-sm-4, */
+/* .col-sm-10, */
+/* .col-sm-9, */
+/* .col-sm-8, */
+/* .col-sm-3{ */
+/* 	padding-left:0px; */
+/* } */
+/* .col-sm-1, */
+/* .col-sm-2, */
+/* .col-sm-6{ */
+/* 	padding-left:0px; */
+/* 	padding-right:0px; */
+/* } */
+.panel-default>.panel-heading,
+.panel-default>.panel-footer{
+	background-color:#fff;
+	overflow:hidden;
+}
+/* 参数表 */
+.params{
+	margin: 10px;
+}
+.params .panel-heading{
+	overflow: hidden; 
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.params .pull-left{
+	height:28px;
+	line-height:28px;
+}
+.params .panel-body{
+	max-height:200px;
+	overflow-y:auto;
+}
+.params .panel-body table{
+	margin-bottom:0px;
+}
+.star{
+	color:red;
+	font-weight:bold;
+}
+.alert{
+	padding:5px;
+	margin:0px;
+}
+
+a {
+	cursor: pointer;
+}

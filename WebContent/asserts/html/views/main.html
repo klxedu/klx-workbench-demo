@@ -1,0 +1,326 @@
+<div class="sidebard-panel">
+    <div>
+        <h4>最新评价 <span class="badge badge-info pull-right">16</span></h4>
+        <div class="feed-element">
+            <a href="" class="pull-left">
+                <img alt="image" class="img-circle" src="./asserts/css/patterns/a1.jpg">
+            </a>
+            <div class="media-body">
+               java入门课程这个课程太好了，学着根本停不下来
+                <br>
+                <small class="text-muted">今天 4:21 pm</small>
+            </div>
+        </div>
+        <div class="feed-element">
+            <a href="" class="pull-left">
+                <img alt="image" class="img-circle" src="./asserts/css/patterns/a2.jpg">
+            </a>
+            <div class="media-body">
+                胡老师讲的课太好了，点个赞！！！！！
+                <br>
+                <small class="text-muted">昨天 2:45 pm</small>
+            </div>
+        </div>
+        <div class="feed-element">
+            <a href="" class="pull-left">
+                <img alt="image" class="img-circle" src="./asserts/css/patterns/a3.jpg">
+            </a>
+            <div class="media-body">
+                怎么下载课程啊？
+                <br>
+                <small class="text-muted">昨天 1:10 pm</small>
+            </div>
+        </div>
+        <div class="feed-element">
+            <a href="" class="pull-left">
+                <img alt="image" class="img-circle" src="./asserts/css/patterns/a4.jpg">
+            </a>
+            <div class="media-body">
+                喜欢快来学，在这里学到了许多东西。
+                <br>
+                <small class="text-muted">星期一 8:37 pm</small>
+            </div>
+        </div>
+    </div>
+    <div class="m-t-md">
+        <h4>统计</h4>
+        <p>
+            
+        </p>
+        <div class="row m-t-sm">
+            <div class="col-md-6">
+                <bar-chart data="main.BarChart3.data" options="main.BarChart3.options"></bar-chart>
+                <h6><span class="badge badge-primary pull-left" >119</span> 邮件</h6>
+            </div>
+            <div class="col-md-6">
+                <bar-chart data="main.BarChart2.data" options="main.BarChart2.options"></bar-chart>
+                <h6><span class="badge badge-primary pull-left">56</span> 订单</h6>
+            </div>
+        </div>
+    </div>
+    <div class="m-t-md">
+        <h4>课程排行</h4>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item text-center" >
+                  <h2>   <span class="badge badge-danger pull-left" style="font-size:15px;">1</span>
+                  <span style="font-weight: bolder;">java初级<span></h2>
+                </li>
+                <li class="list-group-item text-center">
+                   <h4> <span class="badge badge-warning pull-left">2</span>
+                    php中级</h4>
+                </li>
+                <li class="list-group-item text-center">
+                   <h4> <span class="badge badge-success pull-left">3</span>
+                    angularjs高级</h4>
+                </li>
+                <li class="list-group-item text-center">
+                    <span class="badge badge-primary pull-left">4</span>
+                    bootstrap高级
+                </li>
+                <li class="list-group-item text-center">
+                    <span class="badge badge-primary pull-left">5</span>
+                    	css入门
+                </li>
+                <li class="list-group-item text-center">
+                    <span class="badge badge-primary pull-left">6</span>
+                    angularjs初级
+                </li>
+                <li class="list-group-item text-center">
+                    <span class="badge badge-primary pull-left">7</span>
+                    	面向对象
+                </li>
+                <li class="list-group-item text-center">
+                    <span class="badge badge-primary pull-left">8</span>
+                    php初级
+                </li>
+                <li class="list-group-item text-center">
+                    <span class="badge badge-primary pull-left">9</span>
+                    JavaScript初级
+                </li>
+                <li class="list-group-item text-center">
+                    <span class="badge badge-primary pull-left">10</span>
+                    JavaScript中级
+                </li>             
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="wrapper sidebar-content wrapper-content">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>课程</h5>
+
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-white active">今天</button>
+                        <button type="button" class="btn btn-xs btn-white">本月</button>
+                        <button type="button" class="btn btn-xs btn-white">年度</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="flot-chart" ng-controller="MainCtrl as chart">
+                            <div flot class="flot-chart-content" dataset="chart.flotData" options="chart.flotOptions"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <ul class="stat-list">
+                            <li>
+                                <h2 class="no-margins">2,346</h2>
+                                <small>期间的总学习人数</small>
+                                <div class="stat-percent">48% <i class="fa fa-level-up text-navy"></i></div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 48%;" class="progress-bar"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <h2 class="no-margins ">4,422</h2>
+                                <small>上月学习人数</small>
+                                <div class="stat-percent">60% <i class="fa fa-level-down text-navy"></i></div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 60%;" class="progress-bar"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <h2 class="no-margins ">9,180</h2>
+                                <small>课程月通过人数</small>
+                                <div class="stat-percent">22% <i class="fa fa-bolt text-navy"></i></div>
+                                <div class="progress progress-mini">
+                                    <div style="width: 22%;" class="progress-bar"></div>
+                                </div>
+                            </li>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="label label-primary pull-right">今天</span>
+                <h5>访问量</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">22 285,400</h1>
+
+                <div class="stat-percent font-bold text-navy">20% <i class="fa fa-level-up"></i></div>
+                <small>新增学习人数</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="label label-info pull-right">本月</span>
+                <h5>学习人数</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins">60 420,600</h1>
+
+                <div class="stat-percent font-bold text-info">40% <i class="fa fa-level-up"></i></div>
+                <small>新增学习人数</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <span class="label label-warning pull-right">年度</span>
+                <h5>总通过人数</h5>
+            </div>
+            <div class="ibox-content">
+                <h1 class="no-margins"> 120 430,800</h1>
+
+                <div class="stat-percent font-bold text-warning">16% <i class="fa fa-level-up"></i></div>
+                <small>新增通过人数</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>新数据的报告</h5>
+            </div>
+            <div class="ibox-content ibox-heading">
+                <h3>访问人数上升
+                    <div class="stat-percent text-navy">34% <i class="fa fa-level-up"></i></div>
+                </h3>
+                <small><i class="fa fa-stack-exchange"></i> 相对于上一季度访问人数</small>
+            </div>
+            <div class="ibox-content">
+                <div>
+
+                    <div class="pull-right text-right">
+
+                        <bar-chart data="main.BarChart.data" options="main.BarChart.options"></bar-chart>
+                        <br/>
+                        <small class="font-bold">20 054.43</small>
+                    </div>
+                    <h4>现在的访问数量
+                        <br/>
+                        <small class="m-r"><a ui-sref="flot_chart"> 查看最新访问数量 </a></small>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>资讯</h5>
+                <span class="label label-primary">今日资讯</span>
+            </div>
+
+            <div class="ibox-content inspinia-timeline">
+
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-xs-3 date">
+                            <i class="fa fa-briefcase"></i>
+                            6:00 am
+                            <br/>
+                            <small class="text-navy">2 小时前</small>
+                        </div>
+                        <div class="col-xs-7 content no-top-border">
+                            <p class="m-b-xs"><strong>新消息</strong></p>
+
+                            <p>火星撞击地球</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-xs-3 date">
+                            <i class="fa fa-file-text"></i>
+                            7:00 am
+                            <br/>
+                            <small class="text-navy">3 小时前</small>
+                        </div>
+                        <div class="col-xs-7 content">
+                            <p class="m-b-xs"><strong>新增课件</strong></p>
+
+                            <p>凯文上传了新的课件</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-xs-3 date">
+                            <i class="fa fa-coffee"></i>
+                            8:00 am
+                            <br/>
+                        </div>
+                        <div class="col-xs-7 content">
+                            <p class="m-b-xs"><strong>休息时间</strong></p>
+
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="row">
+                        <div class="col-xs-3 date">
+                            <i class="fa fa-phone"></i>
+                            11:00 am
+                            <br/>
+                            <small class="text-navy">21 小时前</small>
+                        </div>
+                        <div class="col-xs-7 content">
+                            <p class="m-b-xs"><strong>新增课件</strong></p>
+
+                            <p>
+                                	凯文上传了新的课件
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+<style>
+table{
+margin-top:0}
+</style>

@@ -1,0 +1,211 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">这里是主页</a>
+			</li>
+			<li>
+				<a>这里是一级菜单名</a>
+			</li>
+			<li class="active">
+				<strong>这里是二级菜单名</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+<!-- 以上部分为标准头部 -->
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-md-3 over-w-h h-500 bg-w">
+			<div class="ibox-content">
+				<treecontrol class="tree-light" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)" selected-node="node1">
+					{{node.name}}
+				</treecontrol>
+			</div>			
+		</div>
+		<div class="col-md-9 bg-w">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div class="top-dock row">
+						<!-- 左侧按钮操作区域 start-->
+						<div class="btn-group btn-group-sm">
+							<!-- 普通按钮示例 start -->
+							<span class="btn btn-default" ng-click="addNode()">
+								<span class="glyphicon glyphicon-plus"></span > 新增子节点
+							</span>
+							<!-- 普通按钮示例 end -->
+
+							<!-- 通过标签和class打开 start -->
+							<span class="btn btn-default" ng-click="remNode()" ng-if="remStart!=1">							
+								<span class="glyphicon glyphicon-trash" ></span> 删除子节点
+							</span>
+							
+							<!-- 通过标签和class打开  end -->
+	
+							<!-- 按钮式下拉start -->
+							<div class="btn-group btn-group-sm" role="group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  <span class="glyphicon glyphicon-plus"></span>  
+							     按钮式下拉
+							      <span class="caret"></span>
+							    </button>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">Dropdown link</a>
+									</li>
+									<li>
+										<a href="#">Dropdown link</a>
+									</li>
+								</ul>
+							</div>
+							<!-- 按钮式下拉 end -->
+
+						</div>
+						<!-- 左侧按钮操作区域 end-->
+
+						<!-- 右侧查询条件操作区域 start-->
+						<div class="form-inline pull-right">
+							<select name="" id="" class="form-control input-sm" ng-model="searchCriteria">
+								<option value="1">搜索条件1</option>
+								<option value="2">搜索条件2</option>
+								<option value="3">搜索条件3</option>
+								<option value="4">搜索条件4</option>
+							</select>
+							<!-- -->
+							<input type="text" class="form-control input-sm" ng-show="searchCriteria==1">
+							<select name="" id="" class="form-control input-sm" ng-show="searchCriteria==2">
+								<option value="1">查询条件1</option>
+								<option value="2">查询条件2</option>
+								<option value="3">查询条件3</option>
+							</select>
+							<!-- 时间范围插件 start-->
+							<input date-range-picker class="form-control date-picker" type="text" ng-show="searchCriteria==3" ng-model="datePicker.date" />
+							<!-- 时间范围插件 end-->
+
+							<!-- 单个时间围插件 start-->
+							<div class="form-group" ng-show="searchCriteria==4">
+								<div ng-model='timepickerTest' ng-time class="input-group date form_datetime col-md-1" data-date="2015-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+									<input ng-model="test" class="form-control" size="16" type="text" value="" readonly>
+									<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+									<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+								</div>
+
+								<input type="hidden" id="dtp_input1" value="" /><br/>
+							</div>
+							<!-- 单个时间插件 end-->
+							<button class="btn btn-sm btn-primary btn-search">搜索</button>
+						</div>
+						<!-- 右侧查询条件操作区域 end-->
+
+					</div>
+					<div class="table-responsive" tasty-table bind-resource-callback="dataGrid">
+						<table class="table table-gui table-chk  table-striped table-hover table-bordered">
+							<thead>
+								<tr class="">
+									<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名
+								请使用时注意添加-->
+									<th>机构名称</th>
+									<th>机构ID</th>
+									<th>激活状态</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="row in treedata.children">
+									<td class="text-ellipsis">
+										{{row.name}}
+									</td>
+									<td class="text-center">
+										{{row.id}}
+									</td>
+									<td class="text-center">
+										激活
+									</td>
+									<td class="text-center">
+										<div class="btn-group manage">
+											<a class="">新增</a>
+											<a class="" ng-click="remNode(row,$index)">删除</a><br />
+											<a class="">更新</a>
+											<a class="dropdown-toggle" data-toggle="dropdown">
+												更多
+											</a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li>
+													<a>查看</a>
+												</li>
+												<li>
+													<a>编辑</a>
+												</li>
+												<li>
+													<a>删除</a>
+												</li>
+												<li>
+													<a>播放</a>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="9" class="text-right">
+										<span></span>
+										<div tasty-pagination template-url="../common/angularjs/gtiles_paginatione.html"></div>
+										<!-- 翻页标签 -->
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="md-Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
+      </div>
+      <div class="modal-body">
+        <form method="get" class="form-horizontal">
+            <div class="form-group"><label class="col-sm-2 control-label">名称</label>
+                <div class="col-sm-10"><input type="text" ng-model="organizationName" class="form-control"></div>
+            </div>
+            <div class="form-group"><label class="col-sm-2 control-label">ID</label>
+                <div class="col-sm-10"><input type="text" ng-model="organizationID" class="form-control"></div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+	   	     <button type="button" class="btn btn-primary" ng-click="addRoot()">保存</button>
+       		 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 小摸态框 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="rem-Model">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+		   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		   <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
+	   </div>
+	   <div class="modal-body">
+	        <p >{{remMessage}}</p>
+	   </div>
+	   <div class="modal-footer">
+	   	     <button type="button" class="btn btn-primary" ng-click="remRoot()" ng-if="remStart==1">确定</button>
+       		 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+       </div>
+    </div>
+  </div>
+</div>

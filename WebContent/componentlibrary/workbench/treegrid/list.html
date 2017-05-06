@@ -1,0 +1,119 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>这个是当前页的标题</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li>
+                <a>这里是一级菜单名</a>
+            </li>
+            <li class="active">
+                <strong>这里是二级菜单名</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+<!-- 以上部分为标准头部 -->
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                    	<div class="col-lg-12">
+							<div class="ibox float-e-margins" >
+				            	<div class="ibox-content">
+				            		<!-- 按钮区域 -->
+				            	   <div class="top-dock row">
+										<div class="btn-group btn-group-sm">
+											<span class="btn btn-default " ng-click="addTreeNode()">
+												<span class="glyphicon glyphicon-plus"></span>
+												新增
+											</span>
+											<span class="btn btn-default " ng-click="my_tree.expand_all()">
+												<span class="glyphicon glyphicon-collapse-down"></span>
+												全部展开
+											</span>
+											<span class="btn btn-default " ng-click="my_tree.collapse_all()">
+												<span class="glyphicon glyphicon-expand"></span>
+												全部收齐
+											</span>
+										</div>
+									</div>							
+				                <!-- 列表区域 -->
+								  <div>
+					                <tree-grid 
+					                	tree-data="tree_data" 
+					                	expand-level="1" 
+					                	expand-on="expand_to" 
+					                	template-url="./workbench/treegrid/treeGridTpl.html" 
+					                	tree-control="my_tree"  
+					                	on-state-change="onStateChange(branch,callback)" 
+					                	on-tree-rank="onTreeRank(branch,fixedVal,callback)" 
+					                	on-branch-operation="onBranchOperation(branch,operate_type,callback)"  
+					                	col-defs="col_defs">
+					                </tree-grid>
+								  </div>
+								  <div>
+								  	<h3 class="text-danger">该模板支持功能（v1.0）</h3>
+								  	<p>
+								  		1：数据默认一次性从后台加载、并展示第一级菜单。支持配置展开至第几级。<br />
+								  		2：分类名称不能换行，子分类名称使用空格缩进，+代表还有下级，-表示无下级。（此处可配置）。<br />
+								  		3：操作列中功能点除编辑，查看，添加子节点外还有其他功能点，则放入更多中。<br />
+								  		4：树对象操作，操作成功后采用异步方式处理操作结果。<br />
+								  		5: 状态值单击状态栏中相互切换。</p>	
+								  	<h3 class="text-danger">下一版本预览</h3>
+								  	<p>									
+										1：支持模糊搜索分类名称，将搜索出的数据节点上展开、并高亮显示。<br />	
+										2：删除，启用，停用等按钮在数据比满屏更多的情况下定位在最上面。<br />
+										3：点击展开抖动问题
+									</p>
+								  </div>
+								  <div>
+								  	<h3 class="text-danger">使用说明</h3>
+								  	<p>
+								  		tree-grid directive 主要包含以下使用接口说明<br />
+								  		<span class="text-success">tree-data</span>，列表树数据，格式为数组形式，具体请参考treegridctrl.js中的myTreeData。<br />
+								  		<span class="text-success">expand-level</span>，展开级数，展开后不支持收缩。<br />
+								  		<span class="text-success">expand-on</span>，树形展开列，格式为数组形式，具体请参考treegridctrl.js中的expand_to。<br />
+								  		<span class="text-success">template-url</span>，模版url，具体请参考components/workbenchdemo/treegrid/treeGridTpl.html。<br />
+								  		<span class="text-success">tree-control</span>，当前treegrid的control。<br />
+								  		<span class="text-success">on-state-change</span>，启用按钮操作事件，具体请参考treegridctrl.js中的onStateChange。<br />
+								  		<span class="text-success">on-tree-rank</span>，修改排序事件，具体请参考treegridctrl.js中的onTreeRank。<br />
+								  		<span class="text-success">on-branch-operation</span>，操作列事件，具体请参考treegridctrl.js中的onBranchOperation，具体操作列如何配置，请自定义模版，按照模版进行自定义。<br />
+								  		<span class="text-success">col-defs</span>，列表列定义，具体请参考treegridctrl.js中的onBranchOperation，具体操作列如何配置，请自定义模版，按照模版进行自定义。<br />
+								  	</p>
+								  </div>
+							  </div>	
+				            </div>	
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 模拟新增子节点 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="sm-Model">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+		   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		   <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
+	   </div>
+	   <div class="modal-body">
+	        <div class="form-group">
+                <div class="col-sm-12"><input type="text" class="form-control"></div>
+            </div>
+	   </div>
+	   <div class="modal-footer">
+	   	     <button type="button" class="btn btn-primary" ng-click="saveTreeNode()">保存</button>
+       		 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+       </div>
+    </div>
+  </div>
+</div>

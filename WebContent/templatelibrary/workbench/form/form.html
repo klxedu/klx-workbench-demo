@@ -1,0 +1,121 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>这个是当前页的标题</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li>
+                <a>这里是一级菜单名</a>
+            </li>
+            <li class="active">
+                <strong>这里是二级菜单名</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+<!-- 以上部分为标准头部 -->
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12 ">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<!--一行一个表单  start-->
+					<form method="get" class="form-horizontal">
+			            <div class="form-group"><label class="col-sm-2 control-label">大input</label>
+			                <div class="col-sm-9"><input type="text" ng-model="standardForm.bigInput" class="form-control"></div>
+			            </div>
+			            <div class="hr-line-dashed"></div>
+			            <div class="form-group"><label class="col-sm-2 control-label">textarea</label>
+			                <div class="col-sm-9"><textarea ng-model="standardForm.textarea" id="test_paper_bewrite" placeholder="试卷描述" class="form-control"></textarea> 
+			                	<span class="help-block m-b-none text-info">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+			                </div>
+			            </div>  
+			            <div class="hr-line-dashed"></div>
+			            <div class="form-group"><label class="col-sm-2 control-label">小input</label>
+			
+			                <div class="col-sm-2"><input type="number" ng-model="standardForm.smallInput" class="form-control" name=""></div>
+			                <label class="col-sm-2 control-label text-left">单位</label>         
+			            </div>        
+			            <div class="hr-line-dashed"></div>
+			            <div class="form-group iradio_square-green"><label class="col-sm-2 control-label">radio1</label>
+			                <div class="col-sm-9">
+			                    <label class="radio-inline">
+			                    <input type=radio value="1" ng-model="standardForm.radio1" name="test_paper_way"> 男</label>
+			            	</div>
+			            </div>	
+			            <div class="form-group">
+			                <div class="col-sm-offset-2 col-sm-9">
+			                    <label class="radio-inline">
+			                    <input type=radio value="2" ng-model="standardForm.radio1" name="test_paper_way"> 女 </label>
+			                </div>
+			            </div>
+			            <div class="hr-line-dashed"></div>
+			            <div class="form-group"><label class="col-sm-2 control-label">radio2</label>
+			                <div class="col-sm-9">
+			                    <label class="radio-inline">
+			                    <input type=radio value="1" ng-model="standardForm.radio2" name="test_paper_way1"> 男 </label>
+			                    <label class="radio-inline">
+			                    <input type=radio value="2" ng-model="standardForm.radio2" name="test_paper_way1"> 女 </label>
+			            	</div>
+			            </div>	
+			            <div class="hr-line-dashed"></div>
+			            <div class="form-group">
+						    <label for="" class="col-sm-2 control-label">两列input</label>
+						    	<div class="col-sm-8">
+							    	<div class="row">	
+								    	<div class="col-sm-3">
+									        <label class="control-label hover">
+											  input
+											</label>
+								    	</div>
+								    	<div class="col-sm-5">
+									        <label class="text-line">
+										  	<input type="number" ng-model="standardForm.doubleRowInput1" class="form-control tm"> <span>/input1</span></label>		
+								    	</div>
+								    	<div class="col-sm-4">
+								    		<label class="text-line">
+									       	 <input type="number" ng-model="standardForm.doubleRowInput2" class="form-control tm"><span>/input2</span></label>	
+								    	</div>
+							      </div>	      
+						    </div>
+						</div>
+						<div class="hr-line-dashed"></div>	      
+						<div class="form-group"><label class="col-sm-2 control-label">下拉菜单</label>
+			                <div class="col-sm-9">
+			                    <select class="form-control" ng-model="standardForm.singleSelect">
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								</select>
+			            	</div>
+			            </div>
+						<div class="form-group"><label class="col-sm-2 control-label">下拉菜单多选</label>
+			                <div class="col-sm-9">
+			                    <select multiple  class="form-control" ng-model="standardForm.mutiSelect">
+								  <option>1</option>
+								  <option>2</option>
+								  <option>3</option>
+								  <option>4</option>
+								  <option>5</option>
+								</select>
+			            	</div>
+			            </div>							            
+			            <div class="modal-footer">
+			            	<div class="button-group">
+			            		<button class="btn btn-primary" ng-click="saveForm()">保存</button>
+			            	</div>
+			            </div>
+			        </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

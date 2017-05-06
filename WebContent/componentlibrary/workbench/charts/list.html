@@ -1,0 +1,299 @@
+<style>
+	.chart-spline-title{
+	    height: 35px;
+	}
+	.statistics-panel{
+		background:#FFF;
+		margin-bottom:10px;
+		padding-bottom:10px;
+	}
+	.statistics-panel .fa-wrench{
+		padding-right:10px
+	}
+    .header{
+        height: 32px;
+        width:32px;
+        margin: 0 10px;
+    }
+    .media-body{
+        text-align: left;
+        font-size: 14px;
+    }
+    .name{
+        font-size: 14px;
+        color:#000;
+        font-weight: 600;
+    }
+    .ibox-title h5{
+        font-size: 16px;
+    }
+    .table th{
+        text-align: center;
+    }
+        /*  */
+</style>
+<div class="wrapper wrapper-content">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins ibox-content">
+                <div class="row">
+                    <div class="col-lg-12">
+	                    <div class="" style="padding-bottom:15px">
+		                    <div class="chart-spline-title">
+				                <h5 class="pull-left">学习情况</h5>
+				                <div class="pull-right">
+				                    <div class="btn-group">
+				                        <button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='today']" ng-click="selectClass('today')">今天</button>
+                                        <button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='month']" ng-click="selectClass('month')">本月</button>
+                                        <button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='year']" ng-click="selectClass('year')">年度</button>
+				                    </div>
+				                </div>
+				            </div>
+	                        <div class="flot-chart">
+	                            <div flot class="flot-chart-content" dataset="flotChartData" options="flotLineOptions"></div>
+	                        </div>
+	                    </div>
+                    </div>
+                    <div class="col-lg-12" >
+	                    <pre>
+			            	<h3 class="text-danger">折线图控件使用说明</h3>
+			            	<p>一、使用前准备</p>
+			            	<p>1.折线图控件需要依赖angular-flot模块，且需要加入以下js文件：jquery.flot.js,jquery.flot.time.js,jquery.flot.tooltip.min.js,jquery.flot.spline.js,jquery.flot.resize.js,flot/jquery.flot.pie.js,flot/curvedLines.js,angular-flot.js</p>
+			            	<p>html中使用标签引入：&lt;div flot class="flot-chart-content" dataset="flotChartData" options="flotLineOptions"&gt;&lt;/div&gt;
+			            	</p>
+			            	<p>二、使用</p>
+							<p>1.设置dataset属性，值为折线图的数据源。例：
+	$scope.flotChartData= [
+        {
+            label: "bar",
+            data: [
+                [1, 34],
+                [2, 25],
+                [3, 19],
+                [4, 34],
+                [5, 32],
+                [6, 44]
+            ]
+        }
+    ];</p>
+							<p>2.设置options属性，定义了折线图的配置项， 例：
+	$scope.flotLineOptions={
+
+        series: {
+            lines: {
+                show: true,
+                lineWidth: 2,
+                fill: true,
+                fillColor: {
+                    colors: [
+                        {
+                            opacity: 0.0
+                        },
+                        {
+                            opacity: 0.0
+                        }
+                    ]
+                }
+            }
+        },
+        xaxis: {
+            tickDecimals: 0
+        },
+        colors: ["#1ab394"],
+        grid: {
+            color: "#999999",
+            hoverable: true,
+            clickable: true,
+            tickColor: "#D4D4D4",
+            borderWidth: 0
+        },
+        legend: {
+            show: false
+        },
+        tooltip: true,
+        tooltipOpts: {
+            content: "x: %x, y: %y"
+        }
+    };
+							</p>
+							<p>三、参考资料</p>
+							<p><a href="https://github.com/develersrl/angular-flot">angular-flot</a></p>
+			            </pre>
+                	</div>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>课程</h5>
+                <div class="pull-right">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='today']" ng-click="selectClass('today')">今天</button>
+                        <button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='month']" ng-click="selectClass('month')">本月</button>
+                        <button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='year']" ng-click="selectClass('year')">年度</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content" style="padding-bottom:30px">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="flot-chart">
+                            <div flot class="flot-chart-content" dataset="dataset" options="options"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <pre>
+			            	<h3 class="text-danger">折线图控件使用说明</h3>
+			            	<p>一、使用前准备</p>
+			            	<p>1.折线图控件需要依赖angular-flot模块，且需要加入以下js文件：jquery.flot.js,jquery.flot.time.js,jquery.flot.tooltip.min.js,jquery.flot.spline.js,jquery.flot.resize.js,flot/jquery.flot.pie.js,flot/curvedLines.js,angular-flot.js</p>
+			            	<p>html中使用标签引入：&lt;div flot class=&quot;flot-chart-content&quot; dataset=&quot;dataset&quot; options=&quot;options&quot;&gt;&lt;/div&gt;
+			            	</p>
+			            	<p>二、使用</p>
+							<p>1.设置dataset属性，值为折线图的数据源。例：
+	$scope.dataset = [
+          {
+              label: "课程学习人数",
+              grow:{stepMode:"linear"},
+              data: data2,
+              color: "#1ab394",
+              bars: {
+                  show: true,
+                  align: "center",
+                  barWidth: 24 * 60 * 60 * 600,
+                  lineWidth: 0
+              }
+
+          },
+          {
+              label: "通过人数",
+              grow:{stepMode:"linear"},
+              data: data1,
+              yaxis: 2,
+              color: "#1C84C6",
+              lines: {
+                  lineWidth: 1,
+                  show: true,
+                  fill: true,
+                  fillColor: {
+                      colors: [
+                          {
+                              opacity: 0.2
+                          },
+                          {
+                              opacity: 0.2
+                          }
+                      ]
+                  }
+              }
+          }
+      ];</p>
+			<p>2.设置options属性，定义了折线图的配置项， 例：
+		$scope.options = {
+            grid: {
+                hoverable: true,
+                clickable: true,
+                tickColor: "#d5d5d5",
+                borderWidth: 0,
+                color: '#d5d5d5'
+            },
+            colors: ["#1ab394", "#464f88"],
+            tooltip: true,
+            xaxis: {
+                mode: "time",
+                tickSize: [3,"day"],
+                tickLength: 0,
+                axisLabel: "Date",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Arial',
+                axisLabelPadding: 10,
+                color: "#d5d5d5"
+            },
+            yaxes: [
+                {
+                    position: "left",
+                    max: 1070,
+                    color: "#d5d5d5",
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: 'Arial',
+                    axisLabelPadding: 3
+                },
+                {
+                    position: "right",
+                    color: "#d5d5d5",
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: ' Arial',
+                    axisLabelPadding: 67
+                }
+            ],
+            legend: {
+                noColumns: 1,
+                labelBoxBorderColor: "#d5d5d5",
+                position: "nw"
+            }
+
+        };
+							</p>
+							<p>三、参考资料</p>
+							<p><a href="https://github.com/develersrl/angular-flot">angular-flot</a></p>
+			            </pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="row">
+
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins ibox-content">
+            
+                <div class="row">
+                    <div class="col-sm-3">
+                        <canvas id="doughnu1" class="chart chart-doughnut" height="55" width="55"
+                          chart-data="data" chart-labels="labels" chart-options="option" chart-click="chartClick">
+                        </canvas>
+                    </div>
+                    <div class="col-sm-9" >
+						<pre>
+			            	<h3 class="text-danger">饼图控件使用说明</h3>
+			            	<p>一、使用前准备</p>
+			            	<p>1.折线图控件需要依赖chart.js模块，且需要加入以下js文件：Chart.js,angular-chart.js</p>
+			            	<p>html中使用标签引入：
+	&lt;canvas id=&quot;doughnu1&quot; class=&quot;chart chart-doughnut&quot; height=&quot;55&quot; width=&quot;55&quot;
+              	chart-data=&quot;data&quot; chart-labels=&quot;labels&quot; chart-options=&quot;option&quot; chart-click=&quot;chartClick&quot;&gt;
+        &lt;/canvas&gt;
+			            	</p>
+			            	<p>二、使用</p>
+							<p>1.设置chart-labels、chart-data属性，值为饼图的数据源。例：
+	$scope.labels = ["PC", "微信1", "APP"]
+    $scope.data = [300, 500, 100]
+	</p>
+			<p>2.设置options属性，定义了饼图的配置项， 例：
+	$scope.option={
+        animation:{
+            responsive: false,
+            animateScale:true
+        }
+    }	
+							</p>
+							<p>3.设置chart-click属性，值为一个方法，返回值为当前点击饼图的对象</p>
+							<p>三、参考资料</p>
+							<p><a href="http://jtblin.github.io/angular-chart.js/">angular-chart</a></p>
+			            </pre>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>

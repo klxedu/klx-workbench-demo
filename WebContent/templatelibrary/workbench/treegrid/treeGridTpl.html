@@ -1,0 +1,64 @@
+<table class="table tree-grid table-hover"> 
+       <thead>
+         <tr>
+           <th><a ng-if="expandingProperty.sortable" ng-click="sortBy(expandingProperty)">{{expandingProperty.displayName || expandingProperty.field || expandingProperty}}</a><span ng-if="!expandingProperty.sortable">{{expandingProperty.displayName || expandingProperty.field || expandingProperty}}</span><i ng-if="expandingProperty.sorted" class="{{expandingProperty.sortingIcon}} pull-right"></i></th>
+           <th ng-repeat="col in colDefinitions"><a ng-if="col.sortable" ng-click="sortBy(col)">{{col.displayName || col.field}}</a><span ng-if="!col.sortable">{{col.displayName || col.field}}</span><i ng-if="col.sorted" class="{{col.sortingIcon}} pull-right"></i></th>
+           <th>排序</th>
+           <th>启用</th>
+           <th>操作</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr ng-repeat="row in tree_rows | searchFor:$parent.filterString:expandingProperty:colDefinitions track by row.branch.uid"
+           ng-class="'level-' + {{ row.level }} + (row.branch.selected ? ' active':'')" class="tree-grid-row">
+           <td class="text-left"><a ng-click="user_clicks_branch(row.branch)"><i ng-class="row.tree_icon"
+                  ng-click="row.branch.expanded = !row.branch.expanded"
+                  class="indented tree-icon"></i>
+                  <span ng-if="expandingProperty.cellTemplate" class="indented tree-label" 
+                  ng-click="row.branch.expanded = !row.branch.expanded" compile="expandingProperty.cellTemplate"></span>
+                  <span  ng-if="!expandingProperty.cellTemplate" class="indented tree-label" ng-click="row.branch.expanded = !row.branch.expanded">
+                 {{row.branch[expandingProperty.field] || row.branch[expandingProperty]}}</span></a>
+           </td>
+           <td ng-repeat="col in colDefinitions">
+             <div ng-if="col.cellTemplate" compile="col.cellTemplate" cell-template-scope="col.cellTemplateScope"></div>
+             <div ng-if="!col.cellTemplate" >{{row.branch[col.field]}}</div>
+           </td>
+           <td ng-click="rankShow($event,row.branch)">
+           	{{row.branch.sort}}
+           	<input type="number" value="{{row.branch.sort}}" ng-show="row.branch.rankInput" ng-blur="rankInputblur($event)" style="width: 40px;"/>
+           </td>
+           <td>
+           	<input type="checkbox" ng-checked="row.branch.state" class="onoffswitch-checkbox" />
+           	<div class="onoffswitch" style="margin: 0 auto;">
+                <input type="checkbox" ng-checked="row.branch.state" class="onoffswitch-checkbox">
+                <label class="onoffswitch-label"  ng-click="stateChange(row.branch)">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+           </td>
+           <td><div class="btn-group manage">
+           	<a ng-click="branchOperation('edit')">编辑</a>&nbsp;&nbsp;<a ng-click="branchOperation('view')">查看</a>&nbsp;&nbsp;<a ng-click="branchOperation('add')">新增子节点</a>
+           	   <a  class="dropdown-toggle" data-toggle="dropdown">
+			    	更多
+			  	</a>
+				<ul class="dropdown dropdown-menu dropdown-menu-right">
+					<li>
+						<a>查看</a>
+					</li>
+					<li>
+						<a>编辑</a>
+					</li>
+					<li>
+						<a ng-click="branchOperation('delete')">删除</a>
+					</li>
+					<li>
+						<a>播放</a>
+					</li>
+				</ul>
+				</div>
+           </td>
+         </tr>
+       </tbody>
+    </table>
+                   

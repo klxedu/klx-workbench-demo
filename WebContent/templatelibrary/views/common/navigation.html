@@ -1,0 +1,86 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+	<div class="sidebar-collapse">
+		<ul side-navigation class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+
+				<div class="profile-element" uib-dropdown>
+					<img alt="image" class="img-circle" src="../img/profile_small.jpg" />
+					<a uib-dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">快来学模板库</strong>
+                             </span>
+                                <span class="text-muted text-xs block">切换皮肤<b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
+                        <li><a href="../index.html">快来学整体库</a></li>
+                        <li><a href="../componentlibrary/index.html">快来学控件库</a></li>
+                    </ul>
+				</div>
+				<div class="logo-element">IN+</div>
+			</li>
+			<li ng-class="{active: $state.includes('frontendtemplate')}"
+				class="active"><a href=""><i
+					class="  glyphicon glyphicon-gift"></i> <span class="nav-label">前端模板</span><span
+					class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse in"
+					ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active"><a
+						ui-sref="frontendtemplate.formValidation"
+						href="/frontendtemplateformValidation/">表单</a></li>
+				</ul>
+				<ul class="nav nav-second-level collapse in"
+					ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active"><a
+						ui-sref="frontendtemplate.StandardList"
+						href="/frontendtemplateStandardList/">标准列表</a></li>
+				</ul>
+				<ul class="nav nav-second-level collapse in"
+					ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active"><a
+						ui-sref="frontendtemplate.uploading"
+						href="/frontendtemplateuploading/">上传</a></li>
+				</ul>
+				<ul class="nav nav-second-level collapse in"
+					ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active"><a
+						ui-sref="frontendtemplate.treemenutable"
+						href="/frontendtemplatetreemenutable/">树+列表</a></li>
+				</ul>
+				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active" class="active">
+						<a ui-sref="frontendtemplate.check" href="/frontendtemplatecheck/">考勤</a>
+					</li>
+				</ul>
+				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active" class="active">
+						<a ui-sref="frontendtemplate.model" href="/frontendtemplatemodel/">勾选摸态框</a>
+					</li>
+				</ul>
+				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active" class="active">
+						<a ui-sref="frontendtemplate.basiciinformation" href="/frontendtemplatebasiciinformation/">基础信息维护</a>
+					</li>
+				</ul>
+				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active" class="active">
+						<a ui-sref="frontendtemplate.signin" href="/signin">签到model</a>
+					</li>
+				</ul>
+			</li>
+			<li ng-class="{active: $state.includes('selfdeftemplate')}"
+				class="active"><a href=""><i
+					class="  glyphicon glyphicon-gift"></i> <span class="nav-label">自定义模板</span><span
+					class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse in"
+					ng-class="{in: $state.includes('selfdeftemplate')}">
+					<li ui-sref-active="active"><a
+						ui-sref="selfdeftemplate.sysrefresh"
+						href="/sysrefresh">全局刷新</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</nav>

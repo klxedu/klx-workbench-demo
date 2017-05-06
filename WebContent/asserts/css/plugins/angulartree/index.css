@@ -1,0 +1,117 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #2f4050;
+	height: 100%;
+	overflow: hidden;
+}
+
+.head {
+	  height: 40px;
+	  line-height: 40px;
+	  border-top: 1px solid #125;
+	  border-bottom: 2px solid #fff;
+	  margin-top: 10px;
+	  width: 1500px;
+	  font-size: 12px;
+	  color: #685;
+	  margin: 0 auto; 
+	
+
+}
+
+.head .contain {
+	 background: #2f4050;
+}
+.head span {
+	padding: 5px 10px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	font-weight: 700;
+	cursor : pointer;
+
+}
+.head span.current {
+	 background-color: green;
+	 color : #fff;
+}
+.main {
+	 background-color: #fff;
+	 width: 1500px;
+	 margin: 0 auto;
+	 font-weight: 700;
+	 height: 720px;
+}
+.main .slider {
+	 width: 15%;
+	 float: left;
+	background: #2f4050;
+	 height: 100%;
+	 border-right: 2px solid #fff;
+	 border-left: 2px solid #fff;
+	 box-sizing: border-box;
+	overflow-x:scroll;
+	 
+}
+.center {
+	overflow-x:scroll;
+	 height: 100%;
+}
+.main .content {
+	 float: left;
+	width: 85%;
+	box-sizing: border-box;
+/*	border: 1px solid #789;*/
+	
+	height: 90%;
+}
+
+.main .content li {
+	list-style: none;
+	float: left;
+	width: 9.09%;
+	box-sizing: border-box;
+    border-right: 3px solid #000;
+    text-align: center ;
+    padding: 10px 0;
+    position: relative;
+}
+.main .content li input {
+    position: absolute;
+    left: 9px;
+    top  : 13px;
+
+}
+.main .content ul.list {
+   border-bottom: 1px solid #efefef;
+}
+.main .content ul.list li {
+	border : 0 none;
+}
+.main .contentHead {
+	    font-size: 12px;
+    border-bottom: 2px solid #000;
+}
+.main .contentHead span {
+	display: inline-block;
+    padding: 5px;
+    border-right: 2px solid #000;
+    cursor: pointer;
+}
+.main .contentHead span:hover {
+	background: #2f4050;
+	color : #fff;
+}
+.main .contentTitle {
+	border-top: 2px solid #000;
+}
+.main .search {
+	height: 100px;
+	padding: 15px 10px;
+}
+.main .searchMain {
+	border : 1px solid #000;
+	height: 100%;
+}

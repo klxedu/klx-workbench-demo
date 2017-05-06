@@ -1,0 +1,94 @@
+<!--
+* klxTemplate - Responsive Admin Theme
+* Version 2.5
+*
+-->
+
+<!DOCTYPE html>
+<html ng-app="klxTemplate">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Page title set in pageTitle directive -->
+<!--     <title pageTitle></title> -->
+    <title page-title></title>
+
+    <!-- Font awesome -->
+    <link href="../skin/bootstrap/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Bootstrap and Fonts -->
+    <link href="../skin/bootstrap/css/bootstrap-3.3.5.min.css" rel="stylesheet">
+    <link href="../skin/backconsole/css/loading-bar.css" rel="stylesheet" />
+    <link href="../skin/backconsole/css/angular-growl.min.css" rel="stylesheet" />
+
+    <!-- Main klxTemplate CSS files -->
+    <link href="./asserts/css/animate.css" rel="stylesheet">
+    <link id="loadBefore" href="./asserts/css/style.css" rel="stylesheet">
+    <link href="./asserts/css/securityworkbench.css" rel="stylesheet">
+    
+
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in klxTemplate theme on diferent view -->
+<body ng-controller="MainCtrl as main">
+
+<!-- Main view  -->
+<div ui-view></div>
+
+<!-- jQuery and Bootstrap -->
+<script src="../common/jquery/jquery-2.1.1.min.js"></script>
+<script src="../common/jquery-ui/jquery-ui.js"></script>
+<script src="../common/bootstrap/bootstrap-3.3.5.min.js"></script>
+
+<!-- jQuery md5 -->
+<script src="../common/jquery-md5/jQuery.md5.js"></script>
+
+<!-- MetsiMenu -->
+<script src="../common/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- SlimScroll -->
+<script src="../common/slimscroll/jquery.slimscroll.min.js"></script>
+
+
+<!-- Main Angular scripts-->
+<script src="../common/angularjs/angular-1.5.0.min.js"></script>
+<script src="../common/oclazyload/ocLazyLoad.min.js"></script>
+<script src="../common/angularjs/angular-ui-router.min.js"></script>
+<script src="../common/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+
+<script src="../common/angularjs/angular-messages.min.js"></script>
+<script src="../common/angularjs/angular-animate.min.js"></script>
+<script src="../common/angularjs/angular-resource.min.js"></script>
+<script src="../common/angularjs/ng-tasty-tpls.js"></script>
+<script src="../common/angularjs/angular-confirm-1.2.5.min.js"></script>
+<script src="../common/angularjs/loading-bar-0.9.min.js"></script>
+<script src="../common/angularjs/angular-growl.min.js"></script>
+<script src="../common/angularjs/angular-sanitize.min.js"></script>
+<script src="./asserts/js/plugin/formValidation/angular-translate-2.1.1.min.js"></script>
+<script src="./asserts/js/plugin/formValidation/angular-validation.min.js"></script>
+<!-- <script src="./asserts/js/plugin/formValidation/src/validation-directive.js"></script> -->
+<!-- <script src="./asserts/js/plugin/formValidation/src/validation-common.js"></script> -->
+<!-- <script src="./asserts/js/plugin/formValidation/src/validation-rules.js"></script> -->
+<!-- <script src="./asserts/js/plugin/formValidation/src/validation-service.js"></script> -->
+<script src="./asserts/js/plugin/formValidation/angular-translate-loader-static-files.min.js"></script>
+
+
+
+<!-- Anglar App Script -->
+<script src="./asserts/js/app.js"></script>
+<script src="./menu/config.js"></script>
+<script src="./asserts/js/directives.js"></script>
+<script src="./asserts/js/controllers.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="./asserts/js/klxTemplate.js"></script>
+<script src="./asserts/js/gtiles-angular-ext.js"></script>
+
+<script type="text/javascript" src="../workbench/custom.js"></script>
+</body>
+</html>

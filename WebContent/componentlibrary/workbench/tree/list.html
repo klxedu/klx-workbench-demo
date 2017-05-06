@@ -1,0 +1,62 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">主页</a>
+			</li>
+			<li>
+				<a>树</a>
+			</li>
+			<li class="active">
+				<strong>树组件示例</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div class="row">
+						<div class="col-sm-4">
+							<treecontrol class="tree-light" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)" selected-node="node1" expanded-nodes="dataForTheTreeSel">
+								<span class="{{node.id}}">{{node.name}}</span>
+							</treecontrol>
+						</div>
+						<div class="col-sm-8">
+							<pre>
+				            	<h3 class="text-danger">树控件使用说明</h3>
+				            	<p>一、使用前准备</p>
+				            	<p>1.树控件需要依赖treeControl模块，且需要加入以下js文件：tree-control-attribute.css,tree-control.css,angular-tree-control.js</p>
+				            	<p>html中使用标签引入：&lt;treecontrol class=&quot;tree-light&quot; tree-model=&quot;dataForTheTree&quot; options=&quot;treeOptions&quot; on-selection=&quot;showSelected(node)&quot; selected-node=&quot;node1&quot; expanded-nodes=&quot;dataForTheTreeSel&quot;&gt;
+			&lt;span class=&quot;{{node.id}}&quot;&gt;{{node.name}}&lt;/span&gt;
+							&lt;/treecontrol&gt;
+				            	</p>
+				            	<p>二、使用</p>
+								<p>1.设置tree-model属性，值为树的数据源。如：tree-model={......};，详情查看treectrl中数据示例</p>
+								<p>2.options，对象，定义了树控件的配置项，请参考叁考资料，默认使用请参考ctrl中</p>
+								<p>3.设置on-selection属性，用于接受选择节点事件并返回当前选择的节点</p>
+								<p>4.设置expanded-nodes属性，用于配置那些节点需要展。配置示例：[$scope.dataForTheTree[0],$scope.dataForTheTree[0].children[1]]，此配置为打开根节点并打开根节点下第二个子节点</p>
+								<p>5.指令中&lt;span class=&quot;{{node.id}}&quot;&gt;{{node.name}}&lt;/span&gt,该位置展示信息可以自定义</p>;
+								<p>三、参考资料</p>
+								<p><a href="https://github.com/wix/angular-tree-control">git-tree</a></p>
+				            </pre>
+						</div>
+					</div>
+					<div>
+						
+					</div>
+		            <div>
+						
+		            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

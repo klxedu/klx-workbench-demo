@@ -1,0 +1,71 @@
+{
+	data:[
+		    {
+		        "classifyName": "a",
+		        "children": [
+		            {
+		                "classifyName": "aa",
+		                "children": [
+		                    {"classifyName": "aaa1"},
+		                    {"classifyName": "aaa2"},
+		                    {"classifyName": "aaa3"},
+		                    {"classifyName": "aaa4"}
+		                ]
+		            },
+		            {
+		                "classifyName": "ab",
+		                "children": [
+		                    {"classifyName": "aba1"}
+		                ]
+		            },
+		            {
+		                "classifyName": "ac",
+		                "children": []
+		            },
+		            {
+		                "classifyName": "ad",
+		                "children": [
+		                    {"classifyName": "ada1"},
+		                    {"classifyName": "ada2"},
+		                    {"classifyName": "ada3"},
+		                    {"classifyName": "ada4"}
+		                ]
+		            }
+		        ]
+		    },
+		    {
+		        "classifyName": "b",
+		        "children": [
+		            {
+		                "classifyName": "ba",
+		                "children": [
+		                    {"classifyName": "baa1"}
+		                ]
+		            },
+		            {
+		                "classifyName": "bb",
+		                "children": []
+		            }
+		        ]
+		    },
+		    {
+		        "classifyName": "c",
+		        "children": [
+		            {
+		                "classifyName": "ca",
+		                "children": [
+		                    {"classifyName": "caa"}
+		                ]
+		            },
+		            {
+		                "classifyName": "cb",
+		                "children": []
+		            },
+		            {
+		                "classifyName": "cc",
+		                "children": []
+		            }
+		        ]
+		    }
+		]
+	}

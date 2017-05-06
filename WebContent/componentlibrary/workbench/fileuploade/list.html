@@ -1,0 +1,88 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">主页</a>
+			</li>
+			<li>
+				<a>树</a>
+			</li>
+			<li class="active">
+				<strong>树组件示例</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div class="row">
+							 <div class="form-group"><label class="col-sm-2 control-label">文件名称：</label>
+	                            <label class="col-sm-6  control-label" style="text-align:left">{{file.name}}</label>          
+	                            <div class="col-sm-2 ">
+	                            	<div class="btn btn-primary" ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</div>
+	                            </div>
+	                            <div class="col-sm-2">
+	                            	<button class="btn btn-success" type="submit" ng-click="uploadfilie(file)" ng-disabled="!file.name">确认上传	</button>
+	                            </div>
+	                       </div>                  
+	                       	<!-- 进度条-->
+	                        <div class="form-group">
+	                          	<div class="col-sm-12">
+									<div class="progress " ng-class="q?'progress-bar-striped active':'' "><!-- progress-bar-striped active 这俩个类名用于使进度条滚动起来 -->
+								  		<div class="progress-bar progress-bar-info " role="progressbar"  ng-style="barstyle"></div>
+									</div>
+	                        	</div>
+	                        </div>	
+						<div class="col-sm-12">
+							<pre>
+				            	<h3 class="text-danger">文件上传控件使用说明</h3>
+				            	<p>一、使用前准备</p>
+				            	<p>1.文件上传需要依赖ngFileUpload模块，且需要加入以下js文件：ng-file-upload-shim.min.js',ng-file-upload.min.js'</p>
+				            	<p>html中使用标签引入：&lt;div class=&quot;form-group&quot;&gt;&lt;label class=&quot;col-sm-2 control-label&quot;&gt;文件名称：&lt;/label&gt;
+        &lt;label class=&quot;col-sm-6  control-label&quot; style=&quot;text-align:left&quot;&gt;{{file.name}}&lt;/label&gt;          
+        &lt;div class=&quot;col-sm-2 &quot;&gt;
+        	&lt;div class=&quot;btn btn-primary&quot; ngf-select ng-model=&quot;file&quot; name=&quot;file&quot;  ngf-max-size=&quot;20MB&quot; &gt;选择文件&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-sm-2 &quot;&gt;
+        	&lt;button class=&quot;btn btn-success&quot; type=&quot;submit&quot; ng-click=&quot;uploadfilie(file)&quot; ng-disabled=&quot;!file.name&quot;&gt;确认上传	&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;                  
+
+    &lt;div class=&quot;form-group&quot;&gt;
+      	&lt;div class=&quot;col-sm-12&quot;&gt;
+			&lt;div class=&quot;progress &quot; ng-class=&quot;q?'progress-bar-striped active':'' &quot;&gt;
+		  		&lt;div class=&quot;progress-bar progress-bar-info &quot; role=&quot;progressbar&quot;  ng-style=&quot;barstyle&quot;&gt;&lt;/div&gt;
+			&lt;/div&gt;
+    	&lt;/div&gt;
+    &lt;/div&gt;
+				            	</p>
+				            	<p>二、使用</p>
+								<p>1.ngf-max-size="20MB" 配置可上传文件大小</p>
+								<p>2.进度条：
+	.progress(function (evt) {
+		$scope.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+		$scope.barstyle = {width: $scope.progressPercentage+"%"}
+	})
+								</p>
+				            </pre>
+						</div>
+					</div>
+					<div>
+						
+					</div>
+		            <div>
+						
+		            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

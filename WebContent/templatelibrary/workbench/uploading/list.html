@@ -1,0 +1,111 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>这个是当前页的标题</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li>
+                <a>这里是一级菜单名</a>
+            </li>
+            <li class="active">
+                <strong>这里是二级菜单名{{abc | Yannis}}</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="row">
+                    	<div class="col-lg-12">
+                    		<div class="wrapper wrapper-content animated fadeInRight">
+						   		<div class="row">
+						        	<div class="col-lg-12 ">
+						            	<div class="ibox float-e-margins">
+						                	<div class="ibox-content">
+						                    	<form method="post" class="form-horizontal" name="myForm">
+							                        <div class="form-group"><label class="col-sm-2 control-label">文件名称：</label>
+							                            <label class="col-sm-6  control-label" style="text-align:left">{{file.name}}</label>          
+							                            <div class="col-sm-2 ">
+							                            	<div class="btn btn-primary" ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</div>
+							                            </div>
+							                            <div class="col-sm-2 ">
+							                            	<button class="btn btn-success" type="submit" ng-click="uploadfilie(file)" ng-disabled="!file.name">确认上传	</button>
+							                            </div>
+							                        </div>                  
+						                        	<div class="hr-line-dashed"></div>
+							                       	<!-- 进度条-->
+							                        <div class="form-group">
+							                          	<div class="col-sm-12">
+															<div class="progress " ng-class="q?'progress-bar-striped active':'' "><!-- progress-bar-striped active 这俩个类名用于使进度条滚动起来 -->
+														  		<div class="progress-bar progress-bar-info " role="progressbar"  ng-style="barstyle"></div>
+															</div>
+							                        	</div>
+							                        </div>	
+							                        <!-- 进度说明 -->
+							                        <div class="form-group">
+							                          	<div class="col-sm-4">
+								                          	<ul class="list-group w-100">
+								                          	<li class="list-group-item list-group-item-success w-100">
+															  正在转存至服务器
+															  <span class="glyphicon glyphicon-ok pull-right font-22"></span><!-- 这个span是对勾 -->
+															  </li>
+															</ul>
+							                        	</div>
+							                        	<div class="col-sm-4">
+								                          	<ul class="list-group ">
+															  <li class="list-group-item list-group-item-info w-100">
+															  正在解压 </span>
+															  
+															  	<div class="sk-spinner sk-spinner-cube-grid pull-right">
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                            <div class="sk-cube"></div>
+										                        </div>
+										                        <!-- 此处最好使用ng-if 控制 避免性能问题 -->
+															  </li>
+															</ul>
+							                        	</div>
+							                        	<div class="col-sm-4">
+								                          	<ul class="list-group w-100">
+															  <li class="list-group-item list-group-item-danger w-100">
+															  正在转存至服务器
+															  <span class="glyphicon glyphicon-remove pull-right font-22"></span><!-- 这个span是叉 -->
+															  </li>
+															</ul>
+							                        	</div>
+							                        </div>		                		 
+													<!--图片编辑-->
+													<div class="form-group">
+														<div class="col-sm-8 border-l-dotted" >
+															<div class="cropArea" id="initImgModal" style="background: url(../components/gtattachment/open/downloadAttachment.json?attachmentId={{courseImage.defaultImageId}}) no-repeat;">
+												            	<img ngf-src="file" width="100%" height="100%" class=""/>
+												        	</div>
+														</div>
+						                          	</div>
+						                     	</form>
+						                    </div>
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
