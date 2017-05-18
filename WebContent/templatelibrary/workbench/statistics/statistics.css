@@ -1,0 +1,130 @@
+/*
+ *统计页样式
+ *  
+ * 
+ * */
+#page-wrapper{
+	min-height: 660px !important;
+}
+.modal-body{
+	padding: 20px 10px 30px 10px;
+}
+.btn-rounded{
+	border-radius: 3px;
+}
+/*侧边栏*/
+.sidebard-panel{
+	margin-top: 20px;
+    width: 245px;
+}
+.sidebard-panel .list-group-item a{
+	cursor: default;
+}
+.sidebard-panel .count{
+	font-size: 24px;
+	color: #FFAD00;
+}
+.sidebard-panel .count1{
+	font-size: 24px;
+	color: #18A689;
+}
+.sidebard-panel .col-sm-2,.sidebard-panel .col-sm-3,.sidebard-panel .col-sm-7{
+	padding-left: 0;
+	padding-right: 0;
+}
+/*主区域*/
+.sidebar-content .wrapper, .wrapper.sidebar-content {
+    padding-right: 260px !important;
+}
+/*折线图*/
+.curved-lines{
+    margin-bottom: 0px;
+}
+.curved-lines .btn-white.active{
+    background: #1ab394;
+    border-color: #1ab394;
+    color: #FFFFFF;
+    font-weight: bolder;
+}
+.curved-lines .active:hover{
+    color: #FFFFFF;
+}
+.curved-lines .ibox-content{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+/*统计面板*/
+.statistics-panel{
+	height: 173px;
+	margin-bottom: 0;
+	border-radius: 2px 2px 0 0;
+}
+.statistics-panel .ibox-title h5{
+	font-size: 15px;
+	font-weight: 600;
+}
+.statistics-panel .count{
+    font-size: 34px;
+    color: #1ab394;
+    padding-left: 25px;
+}
+.statistics-panel .glyphicon-wrench{
+	padding-right:5px;
+}
+.statistics-panel .check-lable{
+	color: #1ab394;
+}
+ .statistics-panel.check-lable:hover{
+	color: #1ab394;
+}
+.time{
+	color: #1ab394;
+	padding-left: 5px;
+}
+.statistics-panel .ibox-content{
+	padding-bottom: 0;
+}
+.statistics-panel p{
+	margin-bottom: 5px;
+}
+.number{
+	font-size: 20px;
+	padding-left: 10px;
+}
+.pad-l-7{
+	padding-left: 7px;
+}
+.pad-r-7{
+	padding-right: 7px;
+}
+/*图表*/
+.chart-spline-title{
+    height: 35px;
+}
+.statistics-panel{
+	background:#FFF;
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+.header{
+    height: 32px;
+    width:32px;
+    margin: 0 10px;
+}
+.media-body{
+    text-align: left;
+    font-size: 14px;
+}
+.name{
+    font-size: 14px;
+    color:#000;
+    font-weight: 600;
+}
+.ibox-title h5{
+    font-size: 16px;
+}
+.table th{
+    text-align: center;
+}

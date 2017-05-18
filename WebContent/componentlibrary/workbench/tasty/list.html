@@ -1,0 +1,70 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>这个是当前页的标题</h2>
+		<ol class="breadcrumb">
+			<li>
+				<a href="index.html">这里是主页</a>
+			</li>
+			<li>
+				<a>这里是一级菜单名</a>
+			</li>
+			<li class="active">
+				<strong>这里是二级菜单名</strong>
+			</li>
+		</ol>
+	</div>
+	<div class="col-lg-2">
+		<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+	</div>
+</div>
+
+<div class="wrapper wrapper-content animated container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div tasty-table bind-resource-callback="dataGrid"> 
+						<div tasty-pagination  template-url="../common/angularjs/gtiles_paginatione.html"></div><!-- 翻页标签 -->
+						<div>
+							
+					<div>
+						<pre>
+			            	<h3 class="text-danger">Tasty分页控件使用说明</h3>
+			            	<p>一、使用前准备</p>
+			            	<p>1.需要依赖ngTasty模块，且需要加入以下js文件：summernote.css,summernote-bs3.css,summernote.min.js,angular-summernote.min.js</p>
+			            	<p>2.html使用标签：&lt;div summernote class=&quot;summernote&quot; height=&quot;300&quot; ng-model=&quot;courseContent.contentStr&quot;&gt;&lt;/div&gt;
+			            	</p>
+			            	<p>二、使用</p>
+			            	<p>1.设置ng-model属性，值为富文本内容</p>
+			            	<p>2.设置height属性，值为数字，用于配置富文本内容区高度</p>
+			            	<p>3.设置config属性，值为对象，示例：option={toolbar：[]},支持配置富文本功能</p>
+			            	<p>toolbar配置项： ['edit',['undo','redo']],
+            ['headline', ['style']],
+            ['style', ['bold', 'italic', 'underline', 'superscript', 'subscript', 'strikethrough', 'clear']],
+            ['fontface', ['fontname']],
+            ['textsize', ['fontsize']],
+            ['fontclr', ['color']],
+            ['alignment', ['ul', 'ol', 'paragraph', 'lineheight']],
+            ['height', ['height']],
+            ['table', ['table']],
+            ['insert', ['link','picture','video','hr']],
+            ['view', ['fullscreen', 'codeview']],
+            ['help', ['help']]</p>
+			            	<p>4.支持一下事件on-init,on-enter,on-focus,on-blur,on-paste,on-keyup,on-keydown,on-change=,on-image-upload。
+			            	需要使用时需要将该属性写入标签中并传入对应事件触发是调用的方法</p>
+							<p>三、参考资料</p>
+							<p><a href="https://github.com/summernote/angular-summernote#event-listeners">git-summernote</a></p>
+			            	<p>四、注意事项</p>
+			            	<p>1.在ie下请勿给富文本添加css动画，可能会导致遮罩遮挡突变上传modal</p>
+						</pre>
+			            
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-sm-12">
+			
+		</div>
+	</div>
+</div>

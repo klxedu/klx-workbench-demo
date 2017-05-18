@@ -491,6 +491,40 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 					}
 				}
 			})
+			.state('commonality', {
+	            url: "/commonality",
+	            templateUrl: "views/common/content.html",
+	            data: { pageTitle: '' },
+	            resolve: {
+	                loadPlugin: function ($ocLazyLoad) {
+	                    return $ocLazyLoad.load([
+	                        {
+	                            files: []
+	                        }
+	                    ]);
+	                }
+	            }
+	        })
+			.state('commonality.tasty',{
+				url:'/tasty',
+				templateUrl : "workbench/tasty/list.html",
+				data : {pageTitle:''},
+				controller:'tastyctrl',
+				resolve : {
+					loadPlugin : function($ocLazyLoad) {
+						return $ocLazyLoad
+							.load([{
+								name : 'Module.tasty',
+								files : [
+										'./workbench/tasty/tastyservice.js',
+										'./workbench/tasty/tastyctrl.js',
+										"../asserts/js/plugin/tasty/ng-tasty-tpls.js"
+										],
+								serie : true
+							}]);
+					}
+				}
+			})
 }
 angular.module('klxComponent').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;

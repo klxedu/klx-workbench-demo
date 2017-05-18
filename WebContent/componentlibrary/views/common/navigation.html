@@ -184,6 +184,20 @@
 					</li>
 				</ul>
 			</li>
+			<li ng-class="{active: $state.includes('commonality')}" >
+				<a href="">
+					<i class="glyphicon glyphicon-gift"></i> 
+					<span class="nav-label">公共组件</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('commonality')}">
+					<li ui-sref-active="active">
+						<a ui-sref="commonality.tasty">
+							分页
+						</a>
+					</li>
+				</ul>
+			</li>
 			
 		</ul>
 

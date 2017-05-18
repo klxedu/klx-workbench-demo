@@ -49,16 +49,10 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 										.load([ {
 											name : 'Module.myForm',
 											files : [
+													'./workbench/form/form.css',
 													'./workbench/form/formservice.js',
-													'./workbench/form/formctrl.js',
-													'../asserts/js/plugin/daterangepicker/moment.min.js',
-													'../asserts/js/plugin/daterangepicker/daterangepicker.js',
-													'../asserts/js/plugin/daterangepicker/angular-daterangepicker.js',
-													'../asserts/css/plugins/daterangepicker/daterangepicker-bs3.css',
-													'../asserts/js/plugin/timepicker/bootstrap-datetimepicker.fr.js',
-													'../asserts/js/plugin/timepicker/bootstrap-datetimepicker.min.js',
-													'../asserts/js/plugin/timepicker/datatime.directive.js',
-													'../asserts/css/plugins/timepicker/bootstrap-datetimepicker.min.css' ],
+													'./workbench/form/formctrl.js'
+													],
 											serie : true
 										}
 
@@ -79,6 +73,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 										.load([ {
 											name : 'Module.StandardList',
 											files : [
+												'./workbench/StandardList/StandardList.css',
 													'./workbench/StandardList/StandardListService.js',
 													'./workbench/StandardList/StandardListCtrl.js',
 													'../asserts/js/plugin/daterangepicker/moment.min.js',
@@ -97,7 +92,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 													'../asserts/css/plugins/angulartreetable/tree-control-attribute.css',
 													'../asserts/css/plugins/angulartreetable/tree-control.css',
 													'../asserts/js/plugin/angulartreetable/angular-tree-control.js',
-													'../asserts/js/plugin/selectTree/select.js'],
+													'../asserts/js/plugin/selectTree/select.js',
+													'../asserts/js/plugin/tools/tools.js'],
 											serie : true
 										}
 
@@ -164,11 +160,14 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 										.load([ {
 											name : 'Module.treemenutable',
 											files : [
+													'../asserts/css/plugins/angulartreetable/tree-control.css',
+													'./workbench/treemenutable/treemenutable.css',
+													'./workbench/StandardList/StandardList.css',
 													'./workbench/treemenutable/treemenutableservice.js',
 													'./workbench/treemenutable/treemenutablectrl.js',
 													'../asserts/css/plugins/angulartreetable/tree-control-attribute.css',
-													'../asserts/css/plugins/angulartreetable/tree-control.css',
-													'../asserts/js/plugin/angulartreetable/angular-tree-control.js'],
+													'../asserts/js/plugin/angulartreetable/angular-tree-control.js',
+													'../asserts/js/plugin/tools/tools.js'],
 											serie : true
 										}
 										]);
@@ -239,31 +238,39 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 				   }
 				}
 			})
-			.state('selfdeftemplate', {
-				abstract : true,
-				url : "/selfdeftemplate",
-				templateUrl : "views/common/content.html",
-			})
-			.state('selfdeftemplate.sysrefresh',{
-				url:"sysrefresh",
-				templateUrl: "./workbench/sysrefresh/list.html",
-				controller: "sysrefreshctrl",
+			.state('frontendtemplate.statistics', {
+				url: "statistics/:data",
+				templateUrl: "./workbench/statistics/list.html",
+				data: { pageTitle:''},
+				controller: "statisticsctrl",
 				resolve: {
-					   loadPlugin: function ($ocLazyLoad) {
-					       return $ocLazyLoad.load([
-					          	{ 
-								   name:'Module.sysrefresh', 
-								   files: [
-								   		   './workbench/sysrefresh/sysrefreshctrl.js'
-								   		   ],
-								   serie: true 
-								}
-					
-					       ]);
-					   }
-					}
-			});
-			
+				   loadPlugin: function ($ocLazyLoad) {
+				       return $ocLazyLoad.load([
+				          	{ 
+							   name:'Module.statistics', 
+							   files: [
+							   		   './workbench/statistics/statistics.css',
+							   		   './workbench/statistics/statisticsservice.js',
+							   		   './workbench/statistics/statisticsctrl.js',
+							   		   "../asserts/js/plugin/flot/jquery.flot.js",
+									   "../asserts/js/plugin/flot/jquery.flot.time.js",
+										"../asserts/js/plugin/flot/jquery.flot.tooltip.min.js",
+										//"../asserts/js/plugin/flot/jquery.flot.spline.js",
+										"../asserts/js/plugin/flot/jquery.flot.resize.js",
+										//"../asserts/js/plugin/flot/jquery.flot.pie.js",
+										"../asserts/js/plugin/flot/curvedLines.js",
+										"../asserts/js/plugin/flot/angular-flot.js",
+										"../asserts/js/plugin/chartJs/Chart.js",
+										"../asserts/js/plugin/chartJs/angular-chart.js"
+							   		   
+							   		   ],
+							   serie: true 
+							}
+				
+				       ]);
+				   }
+				}
+			})
 
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {

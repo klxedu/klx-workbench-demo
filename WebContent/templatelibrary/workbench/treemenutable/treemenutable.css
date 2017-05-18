@@ -1,0 +1,27 @@
+treecontrol.tree-light li.tree-collapsed i.tree-branch-head{
+	background: none;
+}
+treecontrol.tree-light li.tree-expanded i.tree-branch-head{
+	background: none;
+}
+treecontrol li{
+	padding: 10px 10px 10px 20px;
+}
+treecontrol ul{
+	padding-top: 10px;
+}
+.treecontrol{
+	min-height: 729px;
+	margin-bottom: 50px;
+}
+.tree-title{
+    padding: 15px;
+    background: #1ab394;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.tree-table{
+	margin-bottom: 50px;
+}

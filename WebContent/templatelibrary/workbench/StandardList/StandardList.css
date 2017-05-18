@@ -1,0 +1,35 @@
+.form-horizontal .control-label{
+	padding-top:5px
+}
+.advanced-search.active{
+	border: none;
+    padding: 0 0 15px 0;
+}
+.advanced-search{
+	border: none;
+    height: 0px;
+}
+.pagination{
+	float: right;
+}
+.glyphicon-exclamation-sign{
+	top:2px;
+}
+.cut-search{
+	margin-top: 7px;
+	font-size: 13px;
+}
+.operation{
+	text-align: left;
+	padding: 0 0 15px 0;
+}
+.btn-sm.add{
+    padding: 5px 20px;
+    margin-left: 10px;
+}
+table .manage a{
+	padding: 0 2px;
+}
+.dropdown-menu.dropdown-menu-right{
+	border: 1px solid #ccc;
+}

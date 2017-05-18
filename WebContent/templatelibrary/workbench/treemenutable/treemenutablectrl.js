@@ -1,4 +1,6 @@
 app.controller('treemenutablectrl',function($scope,treemenutableservice) {
+$scope.dataRows=[{courseName:"疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式",activeState:2,publishState:"2",studyScore:50,modifyUserName:"aa"},
+			{courseName:"123",activeState:1,publishState:"1",studyScore:50,modifyUserName:"aa"}]
 $scope.showSelected=function(node){
 	$scope.treedata=node;
 }
@@ -39,11 +41,11 @@ $scope.treeOptions = {
     dirSelectable: true,
     injectClasses: {
         ul: "a1",
-        li: "a2",
+        li: "item",
         liSelected: "a7",
-        iExpanded: "a3",
-        iCollapsed: "a4",
-        iLeaf: "a5",
+        iExpanded: "glyphicon glyphicon-minus",
+        iCollapsed: "glyphicon glyphicon-plus",
+        iLeaf: "glyphicon glyphicon-leaf",
         label: "a6",
         labelSelected: "a8"
     }
@@ -83,4 +85,5 @@ $scope.dataForTheTree =
     	]}
     ]}
 ]
+$scope.expandedNodes=[$scope.dataForTheTree[0]];
 });

@@ -68,16 +68,10 @@
 						<a ui-sref="frontendtemplate.signin" href="/signin">签到model</a>
 					</li>
 				</ul>
-			</li>
-			<li ng-class="{active: $state.includes('selfdeftemplate')}"
-				class="active"><a href=""><i
-					class="  glyphicon glyphicon-gift"></i> <span class="nav-label">自定义模板</span><span
-					class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse in"
-					ng-class="{in: $state.includes('selfdeftemplate')}">
-					<li ui-sref-active="active"><a
-						ui-sref="selfdeftemplate.sysrefresh"
-						href="/sysrefresh">全局刷新</a></li>
+				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active" class="active">
+						<a ui-sref="frontendtemplate.statistics" href="/statistics">数据统计</a>
+					</li>
 				</ul>
 			</li>
 		</ul>

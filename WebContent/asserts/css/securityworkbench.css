@@ -60,9 +60,9 @@ overflow-x: visible;
  }
  
 .ibox-content .top-dock .btn-search{
- margin-bottom: 0px;
- margin-right:14px;
- }
+ 	margin-bottom: 0px;
+    margin-left: 3px;
+}
 .form-inline .date-picker{
 	min-width:170px;
 }
@@ -183,17 +183,13 @@ label {
 		text-align: right;
 	}
 	.advanced-search{
-		border: 1px solid transparent;
-		height: 1px;
-		transition: all 0.3s;
-		-moz-transition: all 0.3s; /* Firefox 4 */
-		-webkit-transition: all 0.3s; /* Safari 和 Chrome */
-		-o-transition: all 0.3s;
+		border: 0px solid transparent;
+		height: 0px;
 		overflow: hidden;
 	}
 	.advanced-search.active{
 		height: 100%;
-		padding: 15px;
+		    padding: 15px 0;
 		border: 1px solid #e5e6e7;
 		overflow: visible;
 	}
@@ -317,4 +313,10 @@ label {
     	overflow: hidden;
     	text-overflow: ellipsis;
     	white-space: nowrap;
+	}
+	.tfoot #Ribbon{
+		margin-top: 6px;
+	}
+	.tfoot #Ribbon .caret{
+		margin-bottom: 3px;
 	}

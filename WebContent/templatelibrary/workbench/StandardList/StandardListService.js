@@ -1,5 +1,4 @@
-
-var app = angular.module('Module.StandardList', ['daterangepicker', 'ngSanitize','datatime.directive','ngTasty','ngAnimate','ui.bootstrap'])
+var app = angular.module('Module.StandardList', ['daterangepicker', 'ngSanitize','datatime.directive','ngTasty','ngAnimate','ui.bootstrap','tools'])
 
 /*
  *翻页插件需要依赖ngTasty

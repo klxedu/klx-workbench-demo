@@ -1,10 +1,8 @@
 app.controller('StandardListCtrl', function($scope, StandardListService,$timeout) {
 	//表格数据
-	$scope.dataRows=[{courseName:"12爱爱啊3123123123123123实打实312爱爱啊3123123123123123实打实312爱爱啊3123123123123123实打实312爱爱啊3123123123123123实打实312爱爱啊3123123123123123实打实3",activeState:2,publishState:"2",studyScore:50,modifyUserName:"aa"},
+	$scope.dataRows=[{courseName:"疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式",activeState:2,publishState:"2",studyScore:50,modifyUserName:"aa"},
 					{courseName:"123",activeState:1,publishState:"1",studyScore:50,modifyUserName:"aa"}]
-	
-	
-	
+	$scope.searchCriteria="1";
 	$scope.griddata=null;
 	/* 控制摸态框显示 */
 	$scope.openmodel = function() {
@@ -142,7 +140,7 @@ app.controller('StandardListCtrl', function($scope, StandardListService,$timeout
 		}else{
 			$scope.remStart=1;
 		}
-		if($scope.remStart == 1){		
+		if($scope.remStart == 1){
 			//该循环用于将选中的对象在树中找到对应的下标
 			for(var i=0;i<$scope.treedata.children.length;i++){
 				if($scope.treedata.children[i].id==row.id){
@@ -227,4 +225,16 @@ app.controller('StandardListCtrl', function($scope, StandardListService,$timeout
 	    ]}
 	]
 	$scope.dataForTheTreeSel=[$scope.dataForTheTree[0]]
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//表格尾固定
+		
 });
+

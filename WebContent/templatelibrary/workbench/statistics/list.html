@@ -1,0 +1,206 @@
+<div class="sidebard-panel white-bg">
+	<div class="m-t-md">
+		<h4>活跃度排行榜</h4>
+		<div>
+			<ul class="list-group">
+				<li class="list-group-item text-center" title="tony">
+					<h4 class="row"> <span class="col-sm-2 count">1</span>
+                    <a href="" class="pull-left col-sm-3">
+                        <img alt="image" class="img-circle header" src="../asserts/css/patterns/a2.jpg">
+                    </a>
+                    <div class="media-body col-sm-7">
+                            <span class="name">tony</span>
+                        <br>
+                        <small class="text-muted">总学时：22</small>
+                    </div>
+                    </h4>
+				</li><li class="list-group-item text-center" title="tony">
+					<h4 class="row"> <span class="col-sm-2 count">2</span>
+                    <a href="" class="pull-left col-sm-3">
+                        <img alt="image" class="img-circle header" src="../asserts/css/patterns/a2.jpg">
+                    </a>
+                    <div class="media-body col-sm-7">
+                            <span class="name">tony</span>
+                        <br>
+                        <small class="text-muted">总学时：22</small>
+                    </div>
+                    </h4>
+				</li>
+				<li class="list-group-item text-center" title="tony">
+					<h4 class="row"> <span class="col-sm-2 count1">3</span>
+                    <a href="" class="pull-left col-sm-3">
+                        <img alt="image" class="img-circle header" src="../asserts/css/patterns/a2.jpg">
+                    </a>
+                    <div class="media-body col-sm-7">
+                            <span class="name">tony</span>
+                        <br>
+                        <small class="text-muted">总学时：22</small>
+                    </div>
+                    </h4>
+				</li>
+				<li class="list-group-item text-center" title="tony">
+					<h4 class="row"> <span class="col-sm-2 count1">10</span>
+                    <a href="" class="pull-left col-sm-3">
+                        <img alt="image" class="img-circle header" src="../asserts/css/patterns/a2.jpg">
+                    </a>
+                    <div class="media-body col-sm-7">
+                            <span class="name">tony</span>
+                        <br>
+                        <small class="text-muted">总学时：22</small>
+                    </div>
+                    </h4>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="wrapper sidebar-content wrapper-content">
+	<div class="row">
+		<div class="col-lg-12 curved-lines">
+			<div class="ibox float-e-margins white-bg ">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="ibox-content">
+							<div class="chart-spline-title">
+								<h5 class="pull-left">学习情况</h5>
+								<div class="pull-right">
+									<div class="btn-group">
+										<button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='today']" ng-click="selectClass('today')">今天</button>
+										<button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='month']" ng-click="selectClass('month')">本月</button>
+										<button type="button" class="btn btn-xs btn-white" ng-class="{true:'active'}[selectClassName=='year']" ng-click="selectClass('year')">年度</button>
+									</div>
+								</div>
+							</div>
+							<div class="flot-chart">
+								<div flot class="flot-chart-content" dataset="flotChartData" options="flotLineOptions"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-4" style="padding-right: 10px;">
+			<div class="ibox float-e-margins statistics-panel">
+				<div class="ibox-title">
+					<span class="label label-primary pull-right">{{showText}}</span>
+					<h5>访问量</h5>
+					<div>
+						<div class="ibox-tools">
+							<a href="" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+								<i class="glyphicon glyphicon-wrench"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a ng-click="showTextClick('今年')">今年</a>
+								</li>
+								<li>
+									<a ng-click="showTextClick('本月')">本月</a>
+								</li>
+								<li>
+									<a ng-click="showTextClick('今日')">今日</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="ibox-content">
+					<p><span>次数</span><span class="count">100</span></p>
+					<p>首页访问量</p>
+					<p><span>数据生成</span><span class="time">12点59分59秒</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4" style="padding-right:0;padding-left: 0;">
+			<div class="ibox float-e-margins statistics-panel">
+				<div class="ibox-title">
+					<span class="label label-primary pull-right">本月</span>
+					<h5>访问方式</h5>
+					<div class="ibox-tools">
+						<a href="" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+							<i class="glyphicon glyphicon-wrench"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a ng-click="showTextClick('今年')">今年</a>
+							</li>
+							<li>
+								<a ng-click="showTextClick('本月')">本月</a>
+							</li>
+							<li>
+								<a ng-click="showTextClick('今日')">今日</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="ibox-content">
+							<p><span style="padding-right: 5px;" ng-style="">P C</span><span class="number" style="color: {{chartColors[0]}};">800</span></p>
+							<p><span>微信</span><span class="number" style="color: {{chartColors[1]}};">2654,288</span></p>
+							<p><span>APP</span><span class="number" style="color: {{chartColors[2]}};">800</span></p>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4">
+						<canvas id="doughnu1" class="chart chart-doughnut" height="55" width="55" chart-data="data" chart-colors="chartColors" chart-labels="labels" chart-options="option" chart-click="chartClick">
+                        </canvas>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4" style="padding-right:15px;padding-left: 10px;">
+			<div class="ibox float-e-margins statistics-panel">
+				<div class="ibox-title">
+					<a class="check-lable pull-right"><span data-toggle="modal" data-target="#sm-Model">选择考核</span></a>
+					<h5>考核</h5>
+				</div>
+				<div class="ibox-content">
+					<p><span>通过率</span><span class="count">99%</span></p>
+					<p><span>通过人数</span><span class="number time">1000</span></p>
+					<p><span>2017年度第一次骨灰级考核...</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="ibox float-e-margins">
+				<div class="ibox-title">
+					<h5>统计</h5>
+				</div>
+				<div class="ibox-content" style="padding-bottom: 15px;padding-top: 10px;">
+					<div class="row">
+						<div class="col-lg-6">
+							<p><span>课程数</span><span class="number time">500 </span><span class="pad-l-7">必修</span><span class="time">250</span><span class="pad-l-7">选修</span><span class="time">250</span></p>
+						</div>
+						<div class="col-lg-6">
+							<p><span>班级</span><span class="number time">500 </span><span class="pad-l-7">线上</span><span class="time">250</span><span class="pad-l-7">线下</span><span class="time">250</span></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- 小摸态框 -->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="sm-Model">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+		   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		   <h4 class="modal-title" id="myModalLabel">选择考核</h4>
+	   </div>
+	   <div class="modal-body">
+	        <button type="button" class="btn btn-default btn-lg btn-block">2017年年度考核骨灰级英语第一节</button>
+	        <button type="button" class="btn btn-primary btn-lg btn-block">2017年年度考核骨灰级英语第二节</button>
+	        <button type="button" class="btn btn-rounded btn-lg btn-block">2017年年度考核骨灰级英语第二节</button>
+	   </div>
+    </div>
+  </div>
+</div>
