@@ -9,10 +9,17 @@ app.controller('fileuploadectrl',function($scope,Upload) {
 		//进度条
 		$scope.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
 		$scope.barstyle = {width: $scope.progressPercentage+"%"}
-	}).then(function (response) {
-    });
+	}).then(function(resp) {
+		  // file is uploaded successfully
+		  console.log('file ' + resp.config.data.file.name + 'is uploaded successfully. Response: ' + resp.data);
+		}, function(resp) {
+			// file is uploaded $error
+		  console.log(resp)
+		}, function(evt) {
+		  // progress notify
+		  console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :'+ evt.config.data.file.name);
+		});
   };
-  $scope.abc=123;
   $scope.uploadFilesss=function(file){
   	console.log(file);
   }

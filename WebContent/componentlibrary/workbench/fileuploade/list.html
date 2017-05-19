@@ -5,11 +5,8 @@
 			<li>
 				<a href="index.html">主页</a>
 			</li>
-			<li>
-				<a>树</a>
-			</li>
 			<li class="active">
-				<strong>树组件示例</strong>
+				<strong>上传组件示例</strong>
 			</li>
 		</ol>
 	</div>
@@ -24,23 +21,35 @@
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="row">
+						<form action="" method="post" name="form">
+							
+							
+						
 							 <div class="form-group"><label class="col-sm-2 control-label">文件名称：</label>
 	                            <label class="col-sm-6  control-label" style="text-align:left">{{file.name}}</label>          
 	                            <div class="col-sm-2 ">
-	                            	<div class="btn btn-primary" ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</div>
+	                            	<div ngf-model-invalid="errorFile"
+	                            		ngf-model-invalid ="invalidFile(error)" 
+	                            		
+	                            		 class="btn btn-primary"  ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</div>
 	                            </div>
 	                            <div class="col-sm-2">
 	                            	<button class="btn btn-success" type="submit" ng-click="uploadfilie(file)" ng-disabled="!file.name">确认上传	</button>
+	                            </div>
+	                            <div class="col-sm-10 col-md-offset-1 text-danger">
+	                            	<i ng-show="form.file.$error.maxSize">文件超过限制大小
+         							 {{errorFile.size / 1000000|number:1}}MB: 最大 2M</i>
 	                            </div>
 	                       </div>                  
 	                       	<!-- 进度条-->
 	                        <div class="form-group">
 	                          	<div class="col-sm-12">
-									<div class="progress " ng-class="q?'progress-bar-striped active':'' "><!-- progress-bar-striped active 这俩个类名用于使进度条滚动起来 -->
+									<div class="progress "  ng-class="q?'progress-bar-striped active':'' "><!-- progress-bar-striped active 这两个类名用于使进度条滚动起来 -->
 								  		<div class="progress-bar progress-bar-info " role="progressbar"  ng-style="barstyle"></div>
 									</div>
 	                        	</div>
 	                        </div>	
+	                        </form>
 						<div class="col-sm-12">
 							<pre>
 				            	<h3 class="text-danger">文件上传控件使用说明</h3>
@@ -65,8 +74,12 @@
     &lt;/div&gt;
 				            	</p>
 				            	<p>二、使用</p>
-								<p>1.ngf-max-size="20MB" 配置可上传文件大小</p>
-								<p>2.进度条：
+								<p>1.ngf-max-size="20MB" 配置可上传文件大小，错误类型 maxSize</p>
+								<p>2.ngf-pattern="'image/*'" ngf-pattern="'.pdf,.jpg'" ngf-pattern="'!.jpg'"三种方式均可配置可用文件格式，错误类型 pattern</p>
+								<p>3.错误提示示例：
+	&lt;i ng-show=&quot;form.file.$error.maxSize&quot;&gt;文件超过限制大小
+	 {errorFile.size / 1000000|number:1}MB: 最大 2M&lt;/i&gt;&lt;/p&gt;
+								<p>4.进度条：
 	.progress(function (evt) {
 		$scope.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
 		$scope.barstyle = {width: $scope.progressPercentage+"%"}

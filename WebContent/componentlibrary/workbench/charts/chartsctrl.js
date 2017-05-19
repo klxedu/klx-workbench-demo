@@ -211,7 +211,8 @@ app.controller('chartsctrl',function($scope,chartsservice) {
         animation:{
             responsive: false,
             animateScale:true
-        }
+        },
+        labels:["aa","bb","cc"]
     }
     //折线图数据
     $scope.flotChartData= [
