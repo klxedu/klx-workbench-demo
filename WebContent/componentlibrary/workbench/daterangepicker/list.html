@@ -25,8 +25,12 @@
 				<div class="ibox-content">
 					<div class="form-group" style="margin-bottom: 50px;">
 						<label class="col-sm-2 control-label" style="margin-top: 5px;">时间范围选择</label>
-		                <div class="col-sm-10">
-		                    <input date-range-picker class="form-control date-picker" type="text" ng-model="dateRange.date1" options='{separator: "~"}'/>
+		                <div class="col-sm-8">
+		                    <input date-range-picker class="form-control date-picker" type="text" ng-model="dateRange.date1" 
+		                    	options="dataRangeOpts"/>
+		            	</div>
+		            	<div class="col-sm-2">
+		            		<button class="btn btn-primary pull-left" ng-click="saveForm()">执行选择</button>
 		            	</div>
 		           </div>
 		            <div>
@@ -41,6 +45,9 @@
 							<p>3.获取日期选择对象，开始时间：$scope.dateRange.date1.startDate；结束时间：$scope.dateRange.date1.endDate</p>
 							<p>4.获取格式化日期字符串，使用momentJs方法，moment(日期对象).format(&quot;YYYY-MM-DD HH:mm:ss&quot;)</p>
 							<p>5.选择器赋值，可以直接赋值定义好格式的日期字符串，如：var date=&quot;2016-12-25 10:10:23&quot;;，也可以使用日期对象，如：var date=moment(&quot;2016-12-25 10:10:23&quot;,&quot;YYYY-MM-DD HH:mm:ss&quot;)。然后将日期值赋到对应的绑定值上即可$scope.dateRange={"date1":{"startDate":date}};</p>
+			           		<p>6.日期范围控件，默认时区设置，在options中定义<code>timeZone</code> ： moment().utcOffset()</p>
+			           		<p>7.日期范围配置项示例如下：$scope.dataRangeOpts = {separator: "~",format: "YYYY-MM-DD HH:mm",timePicker:true,timePicker12Hour:false,timeZone:moment().utcOffset()};
+			           		</p>
 			            </pre>
 		            </div>
 				</div>
