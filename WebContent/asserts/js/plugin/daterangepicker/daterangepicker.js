@@ -400,7 +400,6 @@
             this.oldStartDate = this.startDate.clone();
             this.oldEndDate = this.endDate.clone();
             this.oldChosenLabel = this.chosenLabel;
-
             this.leftCalendar = {
                 month: moment([this.startDate.year(), this.startDate.month(), 1, this.startDate.hour(), this.startDate.minute(), this.startDate.second()]),
                 calendar: []
@@ -410,7 +409,6 @@
                 month: moment([this.endDate.year(), this.endDate.month(), 1, this.endDate.hour(), this.endDate.minute(), this.endDate.second()]),
                 calendar: []
             };
-
             if (this.opens == 'right' || this.opens == 'center') {
                 //swap calendar positions
                 var first = this.container.find('.calendar.first');
@@ -903,7 +901,6 @@
         },
 
         updateTime: function(e) {
-
             var cal = $(e.target).closest('.calendar'),
                 isLeft = cal.hasClass('left');
 
@@ -1029,7 +1026,6 @@
                 }
 
             }
-
             return calendar;
         },
 
