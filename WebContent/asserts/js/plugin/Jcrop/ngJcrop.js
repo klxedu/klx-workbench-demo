@@ -7,11 +7,13 @@ angular.module('ngimgJcrop', [''])
 			option : "=",  //选项
 			data : "=",    //选区及图片值
 			setImage : "&",//用于修改图像地址
-			selectChange : "&"//用于返回选区及图片信息
+			selectChange : "&",//用于返回选区及图片信息
+			fileInit : "&",
+			fileUoloadFun : "&"
 		},
 		link : function(scope,element,atts,ctrl){
+			//图片剪切
 			var jcrop_api;
-			
 			var previewW=element.find(".img-content").width();
 			var previewH=element.find(".img-content").height();
 			
@@ -40,21 +42,37 @@ angular.module('ngimgJcrop', [''])
 			}
 			scope.selectChange=function(){
 				return {
-					"imgUrl" : scope.data.url,
-					"selectActualSize" : tellSelect(),
-					"selectdisplaySize" : tellScaled(),
-					"imgActualSize" : getBounds(),
-					"imgdisplaySize" : getWidgetSize()
+					"selectActualSize" : jcrop_api.tellSelect(),
+					"selectdisplaySize" : jcrop_api.tellScaled(),
+					"imgActualSize" : jcrop_api.getBounds(),
+					"imgdisplaySize" : jcrop_api.getWidgetSize()
 				}
 			}
+			//文件上传
+			scope.fileInit();
+			scope.fileUoload=function(file){
+				var data=scope.selectChange();
+				scope.fileUoloadFun({"file":file,"data":data});
+			}
+
 		},
 		template :  '<div class="row">'+
 					'	<div class="imgcrop-content col-md-8">'+
-					'		<img  class="img-responsive imgCrop"/>'+
+					'		<img ngf-src="file" class="img-responsive imgCrop"/>'+
 					'	</div>'+
 					'	<div class="img-content col-md-4">'+
-					'		<img />'+
+					'		<img ngf-src="file" />'+
 					'	</div>'+
-					'</div>"'
+					'	<div class="col-sm-2 ">'+
+                    '		<div ngf-model-invalid="errorFile"'+
+                    '		 ngf-model-invalid ="invalidFile(error)" '+
+                    '		 class="btn btn-primary"  ngf-select ng-model="file" name="file" '+
+                    '		  >选择文件'+
+                    '		</div>'+
+                    '	</div>'+
+                    '	<div class="col-sm-2">'+
+                    '		<button class="btn btn-success" ng-click="fileUoload(file)" ng-disabled="!file.name">确认上传	</button>'+
+                    '	</div>'+
+					'</div>'
 	}
 })

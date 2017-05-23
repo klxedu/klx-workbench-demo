@@ -23,33 +23,22 @@
 		<div class="col-lg-12">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
-					<div jcrop option="option"></div>
+					<div jcrop option="option" data="data"  file-init="fileInit()" file-uoload-fun="uploadfilie(file,data)" ></div>
 					<div class="row">
-						<div class="col-sm-2 ">
-	                    	<div ngf-model-invalid="errorFile"
-	                    		 ngf-model-invalid ="invalidFile(error)" 
-	                    		 class="btn btn-primary"  ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</div>
-	                    </div>
-	                    <div class="col-sm-2">
-	                    	<button class="btn btn-success" type="submit" ng-click="uploadfilie(file)" ng-disabled="!file.name">确认上传	</button>
-	                    </div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
 							<pre>
 				            	<h3 class="text-danger">下拉选树型控件使用说明</h3>
 				            	<p>一、使用前准备</p>
-				            	<p>1.时间范围选择需要依赖ngimgJcrops模块，且需要加入以下js文件：tree-control-attribute.css,tree-control.css,angular-tree-control.js,select.js</p>
+				            	<p>1.时间范围选择需要依赖ngimgJcrops模块、ngFileUpload模块，且需要加入以下js文件：ng-file-upload-shim.min.js,ng-file-upload.min.js,../asserts/css/plugins/Jcrop/jquery.Jcrop.css,./workbench/imgJcrop/imgJcrop.css,./workbench/imgJcrop/imgJcropservice.js,./workbench/imgJcrop/imgJcropctrl.js,../asserts/js/plugin/Jcrop/jquery.Jcrop.js,../asserts/js/plugin/Jcrop/ngJcrop.js'</p>
 				            	<p>html中使用标签引入：
-
+	&lt;div jcrop option=&quot;option&quot; data=&quot;data&quot; file-option=&quot;fileOption&quot; file-uoload-fun=&quot;uploadfilie(file,data)&quot; &gt;&lt;/div&gt;
 				            	</p>
 				            	<p>二、使用</p>
-								<p>1.设置tree-data，值为树的数据源。详情查看ctrl中数据示例</p>
-								<p>2.设置select-tree-options，定义了树控件的配置项，具体请看<a href="https://github.com/wix/angular-tree-control">git-tree</a></p>
-								<p>3.设置on-selection属性，值为树被选中时触发该方法</p>
-								<p>4.设置selected-tree-node，对象，值为变量,树中选中的节点对象</p>
-								<p>5.设置show-direction属性，值为"top"或"bottom"，树菜单在输入框的上或下</p>
-								<p>6.设置show-lable属性，值为要显示在树上key</p>
+								<p>1.设置option，值为图片裁剪的配置项。详情查看ctrl中数据示例</p>
+								<p>2.设置file-init，定义文件上传初始化方法及配置，具体请看<a href="https://github.com/danialfarid/ng-file-upload">ng-file-upload</a>中关于初始化部分</p>
+								<p>3.设置file-uoload-fun属性，定义文件上传执行该方法</p>
 				            </pre>
 						</div>
 					</div>

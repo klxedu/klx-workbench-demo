@@ -1,16 +1,20 @@
-app.controller('imgJcropctrl',function($scope) {
+app.controller('imgJcropctrl',function($scope,Upload) {
 	$scope.option={};//图片裁剪配置对象
-	$scope.uploadfilie = function (dataUrl) {
+	$scope.fileInit=function(){
+		Upload.setDefaults({
+			ngfMaxSize:20000000,
+			ngfPattern:"'image/*'"
+		})
+	};
+	$scope.uploadfilie = function (dataUrl,data) {
+		console.log(dataUrl,data);
         Upload.upload({
             url: '../workbench/courseinfo/course/uploadCourseImage.json',
         data: {
-            file: dataUrl
+            "file": dataUrl,
+            "data":data
         },
-    }).progress(function (evt) {
-		//进度条
-		$scope.progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-		$scope.barstyle = {width: $scope.progressPercentage+"%"}
-	}).then(function(resp) {
+    }).then(function(resp) {
 		  // file is uploaded successfully
 		  console.log('file ' + resp.config.data.file.name + 'is uploaded successfully. Response: ' + resp.data);
 		}, function(resp) {
