@@ -1,0 +1,12 @@
+.img-content{
+	width: 200px;
+	height: 100px;
+	overflow: hidden;
+	text-align: center;
+}
+.imgcrop-content{
+	text-align: center;
+}
+.jcrop-holder{
+	margin: 0 auto;
+}

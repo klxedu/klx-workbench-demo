@@ -525,6 +525,45 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 					}
 				}
 			})
+			.state('imgcrop', {
+	            url: "/imgcrop",
+	            templateUrl: "views/common/content.html",
+	            data: { pageTitle: '' },
+	            resolve: {
+	                loadPlugin: function ($ocLazyLoad) {
+	                    return $ocLazyLoad.load([
+	                        {
+	                            files: []
+	                        }
+	                    ]);
+	                }
+	            }
+	        })
+			.state('imgcrop.imgJcrop',{
+				url:'/imgJcrop',
+				templateUrl : "workbench/imgJcrop/list.html",
+				data : {pageTitle:''},
+				controller:'imgJcropctrl',
+				resolve : {
+					loadPlugin : function($ocLazyLoad) {
+						return $ocLazyLoad
+							.load([{
+								name : 'Module.imgJcrop',
+								files : [
+										'../asserts/css/plugins/Jcrop/jquery.Jcrop.css',
+										'./workbench/imgJcrop/imgJcrop.css',
+										'./workbench/imgJcrop/imgJcropservice.js',
+										'./workbench/imgJcrop/imgJcropctrl.js',
+										'../asserts/js/plugin/Jcrop/jquery.Jcrop.js',
+										'../asserts/js/plugin/Jcrop/ngJcrop.js',
+										'../asserts/js/plugin/fileupload/ng-file-upload-shim.min.js',
+										'../asserts/js/plugin/fileupload/ng-file-upload.min.js'
+										],
+								serie : true
+							}]);
+					}
+				}
+			})
 }
 angular.module('klxComponent').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;

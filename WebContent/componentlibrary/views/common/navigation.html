@@ -198,7 +198,20 @@
 					</li>
 				</ul>
 			</li>
-			
+			<li ng-class="{active: $state.includes('imgcrop')}" >
+				<a href="">
+					<i class="glyphicon glyphicon-gift"></i> 
+					<span class="nav-label">图片裁剪</span>
+					<span class="fa arrow"></span>
+				</a>
+				<ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('imgcrop')}">
+					<li ui-sref-active="active">
+						<a ui-sref="imgcrop.imgJcrop">
+							图片裁剪
+						</a>
+					</li>
+				</ul>
+			</li>
 		</ul>
 
 	</div>
