@@ -4100,6 +4100,9 @@ a.close-canvas-menu:hover {
 .p-w-xl {
   padding: 0 40px;
 }
+.p-b-md{
+	padding-bottom: 25px;
+}
 .m-xxs {
   margin: 2px 4px;
 }
