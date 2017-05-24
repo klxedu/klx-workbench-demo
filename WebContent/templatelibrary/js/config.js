@@ -35,31 +35,31 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 				templateUrl : "views/common/content.html",
 			})
 			.state(
-					'frontendtemplate.formValidation',
-					{
-						url : "formValidation/:data",
-						templateUrl : "workbench/form/form.html",
-						data : {
-							pageTitle : ''
-						},
-						controller : "formValidationctrl",
-						resolve : {
-							loadPlugin : function($ocLazyLoad) {
-								return $ocLazyLoad
-										.load([ {
-											name : 'Module.myForm',
-											files : [
-													'./workbench/form/form.css',
-													'./workbench/form/formservice.js',
-													'./workbench/form/formctrl.js'
-													],
-											serie : true
-										}
+				'frontendtemplate.formValidation',
+				{
+					url : "formValidation/:data",
+					templateUrl : "workbench/form/form.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "formValidationctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+									.load([ {
+										name : 'Module.myForm',
+										files : [
+												'./workbench/form/form.css',
+												'./workbench/form/formservice.js',
+												'./workbench/form/formctrl.js'
+												],
+										serie : true
+									}
 
-										]);
-							}
+									]);
 						}
-					})
+					}
+				})
 			.state('frontendtemplate.StandardList',{
 				url : 'StandardList/:data',
 				templateUrl : "workbench/StandardList/list.html",
@@ -271,7 +271,38 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 				   }
 				}
 			})
+			.state('systemdemo', {
+				abstract : true,
+				url : "/systemdemo",
+				templateUrl : "views/common/content.html",
+			})
+			.state(
+				'systemdemo.modeltbale',
+				{
+					url : "modeltbale/:data",
+					templateUrl : "workbench/systemdemo/modeltbale/form.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "modeltbalectrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+									.load([ {
+										name : 'Module.modeltbale',
+										files : [
+												'./workbench/modeltbale/modeltbale.css',
+												'./workbench/modeltbale/modeltbaleservice.js',
+												'./workbench/modeltbale/modeltbalectrl.js'
+												],
+										serie : true
+									}
 
+									]);
+						}
+					}
+				}
+			)
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;

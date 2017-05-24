@@ -133,10 +133,14 @@ angular.module('tools', [])
 		link:function(scope,element,attr,common){
 			var Wheight=$(window).height();
 			var elTop="",elWidth="",checkTdW="";
+			var elementState=false;//用于处理元素当前是否为定位状态，用于判断是否重新获取元素offset
 			scope.tfootInit=function(){
 				Wheight=$(window).height();
 				elWidth="";checkTdW="";
 				footHandleScroll();
+				if(!elementState){
+					elTop=element.offset().top;
+				}
 			}
 			scope.tfootInit();
 			function footHandleScroll() {
@@ -146,15 +150,18 @@ angular.module('tools', [])
 				if(!elWidth||!checkTdW){
 					elWidth=element.parent("table").outerWidth();
 					checkTdW=$(".font-1").outerWidth();
+					
 				}
 				if(!elTop){
 					elTop=element.offset().top;
 				}
 				//判断元素位置
 				if(sTop+Wheight<=elTop){
+					elementState=true;
 					element.css({"position":"fixed","bottom":"0px","background":"#fff","z-index":"100","width":elWidth,"box-shadow": "0px -2px 5px #ccc"}).find(".Ribbon").css({"width":elWidth});
 					element.find(".check").css({"width":checkTdW});
 				}else{
+					elementState=false;
 					element.attr("style","").find("td").attr("style","");
 				}
 			}
@@ -205,6 +212,7 @@ angular.module('tools', [])
 			theadInit:"&"//当外界改变界面时可自行调用init方法
 		},
 		link:function(scope,element,attr){
+			var elementState=false;//用于处理元素当前是否为定位状态，用于判断是否重新获取元素offset
 			var elTop="",elWidth="";
 			//获取当前表格元素并clone一份保存
 			var $table=element.parent("table").clone(false);
@@ -218,6 +226,9 @@ angular.module('tools', [])
 			scope.theadInit=function(){
 				elWidth="";
 				headHandleScroll();
+				if(!elementState){
+					elTop=element.offset().top;
+				}
 			};
 			//将复制元素隐藏
 			cloneTable.hide();
@@ -236,8 +247,10 @@ angular.module('tools', [])
 				};
 				//判断元素位置
 				if(sTop>=elTop){
+					elementState=true;
 					cloneTable.show().css({"position":"fixed","top":"0px","background":"#fff","z-index":"100","width":elWidth+1,"margin-top":"0","box-shadow": "0px 2px 5px #ccc"}).find("tr").css({"width":elWidth});
 				}else{
+					elementState=false;
 					cloneTable.attr("style","display: none;").find("tr").attr("style","");
 				}
 			}

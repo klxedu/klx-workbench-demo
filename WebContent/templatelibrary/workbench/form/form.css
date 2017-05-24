@@ -10,6 +10,12 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 input::-ms-input-placeholder { /* Internet Explorer 10+ */
 　　color:#999;
 }
+.ibox-title>h3.conten-title{
+	padding: 0 15px;
+}
+.ibox-title{
+	border-bottom: 1px solid #D8D8D8;
+}
 .standard-form{
 	margin-top: 50px;
 }

@@ -54,7 +54,6 @@ angular.module('ngimgJcrop', [''])
 				var data=scope.selectChange();
 				scope.fileUoloadFun({"file":file,"data":data});
 			}
-
 		},
 		template :  '<div class="row">'+
 					'	<div class="imgcrop-content col-md-8">'+

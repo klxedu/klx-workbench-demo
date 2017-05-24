@@ -74,6 +74,17 @@
 					</li>
 				</ul>
 			</li>
+			<li ng-class="{active: $state.includes('frontendtemplate')}"
+				class="active"><a href=""><i
+					class="  glyphicon glyphicon-gift"></i> <span class="nav-label">系统表格界面</span><span
+					class="fa arrow"></span></a>
+				<ul class="nav nav-second-level collapse in"
+					ng-class="{in: $state.includes('frontendtemplate')}">
+					<li ui-sref-active="active"><a
+						ui-sref="frontendtemplate.formValidation"
+						href="/frontendtemplateformValidation/">model表格类</a></li>
+				</ul>
+			</li>
 		</ul>
 
 	</div>
