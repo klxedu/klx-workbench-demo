@@ -2,6 +2,9 @@ app.controller('uploadingctrl',function($scope,uploadingservice,Upload) {
 	
 	
   $scope.uploadfilie = function (dataUrl) {
+  	if(!dataUrl){
+  		return;
+  	}
         Upload.upload({
             url: '../workbench/courseinfo/course/uploadCourseImage.json',
         data: {
@@ -15,8 +18,6 @@ app.controller('uploadingctrl',function($scope,uploadingservice,Upload) {
 	}).then(function (response) {
     });
   };
-  $scope.abc=123;
-  
 });
 app.filter("Yannis",function(){
 	return function(parameter,message){		

@@ -64,12 +64,18 @@ angular.module('tools', [])
  */
 .filter("strCut",function(){
 	return function(parameter,count){
+		if(!parameter||parameter.length==0){
+			return "";
+		}
 		//先处理需要返回的字符串
 		var str=(parameter+"").slice(0,count);
 		//判断需要返回字符串中有多少字母和数字
 		var lowercase=str.match(/[a-z0-9]/g)?str.match(/[a-z0-9]/g):"";
 		var count=parseInt(lowercase.length*0.5+count);
 		//返回指定长度字符串
+		if(parameter.length<=count){
+			return parameter;
+		}
 		return parameter.slice(0,count)+"...";
 	}
 })

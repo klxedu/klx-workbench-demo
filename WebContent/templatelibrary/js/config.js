@@ -114,6 +114,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 										.load([{
 											name : 'Module.uploading',
 											files : [
+													'./workbench/uploading/uploading.css',
 													'./workbench/uploading/uploadingservice.js',
 													'./workbench/uploading/uploadingctrl.js',
 													'../asserts/js/plugin/fileupload/ng-file-upload-shim.min.js',
@@ -280,20 +281,20 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 				'systemdemo.modeltbale',
 				{
 					url : "modeltbale/:data",
-					templateUrl : "workbench/systemdemo/modeltbale/form.html",
+					templateUrl : "./workbench/systemdemo/modeltable/list.html",
 					data : {
 						pageTitle : ''
 					},
-					controller : "modeltbalectrl",
+					controller : "modeltablectrl",
 					resolve : {
 						loadPlugin : function($ocLazyLoad) {
 							return $ocLazyLoad
 									.load([ {
-										name : 'Module.modeltbale',
+										name : 'Module.modeltable',
 										files : [
-												'./workbench/modeltbale/modeltbale.css',
-												'./workbench/modeltbale/modeltbaleservice.js',
-												'./workbench/modeltbale/modeltbalectrl.js'
+												'./workbench/systemdemo/modeltable/modeltable.css',
+												'../asserts/js/plugin/tools/tools.js',
+												'./workbench/systemdemo/modeltable/modeltable.js'
 												],
 										serie : true
 									}

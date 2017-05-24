@@ -1,0 +1,9 @@
+.modal-body.row{
+	margin: 0;
+}
+.advanced-search.active{
+	border: none;
+}
+.operation{
+    padding: 0 0 15px 0;
+}
