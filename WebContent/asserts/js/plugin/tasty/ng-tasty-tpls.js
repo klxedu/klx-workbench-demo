@@ -1381,13 +1381,13 @@ module.run(['$templateCache', function($templateCache) {
 	'		</span>'+
 	'	</li>'+
 	'	<li>'+
-
-	'    </li>'+
-	'	<li ng-repeat="numPage in rangePage" ng-class="classNumPage(numPage)">'+
-	'    	<a><input type="number" ng-model="skipnumPage" min="0" style="width: 50px;height: 21px;"/></a>'+
+	'		<a><input type="number" ng-model="skipnumPage" min="0" style="width: 50px;height: 21px;"/></a>'+
 	'		<a href ng-click="page.get(skipnumPage)">'+
 	'			跳转'+
 	'		</a>'+
+	'    </li>'+
+	'	<li ng-repeat="numPage in rangePage" ng-class="classNumPage(numPage)">'+
+	'    	
 	'		<a href ng-click="page.get(numPage)">'+
 	'			<span ng-bind="numPage"></span>'+
 	'			<span class="sr-only" ng-if="classNumPage(numPage)">(current)</span>'+
