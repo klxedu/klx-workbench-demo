@@ -30,6 +30,9 @@
 table .manage a{
 	padding: 0 2px;
 }
+table tr td.title-pointer {
+	cursor: pointer;
+}
 .dropdown-menu.dropdown-menu-right{
 	border: 1px solid #ccc;
 }

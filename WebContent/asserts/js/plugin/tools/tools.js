@@ -302,3 +302,34 @@ angular.module('tools', [])
 		}
 	}
 })
+/**
+ * 标题自适应剪切 
+ * <td title-fit-cut='row.title'>{{row.title}}</td>
+ * <td title-fit-cut='row.title'><a>{{row.title}}</a></td>
+ */
+.directive('titleFitCut',['$timeout','$filter',function($timeout,$filter){
+	return {
+		restrict:'A',
+		scope :true,
+		link:function(scope,element,attrs){
+			$timeout(function(){
+				if(attrs.titleFitCut){
+					var attrArr = attrs.titleFitCut.split('.');
+					var value,display,fontNum;
+					angular.forEach(attrArr,function(data){
+						value = value?value[data]:scope[data];
+					});
+					fontNum = (element.width()-parseInt(element.css("padding"))*2)/parseInt(element.css("font-size"))-3;
+				}
+				display = $filter('strCut')(value,fontNum);
+				element.attr("title",value);
+				debugger;
+				if(element.children().length>0){
+					element.children().first().html(display);
+				}else{
+					element.html(display);
+				}
+			});
+		}
+	}
+}]);
