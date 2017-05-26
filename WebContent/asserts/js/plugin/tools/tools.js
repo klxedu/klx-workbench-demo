@@ -159,7 +159,7 @@ angular.module('tools', [])
 					checkTdW=$(".font-1").outerWidth();
 					
 				}
-				if(!elTop){
+				if(!elTop || !scope.tfootState){
 					elTop=element.offset().top;
 				}
 				//判断元素位置
@@ -302,11 +302,7 @@ angular.module('tools', [])
 		}
 	}
 })
-/**
- * 标题自适应剪切 
- * <td title-fit-cut='row.title'>{{row.title}}</td>
- * <td title-fit-cut='row.title'><a>{{row.title}}</a></td>
- */
+//标题自适应剪切
 .directive('titleFitCut',['$timeout','$filter',function($timeout,$filter){
 	return {
 		restrict:'A',
@@ -323,7 +319,6 @@ angular.module('tools', [])
 				}
 				display = $filter('strCut')(value,fontNum);
 				element.attr("title",value);
-				debugger;
 				if(element.children().length>0){
 					element.children().first().html(display);
 				}else{
