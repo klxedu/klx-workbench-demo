@@ -14,7 +14,16 @@
 	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
     </div>
 </div>
-
+<div class="wrapper wrapper-panel animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+        	<div class="ibox-content">
+        		<h3>配置注意事项</h3>
+        		<p>配置注意事项配置注意事项配置注意事项配置注意事项配置注意事项配置注意事项配置注意事项</p>
+        	</div>
+        </div>
+    </div>
+</div>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
@@ -35,7 +44,7 @@
 						<div class="col-md-8">
 							<div class="col-md-6 uitree">
 								<div ui-tree="treeOptions" id="secondTreeRoot" data-max-depth=1 data-clone-enabled=false >
-									<h3>二级菜单<i class="glyphicon glyphicon-trash pull-right" title="清空"></i></h3>
+									<h3>二级菜单<i ng-click="allPushLabel()" class="glyphicon glyphicon-trash pull-right" title="清空"></i></h3>
 			                        <ol ui-tree-nodes ng-model="item">
 			                            <li ng-repeat="node in item" ui-tree-node ng-include="'nodes_renderer1.html'"></li>
 			                        </ol>
@@ -73,7 +82,7 @@
       <span class="glyphicon glyphicon-list"></span>
     </div>
     <div class="tree-node tree-node-content">
-        <span class="pull-right" data-nodrag ng-click="remove(this)"><span title="删除" class="glyphicon glyphicon-trash"></span></span>
+        <span class="pull-right" data-nodrag ng-click="pushLable($index)"><span title="删除" class="glyphicon glyphicon-trash"></span></span>
         <span class="pull-right" data-nodrag ng-click="edit(this)"><span title="编辑" class="glyphicon glyphicon-edit"></span></span>
         <span class="ui-tree-icon"><span class="" ng-class="node.icon"></span></span>
         {{node.title}}

@@ -4,6 +4,12 @@
 .ibox-title{
 	border-bottom: 1px solid #D8D8D8;
 }
+.wrapper-panel{
+	padding: 30px 10px 10px 10px;
+}
+.wrapper-panel .ibox-content{
+	padding: 15px 20px 20px 35px;
+}
 /*angular ui-tree*/
 .angular-ui-tree-handle {
     background: none repeat scroll 0 0 #f3f3f4;
@@ -112,10 +118,12 @@
     color: #18A689;
     margin: 5px;
 }
+#uiTree .glyphicon{
+	cursor: pointer;
+} 
 #uiTree>.col-md-8>.col-md-6.label .lable-item .glyphicon-plus{
 	top: 4px;
 	margin-left: 6px;
-	cursor: pointer;
 }
 #secondTreeRoot h3{
 	padding: 10px;

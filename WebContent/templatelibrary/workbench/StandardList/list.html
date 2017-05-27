@@ -20,18 +20,40 @@
 						<!-- 高级搜索start -->
 						<div class="advanced-search" ng-class="{true:'active',false:''}[Searchshow]">
 							<form method="get" class="form-horizontal">
-								<div class="form-group">
-									<label class="col-sm-1 control-label">搜索内容</label>
-									<div class="col-sm-5">
-										<input type="text" ng-model="standardForm.bigInput"
-											class="form-control input-sm">
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="col-sm-3 control-label p5">模块名称</label>
+										<div class="col-sm-9 p5">
+											<input type="text" ng-model="advancedSearch.queryModuleName" class="form-control input-sm">
+										</div>
 									</div>
-									<label class="col-sm-1 control-label">发布时间</label>
-									<div class="col-sm-5">
-										<input date-range-picker class="form-control date-picker input-sm"
-											type="text" ng-model="datePicker.date" />
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="col-sm-3 control-label p5">操作</label>
+										<div class="col-sm-9 p5">
+											<input type="text" ng-model="advancedSearch.queryOperateName" class="form-control input-sm">
+										</div>
 									</div>
-		
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="col-sm-3 control-label p5">用户IP</label>
+										<div class="col-sm-9 p5">
+											<input type="text" ng-model="advancedSearch.queryOperateIp" class="form-control input-sm">
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-4">
+									<div class="form-group">
+										<label class="col-sm-3 control-label p5">操作时间</label>
+										<div class="col-sm-9 p5">
+											<input date-range-picker class="form-control input-sm date-picker" 
+												ng-model="advancedSearch.dateRange" 
+												options='dataRangeOpts' 
+												readonly="readonly"/>
+										</div>
+									</div>
 								</div>
 							</form>
 

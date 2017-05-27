@@ -129,12 +129,19 @@ angular.module('Module.modificationmenu',['ui.tree'])
 	  }
 	]
 	$scope.pushItme = function(i){
-		
 		$scope.item.push($scope.lables.splice(i,1)[0]);
-		console.log($scope.item);
-	}
+	};
+	$scope.pushLable = function(i){
+		$scope.lables.push($scope.item.splice(i,1)[0]);
+	};
 	$scope.remove = function(scope) {
         scope.remove();
+   	};
+   	$scope.allPushLabel = function(){
+   		for (var i=0,j=$scope.item.length;i<j;i++) {
+   			$scope.lables.push($scope.item[i]);
+   		}
+   		$scope.item=[];
    	};
    	$scope.select=function(scope){
    		console.log(scope.$modelValue,"sclect")
