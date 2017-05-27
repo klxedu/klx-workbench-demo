@@ -1,0 +1,131 @@
+.ibox-title>h3.conten-title{
+	padding: 0 15px;
+}
+.ibox-title{
+	border-bottom: 1px solid #D8D8D8;
+}
+/*angular ui-tree*/
+.angular-ui-tree-handle {
+    background: none repeat scroll 0 0 #f3f3f4;
+    border: 1px dashed #e7eaec;
+    color: inherit;
+    padding: 10px;
+    font-weight: normal;
+}
+.angular-ui-tree-handle:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+.angular-ui-tree-placeholder {
+    background: #f0f9ff;
+    border: 1px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.group-title {
+    background-color: #687074 !important;
+    color: #FFF !important;
+}
+.tree-node {
+    background: none repeat scroll 0 0 #f3f3f4;
+    border: 1px dashed #e7eaec;
+    color: inherit;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.tree-node .btn {
+    min-width: 22px;
+    margin-right: 4px;
+}
+
+.tree-node-content {
+    margin: 5px 0;
+}
+
+.tree-handle {
+    background: none repeat scroll 0 0 #f3f3f4;
+    border: 1px dashed #e7eaec;
+    color: inherit;
+    padding: 10px;
+}
+
+.angular-ui-tree-handle:hover {
+}
+
+.angular-ui-tree-placeholder {
+    background: #f0f9ff;
+    border: 1px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.tree-handle[ui-tree-handle]{
+	background: #1ab394;
+	cursor: move;
+    color: white;
+}
+.tree-node{
+	background: #fff;
+	color: inherit;
+}
+.tree-node.active{
+	background: #1ab394;
+	color: #fff;
+}
+.tree-node span[data-nodrag]{
+    padding: 0 5px;
+}
+#firstTreeRoot{
+	border: 1px solid #D8D8D8;
+	min-height: 1000px;
+}
+#firstTreeRoot h3{
+	padding: 10px;
+    margin: 0;
+}
+#uiTree>.col-md-4{
+	padding-right: 0;
+}
+#uiTree>.col-md-8{
+	background: #f3f3f4;
+	height: 1000px;
+}
+#uiTree>.col-md-8>.col-md-6.uitree{
+	min-height: 1000px;
+	overflow-y: scroll;
+}
+#uiTree>.col-md-8>.col-md-6.label{
+	background: #f3f3f4;
+	height: 1000px;
+	padding-top: 40px;
+}
+#uiTree>.col-md-8>.col-md-6.label .lable-item{
+    float: left;
+    border: 1px solid #18A689;
+    border-radius: 12px;
+    height: 24px;
+    padding: 0 10px;
+    background: #fff;
+    line-height: 22px;
+    color: #18A689;
+    margin: 5px;
+}
+#uiTree>.col-md-8>.col-md-6.label .lable-item .glyphicon-plus{
+	top: 4px;
+	margin-left: 6px;
+	cursor: pointer;
+}
+#secondTreeRoot h3{
+	padding: 10px;
+    margin: 0;
+}
+/*小图标*/
+.glyphicon {
+    top: 2px;
+}
+.ui-tree-icon{
+	margin-left: 20px;
+	margin-right: 5px;
+}

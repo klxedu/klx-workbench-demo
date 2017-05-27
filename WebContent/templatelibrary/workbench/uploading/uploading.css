@@ -1,3 +1,17 @@
+.btn-default[disabled]{
+	background: #ccc;
+	color: #fff;
+}
+.btn-default[disabled]:hover{
+	background: #ccc;
+	color: #fff;
+}
+.ibox-title>h3.conten-title{
+	padding: 0 15px;
+}
+.ibox-title{
+	border-bottom: 1px solid #D8D8D8;
+}
 label{
 	line-height: 30px;
 }
@@ -7,4 +21,13 @@ label{
 	line-height: 13px;
 	margin-top: 5px;
 	margin-bottom: 20px;
+}
+a.text-info:hover{
+    color: #23c6c8;
+}
+.progress-message .col-sm-4:first-child{
+	padding-left: 0;
+}
+.progress-message .col-sm-4:last-child{
+	padding-right: 0;
 }

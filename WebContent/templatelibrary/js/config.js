@@ -277,8 +277,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 				url : "/systemdemo",
 				templateUrl : "views/common/content.html",
 			})
-			.state(
-				'systemdemo.modeltbale',
+			.state('systemdemo.modeltbale',
 				{
 					url : "modeltbale/:data",
 					templateUrl : "./workbench/systemdemo/modeltable/list.html",
@@ -302,8 +301,33 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 									]);
 						}
 					}
-				}
-			)
+				})
+				.state('systemdemo.modificationmenu',
+				{
+					url : "modificationmenu/:data",
+					templateUrl : "./workbench/systemdemo/modificationmenu/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "modificationmenuctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+									.load([ {
+										name : 'Module.modificationmenu',
+										files : [
+												'../asserts/css/plugins/uitree/angular-ui-tree.css',
+												'../asserts/js/plugin/uitree/angular-ui-tree.js',
+												'./workbench/systemdemo/modificationmenu/modificationmenu.css',
+												'./workbench/systemdemo/modificationmenu/modificationmenu.js'
+												],
+										serie : true
+									}
+
+									]);
+						}
+					}
+				})
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;

@@ -46,7 +46,7 @@
 					<thead id="theae">
 						<tr>
 							<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名请使用时注意添加-->
-							<th class="font-1"></th>
+							<th class="font-1"><input type="checkbox"/></th>
 							<th class="font-6">课程名称</th>
 							<th class="font-4">时长</th>
 							<th class="font-3">学时</th>
@@ -402,24 +402,7 @@
 								<input type="checkbox" style="margin-top: 13px;"/>
 							</td>
 							<td class="Ribbon" colspan="7" class="text-right">			
-								<div id="Ribbon" class="pull-left btn-group btn-group-sm">
-									
-									<div class="btn-group manage btn-group-sm dropup">
-										  <button type="button" class="btn btn-default ">
-										  	<i title="编辑" class="glyphicon glyphicon-edit"></i>
-										  	编辑
-										  </button>
-										  <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-										    <span class="caret"></span>
-										    <span class="sr-only"></span>
-										  </button>
-										  <ul class="dropdown-menu dropdown-menu-right">
-										    <li><a>查看</a></li>
-										    <li><a>编辑</a></li>
-										    <li><a>删除</a></li>
-										  </ul>
-									</div>
-								</div>
+
 								<div></div><!-- 翻页标签 -->
 							</td>
 						</tr>
@@ -448,12 +431,12 @@
 	   		<div class="advanced-search active">
 				<form method="get" class="form-horizontal">
 					<div class="form-group">
-						<label class="col-sm-2 control-label">搜索内容</label>
+						<label class="col-sm-2">搜索内容</label>
 						<div class="col-sm-4">
 							<input type="text" ng-model="standardForm.bigInput"
 								class="form-control input-sm">
 						</div>
-						<label class="col-sm-2 control-label">发布时间</label>
+						<label class="col-sm-2">发布时间</label>
 						<div class="col-sm-4">
 							<input date-range-picker class="form-control date-picker input-sm"
 								type="text" ng-model="datePicker.date" />
@@ -472,7 +455,7 @@
 					<thead id="theae">
 						<tr>
 							<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名请使用时注意添加-->
-							<th class="font-1"></th>
+							<th class="font-1"><input type="checkbox"/></th>
 							<th class="font-6">课程名称</th>
 							<th class="font-4">时长</th>
 							<th class="font-3">学时</th>
@@ -649,21 +632,7 @@
 							<td class="Ribbon" colspan="7" class="text-right">			
 								<div id="Ribbon" class="pull-left btn-group btn-group-sm">
 									
-									<div class="btn-group manage btn-group-sm dropup">
-										  <button type="button" class="btn btn-default ">
-										  	<i title="编辑" class="glyphicon glyphicon-edit"></i>
-										  	编辑
-										  </button>
-										  <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-										    <span class="caret"></span>
-										    <span class="sr-only"></span>
-										  </button>
-										  <ul class="dropdown-menu dropdown-menu-right">
-										    <li><a>查看</a></li>
-										    <li><a>编辑</a></li>
-										    <li><a>删除</a></li>
-										  </ul>
-									</div>
+									
 								</div>
 								<div ></div><!-- 翻页标签 -->
 							</td>
@@ -690,7 +659,28 @@
 	        <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
 	   </div>
 	   <div class="modal-body row" id="responsemodal" style="max-height: 400px;overflow-y: scroll;">
-	   		
+	   		<form method="post" class="form-horizontal" name="myForm">
+                <div class="form-group">
+                	<label class="col-sm-2" for="input1">资料名称：</label>
+                	<div class="col-sm-9">
+                    	<input class="form-control input-sm" type="text" id="input1" placeholder="请输入文件名称">
+                    	<p class="error text-danger"></p>
+                	</div>
+                	<label class="col-sm-2" for="input1">上传状态：</label>
+                	<div class="col-sm-9">
+                    	<input class="form-control input-sm" type="text" id="input1" value="已上传" ng-disabled="true">
+                    	<p class="error text-danger"></p>
+                	</div>
+                	<label class="col-sm-2">文件名称：</label>
+                    <label class="col-sm-6 text-left"><span class="file-name">{{file.name}}</span>
+                    <p class="error text-danger col-sm-6 col-sm-offset-2"></p>
+                    </label>          
+                    <label class="col-sm-3 text-right">
+                    	<a class="text-info" ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</a>
+                    	<a class="btn btn-sm uploadfile m-l-lg" ng-click="uploadfilie(file)" ng-class="{true:'btn-info',false:'btn-default'}[!!file.name]" ng-disabled="!file.name" >上传</a>
+                    </label>
+                </div>                                 		 
+         	</form>
 			<div class="" tasty-table bind-resource-callback="dataGrid">
 				<table
 					class="table table-gui table-chk table-striped table-hover table-bordered">
@@ -744,21 +734,6 @@
 							<td class="Ribbon" colspan="7" class="text-right">			
 								<div id="Ribbon" class="pull-left btn-group btn-group-sm">
 									
-									<div class="btn-group manage btn-group-sm dropup">
-										  <button type="button" class="btn btn-default ">
-										  	<i title="编辑" class="glyphicon glyphicon-edit"></i>
-										  	编辑
-										  </button>
-										  <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-										    <span class="caret"></span>
-										    <span class="sr-only"></span>
-										  </button>
-										  <ul class="dropdown-menu dropdown-menu-right">
-										    <li><a>查看</a></li>
-										    <li><a>编辑</a></li>
-										    <li><a>删除</a></li>
-										  </ul>
-									</div>
 								</div>
 								<div ></div><!-- 翻页标签 -->
 							</td>

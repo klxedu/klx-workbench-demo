@@ -5,11 +5,8 @@
             <li>
                 <a href="index.html">这里是主页</a>
             </li>
-            <li>
-                <a>这里是一级菜单名</a>
-            </li>
             <li class="active">
-                <strong>这里是二级菜单名{{abc | Yannis}}</strong>
+                <strong>文件上传</strong>
             </li>
         </ol>
     </div>
@@ -22,6 +19,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
+    			<div class="ibox-title">
+					<h3 class="conten-title">文件上传</h3>
+				</div>
                 <div class="ibox-content">
 	            	<div class="ibox float-e-margins">
 	                	<div class="ibox-content">
@@ -38,57 +38,62 @@
 		                            	<p class="error text-danger"></p>
 		                        	</div>
 		                        	<label class="col-sm-2">文件名称：</label>
-		                            <label class="col-sm-6 text-left">{{file.name}}</label>          
+		                            <label class="col-sm-6 text-left"><span class="file-name">{{file.name}}</span>
+		                            
+		                            </label>          
 		                            <label class="col-sm-3 text-right">
 		                            	<a class="text-info" ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</a>
-		                            	<a class="btn btn-sm uploadfile" ng-click="uploadfilie(file)" ng-class="{true:'btn-success',false:'btn-default'}[!!file.name]" ng-disabled="!file.name" >上传</a>
+		                            	<a class="btn btn-sm uploadfile m-l-lg" ng-click="uploadfilie(file)" ng-class="{true:'btn-info',false:'btn-default'}[!!file.name]" ng-disabled="!file.name" >上传</a>
 		                            </label>
+		                           <p class="error text-danger col-sm-6 col-sm-offset-2"></p>
 		                        </div>                  
 		                       	<!-- 进度条-->
 		                        <div class="form-group">
-		                          	<div class="col-sm-12">
+		                          	<div class="col-sm-9 col-sm-offset-2">
 										<div class="progress " ng-class="q?'progress-bar-striped active':'' "><!-- progress-bar-striped active 这俩个类名用于使进度条滚动起来 -->
 									  		<div class="progress-bar progress-bar-info " role="progressbar"  ng-style="barstyle"></div>
 										</div>
 		                        	</div>
 		                        </div>	
 		                        <!-- 进度说明 -->
-		                        <div class="form-group">
-		                          	<div class="col-sm-4">
-			                          	<ul class="list-group w-100">
-			                          	<li class="list-group-item list-group-item-success w-100">
-										  正在转存至服务器
-										  <span class="glyphicon glyphicon-ok pull-right font-22"></span><!-- 这个span是对勾 -->
-										  </li>
-										</ul>
-		                        	</div>
-		                        	<div class="col-sm-4">
-			                          	<ul class="list-group ">
-										  <li class="list-group-item list-group-item-info w-100">
-										  正在解压 </span>
-										  
-										  	<div class="sk-spinner sk-spinner-cube-grid pull-right">
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                            <div class="sk-cube"></div>
-					                        </div>
-					                        <!-- 此处最好使用ng-if 控制 避免性能问题 -->
-										  </li>
-										</ul>
-		                        	</div>
-		                        	<div class="col-sm-4">
-			                          	<ul class="list-group w-100">
-										  <li class="list-group-item list-group-item-danger w-100">
-										  正在转存至服务器
-										  <span class="glyphicon glyphicon-remove pull-right font-22"></span><!-- 这个span是叉 -->
-										  </li>
-										</ul>
+		                        <div class="form-group progress-message">
+		                        	<div class="col-sm-9 col-sm-offset-2">
+			                          	<div class="col-sm-4">
+				                          	<ul class="list-group w-100">
+				                          	<li class="list-group-item list-group-item-success w-100">
+											  正在转存至服务器
+											  <span class="glyphicon glyphicon-ok pull-right font-22"></span><!-- 这个span是对勾 -->
+											  </li>
+											</ul>
+			                        	</div>
+			                        	<div class="col-sm-4">
+				                          	<ul class="list-group ">
+											  <li class="list-group-item list-group-item-info w-100">
+											  正在解压 </span>
+											  
+											  	<div class="sk-spinner sk-spinner-cube-grid pull-right">
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                            <div class="sk-cube"></div>
+						                        </div>
+						                        <!-- 此处最好使用ng-if 控制 避免性能问题 -->
+											  </li>
+											</ul>
+			                        	</div>
+			                        	<div class="col-sm-4">
+				                          	<ul class="list-group w-100">
+											  <li class="list-group-item list-group-item-danger w-100">
+											  正在转存至服务器
+											  <span class="glyphicon glyphicon-remove pull-right font-22"></span><!-- 这个span是叉 -->
+											  </li>
+											</ul>
+			                        	</div>
 		                        	</div>
 		                        </div>		                		 
 	                     	</form>
