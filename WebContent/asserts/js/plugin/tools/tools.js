@@ -145,9 +145,11 @@ angular.module('tools', [])
 				Wheight=$(window).height();
 				elWidth="";checkTdW="";
 				footHandleScroll();
+				element.attr("style","").find("td").attr("style","");
 				if(!scope.tfootState){
 					elTop=element.offset().top;
 				}
+				scope.tfootState=true;
 			}
 			scope.tfootInit();
 			function footHandleScroll() {
@@ -157,10 +159,9 @@ angular.module('tools', [])
 				if(!elWidth||!checkTdW){
 					elWidth=element.parent("table").outerWidth();
 					checkTdW=$(".font-1").outerWidth();
-					
 				}
 				if(!elTop || !scope.tfootState){
-					elTop=element.offset().top;
+					tfootInit();
 				}
 				//判断元素位置
 				if(sTop+Wheight<=elTop){
@@ -168,7 +169,6 @@ angular.module('tools', [])
 					element.css({"position":"fixed","bottom":"0px","background":"#fff","z-index":"100","width":elWidth,"box-shadow": "0px -2px 5px #ccc"}).find(".Ribbon").css({"width":elWidth});
 					element.find(".check").css({"width":checkTdW});
 				}else{
-					scope.tfootState=false;
 					element.attr("style","").find("td").attr("style","");
 				}
 			}
