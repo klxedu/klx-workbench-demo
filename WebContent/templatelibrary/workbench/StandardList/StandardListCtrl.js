@@ -1,6 +1,6 @@
 app.controller('StandardListCtrl', function($scope, StandardListService,$timeout) {
 	$scope.searchCriteria="1";
-	$scope.tfootState = false;
+	$scope.tfootState = true;
 	$scope.dataGrid=function(params,paramsObj){
 		//重置全选
 		$scope.tableState.selectAll = false;
@@ -9,7 +9,10 @@ app.controller('StandardListCtrl', function($scope, StandardListService,$timeout
 	}
 	
 	$scope.reloadCallback=function(){
-		$scope.tfootState = false;
+		$timeout(function(){
+			$scope.tfootState = false;
+		},1)
+		
 	};
 	
 	/*
