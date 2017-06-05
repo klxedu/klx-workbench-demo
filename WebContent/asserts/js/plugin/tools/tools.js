@@ -140,18 +140,19 @@ angular.module('tools', [])
 		link:function(scope,element,attr,common){
 			var Wheight=$(window).height();
 			var elTop="",elWidth="",checkTdW="";
-			scope.tfootState=false;//用于处理元素当前是否为定位状态，用于判断是否重新获取元素offset
+			//scope.tfootState=false;//用于处理元素当前是否为定位状态，用于判断是否重新获取元素offset
 			scope.tfootInit=function(){
 				Wheight=$(window).height();
 				elWidth="";checkTdW="";
-				footHandleScroll();
+				
 				element.attr("style","").find("td").attr("style","");
 				if(!scope.tfootState){
 					elTop=element.offset().top;
 				}
 				scope.tfootState=true;
+				footHandleScroll();
 			}
-			scope.tfootInit();
+			//scope.tfootInit();
 			function footHandleScroll() {
 				//获取滚动条滚动距离
 				sTop=$(document).scrollTop();

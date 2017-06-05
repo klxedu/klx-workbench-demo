@@ -133,7 +133,7 @@
 								</ul>
 							</div>
 							<!-- 菜单下拉  end-->
-							<button ng-click="console()" class="btn btn-sm btn-primary btn-search">搜索</button>
+							<button ng-click="reloadCallback()" class="btn btn-sm btn-primary btn-search">搜索</button>
 							<span class="btn btn-primary pull-right btn-sm add">
 								<span class="glyphicon glyphicon-plus"></span>新增
 							</span>
@@ -147,7 +147,7 @@
 						<!-- 右侧查询条件操作区域 end-->
 						
 						<!-- 主列表区域 start-->
-						<div class="" tasty-table bind-resource-callback="dataGrid">
+						<div tasty-table bind-resource-callback="dataGrid" >
 							<table
 								class="table table-gui table-chk table-striped table-hover table-bordered">
 								<thead common thead-fixed thead-state="false" id="theae">

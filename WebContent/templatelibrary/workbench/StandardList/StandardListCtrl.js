@@ -8,6 +8,10 @@ app.controller('StandardListCtrl', function($scope, StandardListService,$timeout
 		return StandardListService.findList(params,paramsObj);
 	}
 	
+	$scope.reloadCallback=function(){
+		$scope.tfootState = false;
+	};
+	
 	/*
 	 * 列表树
 	 */
