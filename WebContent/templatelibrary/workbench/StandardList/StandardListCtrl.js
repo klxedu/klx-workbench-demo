@@ -1,6 +1,6 @@
 app.controller('StandardListCtrl', function($scope, StandardListService,$timeout) {
 	$scope.searchCriteria="1";
-	$scope.tfootState = true;
+	$scope.tfootState = false;
 	$scope.dataGrid=function(params,paramsObj){
 		//重置全选
 		$scope.tableState.selectAll = false;
