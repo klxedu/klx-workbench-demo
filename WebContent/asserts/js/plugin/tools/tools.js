@@ -161,7 +161,7 @@ angular.module('tools', [])
 					checkTdW=$(".font-1").outerWidth();
 				}
 				if(!elTop || !scope.tfootState){
-					tfootInit();
+					scope.tfootInit();
 				}
 				//判断元素位置
 				if(sTop+Wheight<=elTop){

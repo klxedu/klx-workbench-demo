@@ -1,0 +1,114 @@
+{
+	"data": {
+		"resultList": [{
+			"id":"1",
+			"code":"A001",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"2",
+			"code":"A002",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"3",
+			"code":"A003",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"4",
+			"code":"A004",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"5",
+			"code":"A005",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"1",
+			"code":"A001",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"2",
+			"code":"A002",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"3",
+			"code":"A003",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"4",
+			"code":"A004",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"5",
+			"code":"A005",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"1",
+			"code":"A001",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"2",
+			"code":"A002",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"3",
+			"code":"A003",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"4",
+			"code":"A004",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		},{
+			"id":"5",
+			"code":"A005",
+			"name":"课程审批模型",
+			"subject":"course",
+			"type":"fixRole"
+		}],
+		"pageSize": 15,
+		"currentPage": 1,
+		"count": 200,
+		"maxPage": 1,
+		"minPage": 1,
+		"firstResult": 0,
+		"pagination": {
+			"count": 15,
+			"page": 1,
+			"pages": 14,
+			"size": 200
+		}
+	},
+	"message": "",
+	"success": true,
+	"clientmessagearray": {
+		"message_text": "执行成功",
+		"message_title": "",
+		"message_severity": "success"
+	}
+}

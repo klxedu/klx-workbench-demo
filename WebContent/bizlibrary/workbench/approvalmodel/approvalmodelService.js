@@ -1,11 +1,10 @@
-var app = angular.module('Module.StandardList', ['daterangepicker', 'ngSanitize','datatime.directive','ngTasty','ngAnimate','ui.bootstrap','tools'])
-
+var app = angular.module('Module.approvalmodel', ['ngSanitize','ngTasty','ui.bootstrap','tools'])
 /*
  *翻页插件需要依赖ngTasty
  * */
-app.factory('StandardListService',function($http,$uibModal,$log) {
+app.factory('approvalmodelService',function($http,$uibModal,$log) {
 	var service = {};
-	var CONTROLLER_URL = "workbench/StandardList";
+	var CONTROLLER_URL = "./workbench/approvalmodel";
 	service.findList = function(params, paramsObj) {
 		var url = CONTROLLER_URL + "/mockdata.json";
 		return $http.get(url + "?" + params).then(function(response) {
@@ -23,10 +22,10 @@ app.factory('StandardListService',function($http,$uibModal,$log) {
 					"key" : "status",
 					"name" : "状态"
 				} ],
-				'rows' : response.data.data.resultList,
-				'pagination' : response.data.data.pagination,
 				"sort-by" : "status",
-				"sort-order" : "asc"
+				"sort-order" : "asc",
+				'rows' : response.data.data.resultList,
+				'pagination' : response.data.data.pagination
 			}
 		});
 	};
