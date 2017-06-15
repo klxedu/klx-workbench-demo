@@ -1,0 +1,9 @@
+#imgcropBox .small{
+	margin-top: 15px;
+}
+#imgcropBox .select-file{
+	margin-bottom: 15px;
+}
+#imgcropBox .select-file:hover{
+	color: #23c6c8;
+}

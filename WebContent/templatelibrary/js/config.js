@@ -350,6 +350,28 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 						}
 					}
 				})
+				.state('systemdemo.imgcrop',
+				{
+					url : "imgcrop/:data",
+					templateUrl : "./workbench/systemdemo/imgcrop/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "imgcropctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+									.load([ {
+										name : 'Module.imgcrop',
+										files : [
+												'./workbench/systemdemo/imgcrop/imgcrop.css',
+												'./workbench/systemdemo/imgcrop/imgcrop.js'
+												],
+										serie : true
+									}]);
+						}
+					}
+				})
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;
