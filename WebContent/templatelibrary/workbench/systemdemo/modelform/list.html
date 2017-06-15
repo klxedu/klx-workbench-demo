@@ -1,0 +1,545 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>这个是当前页的标题</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">主页</a>
+            </li>
+            <li class="active">
+                <strong>model中表单示例</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                	<div class="ibox-content">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">mode中单标准表单</button>
+                   </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+	描述：无查询条件model表格
+-->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">标准表单</h4>
+	   </div>
+	   <div class="modal-body" id="responsemodal" style="max-height: 400px;overflow-y: scroll;">
+			<form method="get" class="form-horizontal standard-form">
+	            <div class="form-group">
+	            	<div class="col-md-6">
+	            		<div class="row">
+	            			<div class="col-md-4">
+	            				<lable for="input1">
+	            					<span class="text-danger must">*</span>名称：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-7">
+	            				<input class="form-control input-sm" type="text" id="input1" placeholder="请输入主办人名称">
+	            				<p class="error text-danger"></p>
+	            			</div>
+	            			
+	            		</div>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<div class="row">
+	            			<div class="col-md-3">
+	            				<lable for="input2">
+	            					住址：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-7">
+	            				<input class="form-control input-sm" type="text" id="input2" placeholder="请输入主办人住址">
+	            				<p class="error text-danger"></p>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<div class="row">
+	            			<div class="col-md-4">
+	            				<lable for="select1">
+	            					证书类型：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-7">
+	            				<select name="" id="select1" class="form-control input-sm" placeholder="请输入主办人住址">
+	            					<option value="">选择负责人证书类型</option>
+	            					<option value="">身份证</option>
+	            					<option value="">驾驶证</option>
+	            				</select>
+	            				<p class="error text-danger">请选择正确的证书类型</p>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="col-md-6">
+	            		<div class="row">
+	            			<div class="col-md-3">
+	            				<lable for="input1">
+	            					证书类型：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-7">
+	            				<select name="" id="select1" class="form-control input-sm">
+	            					<option value="" selected="selected">选择单位证书类型</option>
+	            					<option value="">工商营业执照</option>
+	            				</select>
+	            				<p class="error text-danger"></p>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="col-md-12">
+	            		<div class="row">
+	            			<div class="col-md-2">
+	            				<lable for="input2">
+	            					电子邮箱：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-9">
+	            				<input class="form-control input-sm" type="text" id="input2" placeholder="请输入主办人电子邮箱地址">
+	            				<p class="error text-danger"></p>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="col-md-12">
+	            		<div class="row">
+	            			<div class="col-md-2">
+	            				<lable for="textarea">
+	            					<span class="text-danger must">*</span>申请信息：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-9">
+	            				<textarea id="textarea" class="form-control" rows="4" cols="" placeholder="请输入申请信息介绍"></textarea>
+	            				<p class="error text-danger"></p>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="col-md-12 form-checkbox">
+	            		<div class="row">
+	            			<div class="col-md-2 text-right">
+	            				<lable for="textarea">
+	            					网站服务：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-2">
+	            				<label class="checkbox-inline" for="inlineCheckbox1">
+								  	<input type="checkbox" id="inlineCheckbox1" value="option1"> 网络购物
+								</label>
+	            			</div>
+	            			<div class="col-md-2">
+	            				<label class="checkbox-inline" for="inlineCheckbox2">
+								  	<input type="checkbox" id="inlineCheckbox2" value="option1"> 即时通讯
+								</label>
+	            			</div>
+	            			<div class="col-md-2">
+								<label class="checkbox-inline" for="inlineCheckbox3">
+								  	<input type="checkbox" id="inlineCheckbox3" value="option1"> 综合门户
+								</label>
+	            			</div>
+	            			<div class="col-md-2">
+								<label class="checkbox-inline" for="inlineCheckbox4">
+								  	<input type="checkbox" id="inlineCheckbox4" value="option1"> 网络游戏
+								</label>
+	            			</div>
+	            			<div class="col-md-2">
+								<label class="checkbox-inline" for="inlineCheckbox5">
+								  	<input type="checkbox" id="inlineCheckbox5" value="option1"> 其他
+								</label>
+	            			</div>
+	            			<div class="col-md-10 col-md-offset-2">
+	            				<p class="error text-danger"></p>
+	            			</div>
+	            		</div>
+	            	</div>
+	            	<div class="col-md-12 form-radio">
+	            		<div class="row">
+	            			<div class="col-md-2 text-right">
+	            				<lable for="textarea">
+	            					网站语言：
+	            				</lable>
+	            			</div>
+	            			<div class="col-md-2">
+	            				<label class="radio-inline" for="inlineRadio1">
+								  	<input type="radio" id="inlineRadio1" value="option1"> 中文简体
+								</label>
+	            			</div>
+	            			
+	            			<div class="col-md-2">
+								<label class="radio-inline" for="inlineRadio2">
+								  	<input type="radio" id="inlineRadio2" value="option1"> 中文繁体
+								</label>
+	            			</div>
+	            			<div class="col-md-2">
+								<label class="radio-inline" for="inlineRadio3">
+								  	<input type="radio" id="inlineRadio3" value="option1"> 英语
+								</label>
+	            			</div>
+	            			<div class="col-md-2">
+								<label class="radio-inline" for="inlineRadio3">
+								  	<input type="radio" id="inlineRadio3" value="option1"> 俄罗斯语
+								</label>
+	            			</div>
+	            			<div class="col-md-2">
+								<label class="radio-inline" for="inlineRadio4">
+								  	<input type="radio" id="inlineRadio4" value="option1"> 哈萨克语
+								</label>
+	            			</div>
+	            			<div class="col-md-10 col-md-offset-2">
+	            				<p class="error text-danger"></p>
+	            			</div>
+	            		</div>
+	            	</div>
+				</div>
+	        </form>
+	   </div>
+	   <div class="modal-footer">
+	   	 	<button type="button" class="btn btn-primary">保存</button>
+       		<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+       </div>
+    </div>
+  </div>
+</div>
+<!--
+	描述：带查询条件model表格
+-->
+<div class="modal fade bs-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
+	   </div>
+	   <div class="modal-body row" id="responsemodal" style="max-height: 400px;overflow-y: scroll;">
+	   		<div class="advanced-search active">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2">搜索内容</label>
+						<div class="col-sm-4">
+							<input type="text" ng-model="standardForm.bigInput"
+								class="form-control input-sm">
+						</div>
+						<label class="col-sm-2">发布时间</label>
+						<div class="col-sm-4">
+							<input date-range-picker class="form-control date-picker input-sm"
+								type="text" ng-model="datePicker.date" />
+						</div>
+
+					</div>
+				</form>
+					<div class="operation col-sm-11 col-sm-offset-1">
+						<button class="btn btn-sm btn-primary btn-search">搜索</button>
+						<button class="btn btn-sm btn-default btn-search">清空</button>
+					</div>
+			</div>
+			<div class="" tasty-table bind-resource-callback="dataGrid">
+				<table
+					class="table table-gui table-chk table-striped table-hover table-bordered">
+					<thead id="theae">
+						<tr>
+							<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名请使用时注意添加-->
+							<th class="font-1"><input type="checkbox"/></th>
+							<th class="font-6">课程名称</th>
+							<th class="font-4">时长</th>
+							<th class="font-3">学时</th>
+							<th class="font-4">状态</th>
+							<th class="font-3">启用</th>
+							<th class="font-2">年份</th>
+							<th class="font-5">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td title="疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式">
+								<a class="" href="#" >{{dataRows[0].courseName | strCut:13}}</a></td>
+							<td>44分钟</td>
+							<td>50</td>
+							<td>已发布</td>
+							<td>是</td>
+							<td>2017</td>
+							<td class="text-center">
+								<div class="btn-group manage">
+									<a href="#" title="编辑" class="glyphicon glyphicon-edit"></a>
+									<a href="#" title="删除" class="glyphicon glyphicon-trash"></a>
+									<a href="#" title="启用" class="glyphicon glyphicon-ok-circle"></a>
+									<a title="更多" class="dropdown-toggle" data-toggle="dropdown">
+           								<span class="glyphicon glyphicon-cog"></span>
+           								<span class="caret"></span>
+            						</a>
+            						<ul class="dropdown-menu dropdown-menu-right">
+				                        <li><a class="glyphicon glyphicon-edit">编辑</a></li>
+				                        <li><a class="glyphicon glyphicon-trash">删除</a></li>
+				                        <li><a class="glyphicon glyphicon-ok-circle">启用</a></li>
+            						</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td title="疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式">
+								<a class="" href="#" >{{dataRows[0].courseName | strCut:13}}</a></td>
+							<td>44分钟</td>
+							<td>50</td>
+							<td>已发布</td>
+							<td>是</td>
+							<td>2017</td>
+							<td class="text-center">
+								<div class="btn-group manage">
+									<a href="#" title="编辑" class="glyphicon glyphicon-edit"></a>
+									<a href="#" title="删除" class="glyphicon glyphicon-trash"></a>
+									<a href="#" title="启用" class="glyphicon glyphicon-ok-circle"></a>
+									<a title="更多" class="dropdown-toggle" data-toggle="dropdown">
+           								<span class="glyphicon glyphicon-cog"></span>
+           								<span class="caret"></span>
+            						</a>
+            						<ul class="dropdown-menu dropdown-menu-right">
+				                        <li><a class="glyphicon glyphicon-edit">编辑</a></li>
+				                        <li><a class="glyphicon glyphicon-trash">删除</a></li>
+				                        <li><a class="glyphicon glyphicon-ok-circle">启用</a></li>
+            						</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td title="疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式">
+								<a class="" href="#" >{{dataRows[0].courseName | strCut:13}}</a></td>
+							<td>44分钟</td>
+							<td>50</td>
+							<td>已发布</td>
+							<td>是</td>
+							<td>2017</td>
+							<td class="text-center">
+								<div class="btn-group manage">
+									<a href="#" title="编辑" class="glyphicon glyphicon-edit"></a>
+									<a href="#" title="删除" class="glyphicon glyphicon-trash"></a>
+									<a href="#" title="启用" class="glyphicon glyphicon-ok-circle"></a>
+									<a title="更多" class="dropdown-toggle" data-toggle="dropdown">
+           								<span class="glyphicon glyphicon-cog"></span>
+           								<span class="caret"></span>
+            						</a>
+            						<ul class="dropdown-menu dropdown-menu-right">
+				                        <li><a class="glyphicon glyphicon-edit">编辑</a></li>
+				                        <li><a class="glyphicon glyphicon-trash">删除</a></li>
+				                        <li><a class="glyphicon glyphicon-ok-circle">启用</a></li>
+            						</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td title="疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式">
+								<a class="" href="#" >{{dataRows[0].courseName | strCut:13}}</a></td>
+							<td>44分钟</td>
+							<td>50</td>
+							<td>已发布</td>
+							<td>是</td>
+							<td>2017</td>
+							<td class="text-center">
+								<div class="btn-group manage">
+									<a href="#" title="编辑" class="glyphicon glyphicon-edit"></a>
+									<a href="#" title="删除" class="glyphicon glyphicon-trash"></a>
+									<a href="#" title="启用" class="glyphicon glyphicon-ok-circle"></a>
+									<a title="更多" class="dropdown-toggle" data-toggle="dropdown">
+           								<span class="glyphicon glyphicon-cog"></span>
+           								<span class="caret"></span>
+            						</a>
+            						<ul class="dropdown-menu dropdown-menu-right">
+				                        <li><a class="glyphicon glyphicon-edit">编辑</a></li>
+				                        <li><a class="glyphicon glyphicon-trash">删除</a></li>
+				                        <li><a class="glyphicon glyphicon-ok-circle">启用</a></li>
+            						</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td title="疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式">
+								<a class="" href="#" >{{dataRows[0].courseName | strCut:13}}</a></td>
+							<td>44分钟</td>
+							<td>50</td>
+							<td>已发布</td>
+							<td>是</td>
+							<td>2017</td>
+							<td class="text-center">
+								<div class="btn-group manage">
+									<a href="#" title="编辑" class="glyphicon glyphicon-edit"></a>
+									<a href="#" title="删除" class="glyphicon glyphicon-trash"></a>
+									<a href="#" title="启用" class="glyphicon glyphicon-ok-circle"></a>
+									<a title="更多" class="dropdown-toggle" data-toggle="dropdown">
+           								<span class="glyphicon glyphicon-cog"></span>
+           								<span class="caret"></span>
+            						</a>
+            						<ul class="dropdown-menu dropdown-menu-right">
+				                        <li><a class="glyphicon glyphicon-edit">编辑</a></li>
+				                        <li><a class="glyphicon glyphicon-trash">删除</a></li>
+				                        <li><a class="glyphicon glyphicon-ok-circle">启用</a></li>
+            						</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox"/></td>
+							<td title="疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式">
+								<a class="" href="#" >{{dataRows[0].courseName | strCut:13}}</a></td>
+							<td>44分钟</td>
+							<td>50</td>
+							<td>已发布</td>
+							<td>是</td>
+							<td>2017</td>
+							<td class="text-center">
+								<div class="btn-group manage">
+									<a href="#" title="编辑" class="glyphicon glyphicon-edit"></a>
+									<a href="#" title="删除" class="glyphicon glyphicon-trash"></a>
+									<a href="#" title="启用" class="glyphicon glyphicon-ok-circle"></a>
+									<a title="更多" class="dropdown-toggle" data-toggle="dropdown">
+           								<span class="glyphicon glyphicon-cog"></span>
+           								<span class="caret"></span>
+            						</a>
+            						<ul class="dropdown-menu dropdown-menu-right">
+				                        <li><a class="glyphicon glyphicon-edit">编辑</a></li>
+				                        <li><a class="glyphicon glyphicon-trash">删除</a></li>
+				                        <li><a class="glyphicon glyphicon-ok-circle">启用</a></li>
+            						</ul>
+								</div>
+							</td>
+						</tr>
+					
+					</tbody>
+					<tfoot class="tfoot">
+						<tr>
+							<td class="check text-center">
+								<input type="checkbox" style="margin-top: 13px;"/>
+							</td>
+							<td class="Ribbon" colspan="7" class="text-right">			
+								<div id="Ribbon" class="pull-left btn-group btn-group-sm">
+									
+									
+								</div>
+								<div ></div><!-- 翻页标签 -->
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+	   </div>
+	   <div class="modal-footer">
+	   	 	<button type="button" class="btn btn-primary">保存</button>
+       		<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+       </div>
+    </div>
+  </div>
+</div>
+<!--
+	描述：带查询条件model表格
+-->
+<div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabe2" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
+	   </div>
+	   <div class="modal-body row" id="responsemodal" style="max-height: 400px;overflow-y: scroll;">
+	   		<form method="post" class="form-horizontal" name="myForm">
+                <div class="form-group">
+                	<label class="col-sm-2" for="input1">资料名称：</label>
+                	<div class="col-sm-9">
+                    	<input class="form-control input-sm" type="text" id="input1" placeholder="请输入文件名称">
+                    	<p class="error text-danger"></p>
+                	</div>
+                	<label class="col-sm-2" for="input1">上传状态：</label>
+                	<div class="col-sm-9">
+                    	<input class="form-control input-sm" type="text" id="input1" value="已上传" ng-disabled="true">
+                    	<p class="error text-danger"></p>
+                	</div>
+                	<label class="col-sm-2">文件名称：</label>
+                    <label class="col-sm-6 text-left"><span class="file-name">{{file.name}}</span>
+                    <p class="error text-danger col-sm-6 col-sm-offset-2"></p>
+                    </label>          
+                    <label class="col-sm-3 text-right">
+                    	<a class="text-info" ngf-select ng-model="file" name="file"  ngf-max-size="20MB" >选择文件</a>
+                    	<a class="btn btn-sm uploadfile m-l-lg" ng-click="uploadfilie(file)" ng-class="{true:'btn-info',false:'btn-default'}[!!file.name]" ng-disabled="!file.name" >上传</a>
+                    </label>
+                </div>                                 		 
+         	</form>
+			<div class="" tasty-table bind-resource-callback="dataGrid">
+				<table
+					class="table table-gui table-chk table-striped table-hover table-bordered">
+					<thead id="theae">
+						<tr>
+							<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名请使用时注意添加-->
+							<th class="font-1"></th>
+							<th class="font-6">课程名称</th>
+							<th class="font-4">时长</th>
+							<th class="font-3">学时</th>
+							<th class="font-4">状态</th>
+							<th class="font-3">启用</th>
+							<th class="font-2">年份</th>
+							<th class="font-5">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="row in dataRows">
+							<td><input type="checkbox"/></td>
+							<td title="疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式疯狂烧钱的教育O2O陷入窘境 破局之路在于后端驱动的B2C模式">
+								<a class="" href="#" >{{row.courseName | strCut:13}}</a></td>
+							<td>44分钟</td>
+							<td>50</td>
+							<td>已发布</td>
+							<td>是</td>
+							<td>2017</td>
+							<td class="text-center">
+								<div class="btn-group manage">
+									<a href="#" title="编辑" class="glyphicon glyphicon-edit"></a>
+									<a href="#" title="删除" class="glyphicon glyphicon-trash"></a>
+									<a href="#" title="启用" class="glyphicon glyphicon-ok-circle"></a>
+									<a title="更多" class="dropdown-toggle" data-toggle="dropdown">
+           								<span class="glyphicon glyphicon-cog"></span>
+           								<span class="caret"></span>
+            						</a>
+            						<ul class="dropdown-menu dropdown-menu-right">
+				                        <li><a class="glyphicon glyphicon-edit">编辑</a></li>
+				                        <li><a class="glyphicon glyphicon-trash">删除</a></li>
+				                        <li><a class="glyphicon glyphicon-ok-circle">启用</a></li>
+            						</ul>
+								</div>
+							</td>
+						</tr>
+					
+					</tbody>
+					<tfoot class="tfoot">
+						<tr>
+							<td class="check text-center">
+								<input type="checkbox" style="margin-top: 13px;"/>
+							</td>
+							<td class="Ribbon" colspan="7" class="text-right">			
+								<div id="Ribbon" class="pull-left btn-group btn-group-sm">
+									
+								</div>
+								<div ></div><!-- 翻页标签 -->
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+	   </div>
+	   <div class="modal-footer">
+	   	 	<button type="button" class="btn btn-primary">保存</button>
+       		<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+       </div>
+    </div>
+  </div>
+</div>

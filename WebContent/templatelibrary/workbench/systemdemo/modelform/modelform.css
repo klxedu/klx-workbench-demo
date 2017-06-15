@@ -1,0 +1,53 @@
+input::-webkit-input-placeholder { /* WebKit browsers */
+　　color:#000;
+}
+input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+　　color:#999;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　color:#999;
+}
+input::-ms-input-placeholder { /* Internet Explorer 10+ */
+　　color:#999;
+}
+.ibox-title>h3.conten-title{
+	padding: 0 15px;
+}
+.ibox-title{
+	border-bottom: 1px solid #D8D8D8;
+}
+.standard-form{
+	margin-top: 20px;
+}
+.standard-form .must{
+	padding-right: 3px;
+	font-weight: 800;
+}
+.standard-form .error{
+	font-size: 12px;
+	height: 13px;
+	line-height: 13px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+.standard-form .form-checkbox .col-md-2{
+	text-align: left;
+}
+.standard-form .form-radio .col-md-2{
+	text-align: left;
+}
+.standard-form .form-checkbox .col-md-2.text-right{
+	text-align: right;
+}
+.standard-form .form-radio .col-md-2.text-right{
+	text-align: right;
+}
+.standard-form textarea.form-control{
+	height: auto;
+}
+.standard-form lable{
+	line-height: 30px;
+}
+.standard-form .col-md-4,.standard-form .col-md-2,.standard-form .col-md-3{
+	text-align: right;
+}

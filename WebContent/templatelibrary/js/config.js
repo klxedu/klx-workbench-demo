@@ -277,6 +277,28 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 				url : "/systemdemo",
 				templateUrl : "views/common/content.html",
 			})
+			.state('systemdemo.modelform',
+				{
+					url : "modelform/:data",
+					templateUrl : "./workbench/systemdemo/modelform/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "modelformctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+								.load([{
+									name : 'Module.modelform',
+									files : [
+											'./workbench/systemdemo/modelform/modelform.css',
+											'./workbench/systemdemo/modelform/modelform.js'
+											],
+									serie : true
+								}]);
+						}
+					}
+				})
 			.state('systemdemo.modeltbale',
 				{
 					url : "modeltbale/:data",
