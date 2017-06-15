@@ -150,9 +150,7 @@ angular.module('tools', [])
 					elTop=element.offset().top;
 				}
 				scope.tfootState=true;
-				footHandleScroll();
 			}
-			//scope.tfootInit();
 			function footHandleScroll() {
 				//获取滚动条滚动距离
 				sTop=$(document).scrollTop();
