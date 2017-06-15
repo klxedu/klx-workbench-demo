@@ -364,6 +364,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 									.load([ {
 										name : 'Module.imgcrop',
 										files : [
+												'../asserts/css/plugins/Jcrop/jquery.Jcrop.css',
+												'../asserts/js/plugin/Jcrop/jquery.Jcrop.js',
+												'../asserts/js/plugin/Jcrop/ngJcrop.js',
+												'../asserts/js/plugin/fileupload/ng-file-upload-shim.min.js',
+												'../asserts/js/plugin/fileupload/ng-file-upload.min.js',
 												'./workbench/systemdemo/imgcrop/imgcrop.css',
 												'./workbench/systemdemo/imgcrop/imgcrop.js'
 												],

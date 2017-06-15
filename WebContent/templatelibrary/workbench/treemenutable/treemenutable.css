@@ -23,5 +23,6 @@ treecontrol ul{
     margin-bottom: 0;
 }
 .tree-table{
+	min-height: 729px;
 	margin-bottom: 50px;
 }
