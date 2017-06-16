@@ -23,22 +23,49 @@
 		<div class="col-lg-12">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
-					<div jcrop option="option" data="data" do-file-upload="doFileUpload(file,data)"></div>
+					<div jcrop option="imgCrop.option"  data="imgCrop.data" do-file-upload="doFileUpload(file,data)"></div>
 					<div class="row">
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
 							<pre>
-				            	<h3 class="text-danger">下拉选树型控件使用说明</h3>
+				            	<h3 class="text-danger">图片裁剪控件使用说明</h3>
 				            	<p>一、使用前准备</p>
-				            	<p>1.时间范围选择需要依赖ngimgJcrops模块、ngFileUpload模块，且需要加入以下js文件：ng-file-upload-shim.min.js,ng-file-upload.min.js,../asserts/css/plugins/Jcrop/jquery.Jcrop.css,./workbench/imgJcrop/imgJcrop.css,./workbench/imgJcrop/imgJcropservice.js,./workbench/imgJcrop/imgJcropctrl.js,../asserts/js/plugin/Jcrop/jquery.Jcrop.js,../asserts/js/plugin/Jcrop/ngJcrop.js'</p>
-				            	<p>html中使用标签引入：
-	&lt;div jcrop option=&quot;option&quot; data=&quot;data&quot; file-option=&quot;fileOption&quot; file-uoload-fun=&quot;uploadfilie(file,data)&quot; &gt;&lt;/div&gt;
-				            	</p>
-				            	<p>二、使用</p>
-								<p>1.设置option，值为图片裁剪的配置项。详情查看ctrl中数据示例</p>
-								<p>2.设置file-init，定义文件上传初始化方法及配置，具体请看<a href="https://github.com/danialfarid/ng-file-upload">ng-file-upload</a>中关于初始化部分</p>
-								<p>3.设置file-uoload-fun属性，定义文件上传执行该方法</p>
+				            	<code>
+资源文件引入
+'../asserts/js/plugin/fileupload/ng-file-upload-shim.min.js'
+'../asserts/js/plugin/fileupload/ng-file-upload.min.js'
+'../asserts/css/plugins/imgcrop/jquery.Jcrop.min.css'
+'../asserts/css/plugins/imgcrop/ngJcrop.css'
+'../asserts/js/plugin/imgcrop/jquery.Jcrop.js'
+'../asserts/js/plugin/imgcrop/ngJcrop.js'
+				            	</code>
+				            	<code>
+引用模块 ngImgCrop ，并在界面中使用指令 jcrop 。主要使用方式如下：
+&lt;div jcrop option="imgCrop.option"  data="imgCrop.data" do-file-upload="doFileUpload(file,data)"&gt;&lt;/div&gt;
+$scope.imgCrop = {
+	"option" : "",
+	"data" : {
+		'uploadFile' : {
+			'maxSize' : '2MB',
+			'accept' : 'image/jpeg,image/png',
+			'file' : {},
+			'errorFile' : {},
+			'imfoMsg' : '提示：请选择类型为jpg和png的图片，大小小于2MB',
+			'errorMsg' : {
+				'maxSize' : '警告：选择的图片大小超过2MB，请重新选择'
+			}
+		},
+		'w_h_ratio' : 2 / 1,
+		'crop_w' : [400, 200, 120]
+	}
+};
+$scope.doFileUpload = function(file, data) {
+	console.log(file);
+	console.log(data.selectActualSize);
+	console.log($scope.imgCrop.data.crop_w[0]);
+}
+				            	</code>
 				            </pre>
 						</div>
 					</div>

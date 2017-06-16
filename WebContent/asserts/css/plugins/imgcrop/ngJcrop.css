@@ -1,19 +1,24 @@
-.img-content{
+.img-content {
 	overflow: hidden;
 	text-align: center;
 }
-.imgcrop-content{
+
+.imgcrop-content {
 	text-align: center;
 }
-.jcrop-holder{
+
+.jcrop-holder {
 	margin: 0 auto;
 }
-.imgcropBox .small{
+
+.imgcropBox .small {
 	margin-top: 15px;
 }
-.imgcropBox .select-file{
+
+.imgcropBox .select-file {
 	margin-bottom: 15px;
 }
-.imgcropBox .select-file:hover{
+
+.imgcropBox .select-file:hover {
 	color: #23c6c8;
 }

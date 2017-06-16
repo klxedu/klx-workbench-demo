@@ -550,14 +550,13 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 							.load([{
 								name : 'Module.imgJcrop',
 								files : [
-										'../asserts/css/plugins/Jcrop/jquery.Jcrop.css',
-										'./workbench/imgJcrop/imgJcrop.css',
-										'./workbench/imgJcrop/imgJcropservice.js',
-										'./workbench/imgJcrop/imgJcropctrl.js',
-										'../asserts/js/plugin/Jcrop/jquery.Jcrop.js',
-										'../asserts/js/plugin/Jcrop/ngJcrop.js',
 										'../asserts/js/plugin/fileupload/ng-file-upload-shim.min.js',
-										'../asserts/js/plugin/fileupload/ng-file-upload.min.js'
+										'../asserts/js/plugin/fileupload/ng-file-upload.min.js',
+										'../asserts/css/plugins/imgcrop/jquery.Jcrop.min.css',
+										'../asserts/css/plugins/imgcrop/ngJcrop.css',
+										'../asserts/js/plugin/imgcrop/jquery.Jcrop.js',
+										'../asserts/js/plugin/imgcrop/ngJcrop.js',
+										'./workbench/imgJcrop/imgJcropctrl.js'
 										],
 								serie : true
 							}]);

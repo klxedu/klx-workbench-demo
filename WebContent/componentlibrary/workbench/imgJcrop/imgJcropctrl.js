@@ -1,7 +1,24 @@
-app.controller('imgJcropctrl',function($scope,Upload) {
-	$scope.option={};//图片裁剪配置对象
-	$scope.doFileUpload = function(file,data){
+angular.module('Module.imgJcrop',['ngImgCrop']).controller('imgJcropctrl', function($scope, Upload) {
+	$scope.imgCrop = {
+		"option" : "",
+		"data" : {
+			'uploadFile' : {
+				'maxSize' : '2MB',
+				'accept' : 'image/jpeg,image/png',
+				'file' : {},
+				'errorFile' : {},
+				'imfoMsg' : '提示：请选择类型为jpg和png的图片，大小小于2MB',
+				'errorMsg' : {
+					'maxSize' : '警告：选择的图片大小超过2MB，请重新选择'
+				}
+			},
+			'w_h_ratio' : 2 / 1,
+			'crop_w' : [400, 200, 120]
+		}
+	};
+	$scope.doFileUpload = function(file, data) {
 		console.log(file);
-		console.log(data);
+		console.log(data.selectActualSize);
+		console.log($scope.imgCrop.data.crop_w[0]);
 	}
 });
