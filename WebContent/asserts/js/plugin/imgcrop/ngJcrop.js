@@ -15,9 +15,10 @@
  *		},
  *		"errorFile":{
  *		},
- *		"imfoMsg":"提示：请选择类型为jpg和png的图片，大小小于2MB",
- *		"errorMsg":{
- *			"maxSize":"警告：选择的图片大小超过2MB，请重新选择"
+ *		'imfoMsg' : '提示：请选择类型为jpg和png的图片，大小小于2MB，宽度小于${maxWidth}',
+ *		'errorMsg' : {
+ *			'maxSize' : '警告：选择的图片大小超过2MB，请重新选择',
+ *			'maxWidth':	'警告：选择的图片宽度不能超过${maxWidth}'
  *		}
  *	},
  *	"w_h_ratio":1.3333333333333333,
@@ -32,13 +33,14 @@
  */
 angular.module('ngImgCrop', [ 'ngFileUpload' ]).constant('defaultOption', {}).constant('defaultData', {
 	'uploadFile' : {
-		'maxSize' : '2MB',
+		'maxSize' : '10MB',
 		'accept' : 'image/jpeg,image/png',
 		'file' : {},
 		'errorFile' : {},
-		'imfoMsg' : '提示：请选择类型为jpg和png的图片，大小小于2MB',
+		'imfoMsg' : '提示：请选择类型为jpg和png的图片，大小小于2MB，宽度小于${maxWidth}',
 		'errorMsg' : {
-			'maxSize' : '警告：选择的图片大小超过2MB，请重新选择'
+			'maxSize' : '警告：选择的图片大小超过2MB，请重新选择',
+			'maxWidth':	'警告：选择的图片宽度不能超过${maxWidth}'
 		}
 	},
 	'w_h_ratio' : 4 / 3,
@@ -87,7 +89,12 @@ angular.module('ngImgCrop', [ 'ngFileUpload' ]).constant('defaultOption', {}).co
 				$scope.option.onChange = showCoords;
 				$scope.option.onSelect = showCoords;
 				$scope.option.aspectRatio = $scope.data.w_h_ratio;
-
+				//设置最大宽度
+				$scope.uploadFile.maxWidth=element.find(".imgcrop-content").width();
+				//设置错误信息中最大宽度
+				$scope.uploadFile.errorMsg.maxWidth=$scope.uploadFile.errorMsg.maxWidth.replace('${maxWidth}',$scope.uploadFile.maxWidth);
+				//设置提示信息中最大宽度提示
+				$scope.uploadFile.imfoMsg=$scope.uploadFile.imfoMsg.replace('${maxWidth}',$scope.uploadFile.maxWidth);
 				element.find(".imgCrop").Jcrop(
 					$scope.option, function() {
 						jcrop_api = this;
@@ -125,13 +132,9 @@ angular.module('ngImgCrop', [ 'ngFileUpload' ]).constant('defaultOption', {}).co
 				//文件变化
 				$timeout(function(){
 					$scope.$watch('uploadFile.file.$ngfBlobUrl', function(newValue, oldValue, scope) {
-						if(newValue && element.find('.jcrop-holder img')){
-							var _jcropImgs = element.find('.jcrop-holder img');
-							if(_jcropImgs.length>0){
-								angular.forEach(_jcropImgs,function(elt, i, array) {
-									elt.src = newValue;
-								})
-							}
+						if(newValue && element.find('.jcrop-holder img') && jcrop_api){
+//							jcrop_api.setOptions($scope.option);
+							jcrop_api.setImage(newValue);
 						}
 					});
 				});
@@ -147,13 +150,13 @@ angular.module('ngImgCrop', [ 'ngFileUpload' ]).constant('defaultOption', {}).co
 				+ '  		<div class="col-sm-7"> '
 				+ '  			<label class="col-sm-9">'
 				+ '					<span class="text-warning">{{uploadFile.invalidFile.$error?uploadFile.errorMsg[uploadFile.invalidFile.$error]:uploadFile.imfoMsg}}，</span>'
-				+ '					<span><a class="text-info" ngf-model-invalid="uploadFile.invalidFile" accept="{{uploadFile.accept}}" ngf-max-size="uploadFile.maxSize" ngf-select ng-model="uploadFile.file">点击上传</a></span></label>'
+				+ '					<span><a class="text-info" ngf-model-invalid="uploadFile.invalidFile" accept="{{uploadFile.accept}}" ngf-max-size="uploadFile.maxSize" ngf-max-width="uploadFile.maxWidth" ngf-select ng-model="uploadFile.file">点击上传</a></span></label>'
 				+ '             <label class="col-sm-3 text-right">'
 				+ '             <a class="btn btn-sm uploadfile m-l" ng-class="{true:\'btn-info\',false:\'btn-default\'}[!!uploadFile.file.name]" ng-disabled="!uploadFile.file.name" ng-click="fileUpload()">上传</a>'
 				+ '             </label>'
 				+ '  		</div>'
 				+ '  		<div class="col-sm-6 imgcrop-content"> '
-				+ '  			<img style="display:none;" ngf-src="uploadFile.file" /> '
+				+ '  			<img class="img-actural" style="display:none;" ngf-src="uploadFile.file" /> '
 				+ '  			<img class="img-responsive imgCrop" ngf-src="uploadFile.file" /> '
 				+ '  		</div> '
 				+ '  		<div class="col-sm-5"> '

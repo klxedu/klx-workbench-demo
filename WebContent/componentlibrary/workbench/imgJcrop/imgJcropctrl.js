@@ -7,9 +7,10 @@ angular.module('Module.imgJcrop',['ngImgCrop']).controller('imgJcropctrl', funct
 				'accept' : 'image/jpeg,image/png',
 				'file' : {},
 				'errorFile' : {},
-				'imfoMsg' : '提示：请选择类型为jpg和png的图片，大小小于2MB',
+				'imfoMsg' : '提示：请选择类型为jpg和png的图片，大小小于2MB，宽度小于${maxWidth}',
 				'errorMsg' : {
-					'maxSize' : '警告：选择的图片大小超过2MB，请重新选择'
+					'maxSize' : '警告：选择的图片大小超过2MB，请重新选择',
+					'maxWidth':	'警告：选择的图片宽度不能超过${maxWidth}'
 				}
 			},
 			'w_h_ratio' : 2 / 1,
