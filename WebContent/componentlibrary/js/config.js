@@ -6,8 +6,15 @@
  * 
  */
 function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
-		IdleProvider, KeepaliveProvider) {
-
+		IdleProvider, KeepaliveProvider,$translateProvider) {
+	$translateProvider.useStaticFilesLoader({
+		  files: [{
+		      prefix: '../asserts/js/plugin/formValidation/locales/',
+		      suffix: '.json'
+		    }]
+  });
+	$translateProvider.preferredLanguage('zh');
+	$translateProvider.useSanitizeValueStrategy(null);
 	// Configure Idle settings
 	IdleProvider.idle(5); // in seconds
 	IdleProvider.timeout(120); // in seconds

@@ -326,4 +326,110 @@ angular.module('tools', [])
 			});
 		}
 	}
-}]);
+}])
+.directive('tableOperation',function($timeout,$filter){
+	return {
+		restrict: "EA",
+		scope: {
+			options : '=',
+			row : '='
+		},
+		replace: true,
+		controller: function($scope){
+//			var defaultOpts = {
+//					"isMore":true,
+//					"showModel":"icon/text",
+//					"showNum":3,
+//					"cols":[{
+//						"operate":"add",
+//						"operateText":"新增",
+//						"operateIcon":"glyphicon glyphicon-plus",
+//						"event":function(row){
+//							
+//						}
+//					}]
+//			};
+			//显示数量 默认3
+			$scope.showNum = $scope.options.showNum || 3;
+			//是否包含更多 默认是
+			$scope.isMore = $scope.options.isMore==undefined?true:$scope.options.isMore;
+			//显示形式  图标/文字 默认图标
+			$scope.showModel = $scope.options.showModel || 'icon';
+			$scope.cols = $scope.options.cols;
+			//显示操作数组
+			$scope.displayCols = [];
+			//更多操作数组
+			$scope.moreCols = [];
+			//点击事件
+			$scope.onClickEvent = function(event){
+				event($scope.row);
+//				if(angular.isArray(arrs)){
+//					var _func,_params = [];
+//					angular.forEach(arrs,function(elt, i, array) {
+//						if(angular.isFunction(elt)){
+//							_func = elt;
+//						} else{
+//							//获取作用域的值
+//							_params.push(_doGetScopeValue($scope,elt));
+//						}
+//					})
+					//_func(_params.slice());
+//				}
+			}
+			//获取scope中的实际值
+			var _doGetScopeValue = function($scope,k){
+				//属性分割并获取最终值对象
+				var _v = $scope;
+				angular.forEach(k.split(/\[|\]|\./),function(elt, i, array) {
+					if(elt && _v){
+						if(isNaN(parseInt(elt))){
+							_v = _v[elt];
+						}else{
+							_v = _v[parseInt(elt)];
+						}
+					}
+				})
+				return _v;
+			}
+			var _arrayPush = function(arr,col){
+				if(col.operate){
+					var langOpt = $.workbench.lang[$.workbench.defaultLang].operate[col.operate];
+					if(langOpt){
+						col.operateText = langOpt.text || col.operateText;
+						col.operateIcon = langOpt.icon || col.operateIcon;
+					}else if(!col.operateText || !col.operateIcon){
+						throw Error("your define operate '"+col.operate+"' not in workbench lang and not define operateText or operateIcon");
+					}
+					
+				}
+				arr.push(col);
+			}
+			if($scope.isMore && $scope.cols.length-$scope.showNum>1){
+				for(var i=0;i<$scope.showNum;i++){
+					_arrayPush($scope.displayCols, $scope.cols[i]);
+				}
+				for(var i=$scope.showNum;i<$scope.cols.length;i++){
+					_arrayPush($scope.moreCols, $scope.cols[i]);
+				}
+			}else{
+				for(var i=0;i<$scope.cols.length;i++){
+					_arrayPush($scope.displayCols, $scope.cols[i]);
+				}
+			}
+		},
+		link: function($scope,element,attrs){
+		},
+		template: function(){
+			return " <div class=\"btn-group manage\"> " 
+			+" 	<a ng-repeat=\"col in displayCols\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\" title=\"{{col.operateText}}\">{{showModel=='icon'?'':col.operateText}}</a> " 
+			+" 	<a title=\"更多\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" ng-if=\"isMore&&moreCols.length>0\"> " 
+			+" 			<span ng-class=\"{'icon':'glyphicon glyphicon-cog',false:''}[showModel]\">{{showModel=='icon'?'':'更多'}}</span> " 
+			+" 			<span class=\"caret\"></span> " 
+			+" 	</a> " 
+			+" 	<ul class=\"dropdown-menu dropdown-menu-right\" ng-if=\"isMore&&moreCols.length>0\"> " 
+			+"         <li ng-repeat=\"col in moreCols\"><a ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\">{{showModel=='icon'?'':col.operateText}}</a></li> " 
+			+" 	</ul> " 
+			+" </div> " ;
+		}
+	};
+});

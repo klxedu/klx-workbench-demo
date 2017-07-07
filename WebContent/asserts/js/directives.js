@@ -325,6 +325,23 @@ function cut() {
 }
 
 /**
+ * 平台简单国际化，主要应对名词统一场景
+ */
+function gtTranslate(){
+	return function(input){
+		if(input){
+			//operate.add.text
+			var result = $.workbench.lang[$.workbench.defaultLang];
+			$.each(input.split('.'), function(i, elt) {
+				result = result[elt];
+			})
+			return result;
+		}
+		return "";
+	}
+}
+
+/**
  * 
  * Pass all functions into module
  */
@@ -335,4 +352,4 @@ angular.module('klxTemplate').directive('pageTitle', pageTitle).directive(
 				"selectdialogCancel", selectdialogCancel).directive(
 				"selectdialogOk", selectdialogOk).directive("selectDialog",
 				selectDialog).directive("gridSelection", girdCheckBoxSelection)
-		.factory("selectDialogFactory", selectDialogFactory).filter('cut',cut);
+		.factory("selectDialogFactory", selectDialogFactory).filter('cut',cut).filter('gtTranslate',gtTranslate);
