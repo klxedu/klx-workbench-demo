@@ -19,6 +19,7 @@
 	height: 100%;
 }
 .login{
+    width: 350px;
 	background: #FFFFFF;
 	padding: 40px 60px;
 	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
@@ -27,6 +28,9 @@
 .login h1{
 	margin-top: 0;
 	margin-bottom: 36px;
+	font-size: 24px;
+	color: #333;
+	font-weight: 500;
 }
 .login .Captcha{
 	height: 34px;
@@ -56,4 +60,8 @@ button.btn-primary:hover, button.btn-primary:focus, button.btn-primary:active, b
 }
 .form-control:focus, .single-line:focus {
     border-color: #0571BE !important;
+}
+.login-bg>img{
+	padding-right: 23px;
+	padding-top: 35px;
 }
