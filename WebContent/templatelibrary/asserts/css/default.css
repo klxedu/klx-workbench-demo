@@ -2,8 +2,12 @@
 	background: #fff;
 }
 .navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus{
-    background-color: #0571BE;
-    color: white;
+    background-color: #fff;
+    color: #0571BE;
+}
+.navbar-default .nav > li.active > a:hover, .navbar-default .nav > li.active > a:focus{
+	background-color: #0571BE;
+    color: #fff;
 }
 .group-title{
 	margin: 0;
@@ -26,6 +30,9 @@
 }
 .nav-second-level li.active{
 	background-color: #0571BE;
+}
+.nav-second-level li.active:hover{
+	background: #0571BE;
 }
 .navbar-static-side{
 	background: #fff;
@@ -55,7 +62,6 @@
 	border: none;
 }
 #side-menu .nav{
-	
 	border: none;
 }
 .nav-second-level>li>a{
@@ -142,14 +148,4 @@ user{
 }
 .user #userMenu{
 	top: 66px;
-}
-.logo-img{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 106px;
-    height: 36px;
-}
-#logo{
-	
 }
