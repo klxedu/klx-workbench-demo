@@ -1,104 +1,73 @@
 <nav class="navbar-default navbar-static-side" role="navigation">
 	<div class="sidebar-collapse">
+		<div class="nav"><span minimaliza-sidebar></span><a class="navTilte pull-left"><span class="glyphicon glyphicon-cog titleIcon"></span>{{main.navTitle}}</a></div>
 		<ul side-navigation class="nav metismenu" id="side-menu">
-			<li class="nav-header">
+			<li ng-class="{active: $state.includes('frontendtemplate')}" class="">
+				<ul class="nav nav-second-level collapse in" ng-if="main.navStart == 1">
+					<p class="group-title">
+						<a>基础设置</a>
+					</p>
+					<li ui-sref-active="active">
+						<a ui-sref="frontendtemplate.formValidation" href="/frontendtemplateformValidation/"><i class="glyphicon glyphicon-cog"></i>表单</a>
+					</li>
 
-				<div class="profile-element" uib-dropdown>
-					<img alt="image" class="img-circle" src="../img/profile_small.jpg" />
-					<a uib-dropdown-toggle href>
-                            <span class="clear">
-                                <span class="block m-t-xs">
-                                    <strong class="font-bold">快来学模板库</strong>
-                             </span>
-                                <span class="text-muted text-xs block">切换皮肤<b class="caret"></b></span>
-                            </span>
-                    </a>
-                    <ul uib-dropdown-menu class="animated fadeInRight m-t-xs">
-                        <li><a href="../index.html">快来学整体库</a></li>
-                        <li><a href="../componentlibrary/index.html">快来学控件库</a></li>
-                    </ul>
-				</div>
-				<div class="logo-element">IN+</div>
-			</li>
-			<li ng-class="{active: $state.includes('frontendtemplate')}"
-				class="active"><a href=""><i
-					class="  glyphicon glyphicon-gift"></i> <span class="nav-label">前端模板</span><span
-					class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse in"
-					ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active"><a
-						ui-sref="frontendtemplate.formValidation"
-						href="/frontendtemplateformValidation/">表单</a></li>
-				</ul>
-				<ul class="nav nav-second-level collapse in"
-					ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active"><a
-						ui-sref="frontendtemplate.StandardList"
-						href="/frontendtemplateStandardList/">标准列表</a></li>
-				</ul>
-				<ul class="nav nav-second-level collapse in"
-					ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active"><a
-						ui-sref="frontendtemplate.uploading"
-						href="/frontendtemplateuploading/">上传</a></li>
-				</ul>
-				<ul class="nav nav-second-level collapse in"
-					ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active"><a
-						ui-sref="frontendtemplate.treemenutable"
-						href="/frontendtemplatetreemenutable/">树+列表</a></li>
-				</ul>
-				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active" class="active">
-						<a ui-sref="frontendtemplate.check" href="/frontendtemplatecheck/">考勤</a>
+					<li ui-sref-active="active">
+						<a ui-sref="frontendtemplate.StandardList" href="/frontendtemplateStandardList/"><i class="glyphicon glyphicon-cog"></i>标准列表</a>
 					</li>
+
+					<li ui-sref-active="active">
+						<a ui-sref="frontendtemplate.uploading" href="/frontendtemplateuploading/"><i class="glyphicon glyphicon-cog"></i>上传</a>
+					</li>
+					<p class="group-title">
+						<a>推荐设置</a>
+					</p>
+					<li ui-sref-active="active">
+						<a ui-sref="frontendtemplate.treemenutable" href="/frontendtemplatetreemenutable/"><i class="glyphicon glyphicon-cog"></i>树+列表</a>
+					</li>
+
+					<li ui-sref-active="active" >
+						<a ui-sref="frontendtemplate.check" href="/frontendtemplatecheck/"><i class="glyphicon glyphicon-cog"></i>考勤</a>
+					</li>
+
+					<li ui-sref-active="active" >
+						<a ui-sref="frontendtemplate.model" href="/frontendtemplatemodel/"><i class="glyphicon glyphicon-cog"></i>勾选摸态框</a>
+					</li>
+
+					<li ui-sref-active="active">
+						<a ui-sref="frontendtemplate.basiciinformation" href="/frontendtemplatebasiciinformation/"><i class="glyphicon glyphicon-cog"></i>基础信息维护</a>
+					</li>
+
+					<li ui-sref-active="active" >
+						<a ui-sref="frontendtemplate.signin" href="/signin"><i class="glyphicon glyphicon-cog"></i>签到model</a>
+					</li>
+
+					<li ui-sref-active="active" >
+						<a ui-sref="frontendtemplate.statistics" href=""><i class="glyphicon glyphicon-cog"></i>数据统计</a>
+					</li>
+
+					<li ui-sref-active="active" >
+						<a ui-sref="login" href=""><i class="glyphicon glyphicon-cog"></i>登录</a>
+					</li>
+					
 				</ul>
-				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active" class="active">
-						<a ui-sref="frontendtemplate.model" href="/frontendtemplatemodel/">勾选摸态框</a>
+
+
+
+				<ul class="nav nav-second-level collapse in" ng-if="main.navStart == 2">
+					<li ui-sref-active="active">
+						<a ui-sref="systemdemo.modeltbale" href="/systemdemomodeltbale/"><i class="glyphicon glyphicon-cog"></i>model表格类</a>
 					</li>
-				</ul>
-				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active" class="active">
-						<a ui-sref="frontendtemplate.basiciinformation" href="/frontendtemplatebasiciinformation/">基础信息维护</a>
+					<li ui-sref-active="active">
+						<a ui-sref="systemdemo.modelform" href="/systemdemomodelform/"><i class="glyphicon glyphicon-cog"></i>model表单类</a>
 					</li>
-				</ul>
-				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active" class="active">
-						<a ui-sref="frontendtemplate.signin" href="/signin">签到model</a>
+					<li ui-sref-active="active">
+						<a ui-sref="systemdemo.modificationmenu" href="/modificationmenu/"><i class="glyphicon glyphicon-cog"></i>菜单调整</a>
 					</li>
-				</ul>
-				<ul class="nav nav-second-level in collapse" ng-class="{in: $state.includes('frontendtemplate')}">
-					<li ui-sref-active="active" class="active">
-						<a ui-sref="frontendtemplate.statistics" href="/statistics">数据统计</a>
-					</li>
-				</ul>
-			</li>
-			<li ng-class="{active: $state.includes('systemdemo')}"
-				class="active"><a href=""><i
-					class="  glyphicon glyphicon-gift"></i> <span class="nav-label">系统界面</span><span
-					class="fa arrow"></span></a>
-				<ul class="nav nav-second-level collapse in"
-					ng-class="{in: $state.includes('systemdemo')}">
-					<li ui-sref-active="active"><a
-						ui-sref="systemdemo.modeltbale"
-						href="/systemdemomodeltbale/">model表格类</a>
-					</li>
-					<li ui-sref-active="active"><a
-						ui-sref="systemdemo.modelform"
-						href="/systemdemomodelform/">model表单类</a>
-					</li>
-					<li ui-sref-active="active"><a
-						ui-sref="systemdemo.modificationmenu"
-						href="/modificationmenu/">菜单调整</a>
-					</li>
-					<li ui-sref-active="active"><a
-						ui-sref="systemdemo.imgcrop"
-						href="/imgcrop/">图片裁剪</a>
+					<li ui-sref-active="active">
+						<a ui-sref="systemdemo.imgcrop" href="/imgcrop/"><i class="glyphicon glyphicon-cog"></i>图片裁剪</a>
 					</li>
 				</ul>
 			</li>
 		</ul>
-
 	</div>
 </nav>

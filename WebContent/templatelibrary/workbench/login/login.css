@@ -1,0 +1,42 @@
+
+.login-bg{
+	background: #0571BE;
+	height: 100%;
+}
+.loginscreen{
+	width: 100%;
+	height: 100%;
+}
+.Main-view{
+	height: 100%;
+}
+#login .row{
+	height: 100%;
+}
+.login{
+	background: #FFFFFF;
+	margin-top: 126px;
+	padding: 40px 60px;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+	border-radius: 10px;
+    position: relative;
+    top: 50%;
+    margin-top: -185px;
+}
+.login h1{
+	margin-top: 0;
+	margin-bottom: 36px;
+}
+.login .Captcha{
+	height: 34px;
+}
+.login .col-md-7{
+	padding: 0;
+}
+.login .col-md-5{
+	padding: 0;
+	text-align: center;
+}
+.login .col-md-5 img{
+	padding-left: 15px;
+}

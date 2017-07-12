@@ -134,12 +134,14 @@ function iboxToolsFullScreen($timeout) {
 function minimalizaSidebar($timeout) {
 	return {
 		restrict : 'A',
-		template : '<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="" ng-click="minimalize()"><i class="fa fa-bars"></i></a>',
+		template : '<span  class="navbar-minimalize pull-right minimalize-styl-2 " href="" ng-click="minimalize()"><i ng-class={true:"fa-angle-double-left",false:"fa-angle-double-right"}[isActive] class="fa fa-angle-double-left" style="font-size:24px;cursor:pointer;"></i></span>',
 		controller : function($scope, $element) {
+			$scope.isActive=true;
 			$scope.minimalize = function() {
 				$("body").toggleClass("mini-navbar");
 				if (!$('body').hasClass('mini-navbar')
 						|| $('body').hasClass('body-small')) {
+					$scope.isActive=true;
 					// Hide menu in order to smoothly turn on when maximize menu
 					$('#side-menu').hide();
 					// For smoothly turn on menu
@@ -152,6 +154,7 @@ function minimalizaSidebar($timeout) {
 						$('#side-menu').fadeIn(400);
 					}, 100);
 				} else {
+					$scope.isActive=false;
 					// Remove all inline style from jquery fadeIn function to
 					// reset menu state
 					$('#side-menu').removeAttr('style');

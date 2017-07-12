@@ -24,9 +24,10 @@
     <link href="../skin/backconsole/css/angular-growl.min.css" rel="stylesheet" />
 
     <!-- Main klxTemplate CSS files -->
-    <link href="../asserts/css/animate.css" rel="stylesheet">
-    <link id="loadBefore" href="../asserts/css/style.css" rel="stylesheet">
-    <link href="../asserts/css/securityworkbench.css" rel="stylesheet">
+    <link href="asserts/css/animate.css" rel="stylesheet">
+    <link id="loadBefore" href="asserts/css/style.css" rel="stylesheet">
+    <link href="asserts/css/securityworkbench.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="asserts/css/default.css"/>
 
 
 </head>
@@ -36,7 +37,7 @@
 <body ng-controller="MainCtrl as main" class="{{$state.current.data.specialClass}}" landing-scrollspy id="page-top">
 
 <!-- Main view  -->
-<div ui-view></div>
+<div class="Main-view" ui-view></div>
 
 <!-- jQuery and Bootstrap -->
 <script src="../common/jquery/jquery-2.1.1.min.js"></script>
@@ -52,6 +53,8 @@
 <!-- SlimScroll -->
 <script src="../common/slimscroll/jquery.slimscroll.min.js"></script>
 
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
 
 <!-- Main Angular scripts-->
 

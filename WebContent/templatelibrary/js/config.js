@@ -25,6 +25,25 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 				url : "/index",
 				templateUrl : "views/common/content.html",
 			})
+			.state('login', {
+	            url: "/login/:data",
+	            templateUrl: "workbench/login/login.html",
+	            data: { pageTitle: '', specialClass: 'login-bg' },
+	            controller: "gtilesloginctrl",
+	            resolve: {
+	                loadPlugin: function ($ocLazyLoad) {
+	                    return $ocLazyLoad.load([
+	                        {
+	                            name: 'Module.gtileslogin',
+	                            files: [
+	                            './workbench/login/login.css',
+	                            './workbench/login/gtilesloginctrl.js'
+	                            ]
+	                        }
+	                    ]);
+	                }
+	            }
+	        })
 			.state('index.minor', {
 				url : "/minor",
 				templateUrl : "views/minor.html"

@@ -1,0 +1,322 @@
+/*试卷生成css   state*/
+.control-label.text-left{text-align:left}
+.form-control{
+display: inline-block;
+			}
+.form-control.tm{
+width: 60%;
+			}
+.form-horizontal .control-label{
+padding-top:9px}
+/*试卷生成css   end*/
+/*列表类css   state*/
+td,th{border:1px solid #ccc;}
+table{margin-top:15px}
+.glyphicon{top:0}
+
+.table > thead > tr > th{background:white;vertical-align:middle;text-align:center;}
+body{font-family: Microsoft YaHei,\5FAE\8F6F\96C5\9ED1,sans-serif}
+textarea{resize:none;}
+h5,.h5{font-size:16px;}
+h6,.h6{font-size:14px;}
+a,
+a:hover,
+a:focus,
+a:visited{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn.glyphicon{
+	top:0;
+}
+.viewcount {height:31px}
+.text-success{color:#0b0;}
+.text-danger{color:#f21;}
+.form-control{
+	display: inline-block;
+	vertical-align: middle;
+	font-size:12px;
+}
+.table > tbody > tr > td{
+	text-align: center;
+    vertical-align: middle;
+}	
+ .table{   border: 1px solid #ccc;}
+ .table_a{
+ 	color: rgb(103, 106, 108);
+    line-height: 17px;
+    font-size: 13px;
+    font-family: Microsoft YaHei,\5FAE\8F6F\96C5\9ED1,sans-serif;
+    margin-bottom: 0px;
+    display: inline-block;
+ }
+
+ .ibox-content > .table-responsive{
+overflow-x: visible;
+ }
+ .table-responsive.cover{
+ overflow-x: visible;
+ }
+ 
+.ibox-content .top-dock .btn-search{
+ 	margin-bottom: 0px;
+    margin-left: 3px;
+}
+.form-inline .date-picker{
+	min-width:170px;
+}
+.ibox-content{
+	border:0px solid black;
+}
+
+/*列表类css  end*/
+/*按钮类css state*/
+td ul.dropdown-menu-right{/*此样式用于控制分裂式下拉菜单对其方式*/
+	right: 0;
+    left: auto;
+}
+
+/*列表td下的div操作列*/
+.div-opt a{
+	margin:0 5px;
+}
+/*按钮类css  end*/
+/*选中类css state*/
+.active-strong{
+	font-weight: bolder;
+}
+/*选中类css  end*/
+.list-group-item.list-group-item-success{
+    color: #3c763d;
+    background-color: #dff0d8;
+}
+.list-group-item.list-group-item-danger{
+    color: #a94442;
+    background-color: #f2dede;
+}
+.list-group-item.list-group-item-info{
+    color: #31708f;
+    background-color: #d9edf7
+}
+.w-100{
+	width:100%;
+}
+.font-22{
+	font-size:22px
+}
+/*进度控制样式*/
+ .font-11{
+ min-width: 220px;
+ } 
+ .font-10{
+ min-width: 200px;
+ }
+ .font-9{
+ min-width: 180px;
+ } 
+ .font-8{
+ min-width: 160px;
+ }
+ .font-7{
+ min-width: 140px;
+ }
+ .font-6{
+ min-width: 120px;
+ }
+ .font-5{
+ min-width: 100px;
+ }
+ .font-4{
+ min-width: 80px;
+ }
+ .font-3{
+ min-width: 60px;
+ }
+ .font-2{
+ min-width: 45px;
+ }
+ input.mar-r-20{
+ margin-right:20px
+ }
+ input.mar-r-10{
+ margin-right:10px
+ }
+ .manage{
+ font-size: 13px;
+ }
+.manage>a{
+	font-size:13px;
+}
+/*全局样式*/
+
+.tree-grid.table{
+	border:1px solid #ccc
+}
+.tree-icon{
+	color:#1ab394
+}
+/*列表树*/
+/*临时属性修改 资源上传页面按钮间距太小*/
+.btn-white {
+	margin: 0px  15px;
+}
+textarea.form-control {
+	 height : 150px;
+}
+label {
+	font-weight : normal !important;
+}
+.ibox-content>.row{
+	margin:0 !important;
+}
+.btn-group>a:first-child{
+	margin-left: 0px !important;
+}
+.table td p{
+	margin: 0;
+}
+#manage-btn{
+	text-align:center !important;
+}
+	.operation{
+		text-align: right;
+	}
+	.advanced-search{
+		border: 0px solid transparent;
+		height: 0px;
+		overflow: hidden;
+	}
+	.advanced-search.active{
+		height: 100%;
+		    padding: 15px 0;
+		border: 1px solid #e5e6e7;
+		overflow: visible;
+	}
+	/*插件样式修改*/
+	.selectize-input.focus{
+		border-color: #1ab394;
+	}
+	.selectize-input{
+		border: 1px solid #e5e6e7;
+		border-radius: 0;
+	}
+	.selectize-input.selectize-focus{
+		border-color: #1ab394 !important;
+	}
+	.ui-select-choices-row{
+		color: #1ab394;
+		background:#fff;
+	}
+	.ui-select-choices-row:hover{
+		background: #1ab394 !important;
+		color: #fff;
+	}
+	.selectize-dropdown.group-tree .ui-select-breadcrumbs{
+		background: #293846;
+	}
+	/*modal树样式*/
+	.modal-tree .modal-body{
+		padding-left:0px;
+		padding-right:0px;
+		
+	}
+	.modal-tree .over-w-h{
+		
+	}
+	.modal-tree .tree .ibox-content{
+		padding-left:0px;
+		border: 1px solid #ddd;
+		min-height:400px;
+	}
+	.modal-tree .table{
+		margin-top:0px
+	}
+	.modal-tree .ibox-content{
+		padding-top: 0px;
+    	padding-right: 0px;
+    	padding-left:0px;
+	}
+	.modal-tree .table{
+		margin-top:0px;
+	}
+	.modal-tree h4{
+		padding-bottom: 11px;
+    	padding-top: 5px;
+		font-size:15px;
+		padding-left:15px;
+		text-align:left;
+		border-bottom:1px solid #ddd;
+	}
+	.basicinfo .active{
+		display: block;
+		height: 35px;
+		transition: all 0.6s;
+	}
+	.basicinfo .noactive{
+		display: block;
+		height: 0px;
+		overflow: hidden;
+		min-height: 0;
+	}
+	.basicinfo .noactive input{
+		border:none;
+	}
+	.basicinfo .col-sm-4,.col-sm-2{
+		text-align: right;
+	}
+	.basicinfo.form-horizontal{
+		margin-top: 20px;
+	}
+	.basicinfo .photo-img{
+		text-align: center;
+	}
+	.basicinfo .img-responsive{
+		padding: 5px;
+		display: inline-block;
+	}
+	.signin.col-sm-6{
+		padding: 0;
+		padding-bottom: 15px;
+	}
+	.signin-width{
+		width: 70% !important;
+	}
+	.signin-img{
+		height: 20px;
+		cursor: pointer;
+	}
+	#img-detail{
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 3040;
+	    background-color: rgba(0,0,0,0.5);
+	}
+	#img-detail .imgdetail{
+		margin: 30px auto;
+		position: relative;
+	}
+	.signin-img-th{
+		max-width:162px;
+	}
+	pre{
+	    white-space: pre-wrap;
+	}
+	.table.fixed{
+		table-layout:fixed;
+	}
+	.text-ellipsis{
+		margin: 0;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	white-space: nowrap;
+	}
+	.tfoot #Ribbon{
+		margin-top: 6px;
+	}
+	.tfoot #Ribbon .caret{
+		margin-bottom: 3px;
+	}
