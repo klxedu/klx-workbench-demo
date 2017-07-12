@@ -50,6 +50,9 @@
 button.btn-primary{
 	background: #0571BE;
 }
-button.btn-primary:hover{
-	background: #0571BE;
+button.btn-primary:hover, button.btn-primary:focus, button.btn-primary:active, button.btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:hover, .btn-primary.active:focus{
+	background: #0571BE
+}
+.form-control:focus, .single-line:focus {
+    border-color: #0571BE !important;
 }
