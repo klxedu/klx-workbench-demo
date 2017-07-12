@@ -40,3 +40,16 @@
 .login .col-md-5 img{
 	padding-left: 15px;
 }
+.logo-img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 106px;
+    height: 36px;
+}
+button.btn-primary{
+	background: #0571BE;
+}
+button.btn-primary:hover{
+	background: #0571BE;
+}
