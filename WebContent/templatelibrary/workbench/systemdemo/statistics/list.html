@@ -1,0 +1,94 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>这个是当前页的标题</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li class="active">
+                <strong>model中表格示例</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+<div class="wrapper wrapper-panel animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+        	<div class="ibox-content">
+        		<h3>配置注意事项</h3>
+        		<p>配置注意事项配置注意事项配置注意事项配置注意事项配置注意事项配置注意事项配置注意事项</p>
+        	</div>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+            	<div class="ibox-title">
+					<h3 class="conten-title">菜单维护</h3>
+				</div>
+        		<div class="ibox-content">
+					<div class="row" id="uiTree">
+						<div class="col-md-4">
+							<div ui-tree="treeOptions" id="firstTreeRoot" data-max-depth=1 data-clone-enabled=false> 
+		                        <h3>一级菜单<i class="glyphicon glyphicon-plus pull-right" title="新增"></i></h3>
+		                        <ol ui-tree-nodes ng-model="data" class="ui-tree-item">
+		                            <li ng-repeat="node in data" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+		                        </ol>
+		                    </div>
+						</div>
+						<div class="col-md-8">
+							<div class="col-md-6 uitree">
+								<div ui-tree="treeOptions" id="secondTreeRoot" data-max-depth=1 data-clone-enabled=false >
+									<h3>二级菜单<i ng-click="allPushLabel()" class="glyphicon glyphicon-trash pull-right" title="清空"></i></h3>
+			                        <ol ui-tree-nodes ng-model="item">
+			                            <li ng-repeat="node in item" ui-tree-node ng-include="'nodes_renderer1.html'"></li>
+			                        </ol>
+			                    </div>
+							</div>
+							<div class="col-md-6 label">
+								<div class="lable-item" ng-repeat="item in lables">
+									{{item.title}} <span ng-click="pushItme($index)" class="glyphicon glyphicon-plus pull-right" title="添加到二级菜单"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+               	</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="nodes_renderer.html">
+	<div class="pull-left tree-handle" ui-tree-handle>
+      <span class="glyphicon glyphicon-list"></span>
+    </div>
+    <div class="tree-node tree-node-content"  ng-class="{true:'active',false:''}[selectNode.id==node.id]" id="{{node.id}}" ng-click="select(this)">
+        <span class="pull-right" data-nodrag ng-click="remove(this)"><span title="删除" class="glyphicon glyphicon-trash"></span></span>
+        <span class="pull-right" data-nodrag ng-click="edit(this)"><span title="编辑" class="glyphicon glyphicon-edit"></span></span>
+        <span class="ui-tree-icon"><span class="" ng-class="node.icon"></span></span>
+        {{node.title}}
+    </div>
+    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+        </li>
+    </ol>
+</script>
+<script type="text/ng-template" id="nodes_renderer1.html">
+	<div class="pull-left tree-handle" ui-tree-handle>
+      <span class="glyphicon glyphicon-list"></span>
+    </div>
+    <div class="tree-node tree-node-content">
+        <span class="pull-right" data-nodrag ng-click="pushLable($index)"><span title="删除" class="glyphicon glyphicon-trash"></span></span>
+        <span class="pull-right" data-nodrag ng-click="edit(this)"><span title="编辑" class="glyphicon glyphicon-edit"></span></span>
+        <span class="ui-tree-icon"><span class="" ng-class="node.icon"></span></span>
+        {{node.title}}
+    </div>
+    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+        <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+        </li>
+    </ol>
+</script>

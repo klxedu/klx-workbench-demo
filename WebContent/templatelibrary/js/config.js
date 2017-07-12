@@ -396,6 +396,28 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 						}
 					}
 				})
+				.state('systemdemo.statistics',
+				{
+					url : "statistics/:data",
+					templateUrl : "./workbench/systemdemo/statistics/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "statisticsctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+									.load([ {
+										name : 'Module.statistics',
+										files : [
+												'./workbench/systemdemo/statistics/statistics.css',
+												'./workbench/systemdemo/statistics/statistics.js'
+												],
+										serie : true
+									}]);
+						}
+					}
+				})
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;
