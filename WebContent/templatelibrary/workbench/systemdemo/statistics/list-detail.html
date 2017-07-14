@@ -13,21 +13,81 @@
 	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
     </div>
 </div>
-<div id="statistics">
-	<div class="wrapper wrapper-content animated fadeInRight info">
+<div id="statisticsDetail">
+	<div class="wrapper wrapper-cont animated fadeInRight">
 	    <div class="row">
 	        <div class="col-lg-12">
 	            <div class="ibox float-e-margins">
 	            	<div class="ibox-title">
-						<h3 class="conten-title">综述</h3>
-					</div>
-	        		<div class="ibox-content">
-						<div class="row text-center">
-							<div class="col-md-3"><span class="count text-primary">100</span><p>考试数</p></div>
-							<div class="col-md-3"><span class="count text-info">23</span><p>进行中</p></div>
-							<div class="col-md-3"><span class="count text-danger">13</span><p>已结束</p></div>
-							<div class="col-md-3"><span class="count text-primary">3</span><p>已取消</p></div>
+	            		<div class="row"></div>
+						<h3 class="conten-title col-md-3">单位排行榜</h3>
+						<div class="col-md-9">
+							<div class="row">
+								<div class="col-md-2 p-t-6">
+									<a id="loca" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						                	北京市西城区
+						                	<span class="caret"></span>
+						           	</a>
+						           	<ul id="locaMenu" class="dropdown-menu" aria-labelledby="loca">
+									    <li>修改密码</li>
+									    <li>注销</li>
+									</ul>
+								</div>
+								<div class="col-md-2 p-t-6">
+									<div class="form-inline">
+										<label>
+									      <input type="checkbox"> 查询子部门
+									    </label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-inline">
+										<select name="" class="form-control">
+											<option value="1">搜索条件</option>
+										</select>
+										<input class="form-control" type="text" name="" id="" value="" />
+										<button type="button" class="btn btn-primary search">搜索</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									   <i class="glyphicon glyphicon-save"></i> 导出 <span class="caret"></span>
+									  </button>
+									  <ul class="dropdown-menu">
+									    <li>Action</li>
+									    <li>Another action</li>
+									    <li>Something else here</li>
+									  </ul>
+								</div>
+							</div>
 						</div>
+					</div>
+	        		<div class="ibox-content" id="detail">
+	        			<div class="row">
+	        				<div class="col-md-6" id="echartBox">
+								<ng-echart-bar count="count" option="option" el="#btnaaa"></ng-echart-bar>
+	        				</div>
+	        				<div class="col-md-6" id="">
+	        					<div class="row detail">
+	        						<div class="col-md-6" title="支部生活杂志社">A&nbsp;&nbsp;支部生活杂志社</div>
+	        						<div class="col-md-6">A&nbsp;&nbsp;中国电子北京公司</div>
+	        						<div class="col-md-6" title="支部生活杂志社">A&nbsp;&nbsp;支部生活杂志社</div>
+	        						<div class="col-md-6">A&nbsp;&nbsp;中国电子北京公司</div>
+	        						<div class="col-md-6" title="支部生活杂志社">A&nbsp;&nbsp;支部生活杂志社</div>
+	        						<div class="col-md-6">A&nbsp;&nbsp;中国电子北京公司</div>
+	        						<div class="col-md-6" title="支部生活杂志社">A&nbsp;&nbsp;支部生活杂志社</div>
+	        						<div class="col-md-6">A&nbsp;&nbsp;中国电子北京公司</div>
+	        						<div class="col-md-6" title="支部生活杂志社">A&nbsp;&nbsp;支部生活杂志社</div>
+	        						<div class="col-md-6">A&nbsp;&nbsp;中国电子北京公司</div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="next">
+	        				<span class="glyphicon glyphicon-chevron-right"></span>
+	        			</div>
+	        			<div class="prev">
+	        				<span class="glyphicon glyphicon-chevron-left"></span>
+	        			</div>
 	               	</div>
 	            </div>
 	        </div>
@@ -37,126 +97,148 @@
 	    <div class="row">
 	        <div class="col-lg-12">
 	            <div class="ibox float-e-margins">
-	            	<div class="ibox-title">
-						<h3 class="conten-title">菜单维护</h3>
-					</div>
-	        		<div class="ibox-content">
-	        			<div class="row">
-							<div class="col-md-6">
+        			<div class="row" id="list">
+        				<div class="col-md-6">
+        					<div class="list">
 								<div class="row">
-									<div class="list">
-										<div class="col-md-12 list-info-title">
-											<p>2017年第一次考试</p>
-											<p>2017-22-22至2017-33-33</p>
-										</div>
-										<div class="col-md-6 list-info-rate text-center">
-											通过率<span class="rate text-success">99%</span>
-										</div>
-										<div class="col-md-6 list-info-detail text-center">
-											<p><a class="default">考试人数</a><a class="default">1000人</a></p>
-											<p><a class="default">缺考人数</a><a>1000人</a></p>
-											<p><a class="default">通过人数</a><a>1000人</a></p>
-											<p><a class="default" style="padding-right: 6px;">未通过人数</a><a>1000人</a></p>
-										</div>
-										<p class="col-md-12 text-right"><a>查看详情</a></p>
+									<div class="col-md-12 list-info-title">
+										<span>考核公司1</span><span class="pull-right">通过率：99%</span>
 									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="row">
-									<div class="list">
-										<div class="col-md-12 list-info-title">
-											<p>2017年第一次考试</p>
-											<p>2017-22-22至2017-33-33</p>
-										</div>
-										<div class="col-md-6 list-info-rate text-center">
-											通过率<span class="rate text-success">99%</span>
-										</div>
-										<div class="col-md-6 list-info-detail text-center">
-											<p><a class="default">考试人数</a><a class="default">1000人</a></p>
-											<p><a class="default">缺考人数</a><a>1000人</a></p>
-											<p><a class="default">通过人数</a><a>1000人</a></p>
-											<p><a class="default" style="padding-right: 6px;">未通过人数</a><a>1000人</a></p>
-										</div>
-										<p class="col-md-12 text-right"><a>查看详情</a></p>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>考核人数</p>
 									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="row">
-									<div class="list">
-										<div class="col-md-12 list-info-title">
-											<p>2017年第一次考试</p>
-											<p>2017-22-22至2017-33-33</p>
-										</div>
-										<div class="col-md-6 list-info-rate text-center">
-											通过率<span class="rate text-success">99%</span>
-										</div>
-										<div class="col-md-6 list-info-detail text-center">
-											<p><a class="default">考试人数</a><a class="default">1000人</a></p>
-											<p><a class="default">缺考人数</a><a>1000人</a></p>
-											<p><a class="default">通过人数</a><a>1000人</a></p>
-											<p><a class="default" style="padding-right: 6px;">未通过人数</a><a>1000人</a></p>
-										</div>
-										<p class="col-md-12 text-right"><a>查看详情</a></p>
+									<div class="col-md-2 list-info-count p-l-15 text-center">
+										<a class="count">450</a>
+										<p>参学人数</p>
 									</div>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="page">
-									<ul class="pagination" style="margin:4px 0 0;">
-									    <li>
-											<span class="viewcount ng-binding">每页显示
-												<select ng-init="count=itemsPerPage" ng-model="count" ng-change="page.setCount(count)" ng-options="count for count in listItemsPerPageShow" class="ng-pristine ng-untouched ng-valid ng-not-empty"><option label="5" value="number:5" selected="selected">5</option><option label="25" value="number:25">25</option><option label="50" value="number:50">50</option><option label="100" value="number:100">100</option></select> 
-												条,共14 页/ 200 条数据
-											</span>
-										</li>
-										<li>
-									    	<a><input type="number" ng-model="skipnumPage" min="0" style="width: 50px;height: 21px;" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-min"></a>
-											<a href="" ng-click="page.get(skipnumPage)">
-												跳转
-											</a>
-									    </li>
-										<!-- ngRepeat: numPage in rangePage --><li ng-repeat="numPage in rangePage" ng-class="classNumPage(numPage)" class="ng-scope active">
-											
-											<a href="" ng-click="page.get(numPage)">
-												<span ng-bind="numPage" class="ng-binding">1</span>
-												<!-- ngIf: classNumPage(numPage) --><span class="sr-only ng-scope" ng-if="classNumPage(numPage)">(current)</span><!-- end ngIf: classNumPage(numPage) -->
-											</a>
-									    </li><!-- end ngRepeat: numPage in rangePage --><li ng-repeat="numPage in rangePage" ng-class="classNumPage(numPage)" class="ng-scope">
-											
-											<a href="" ng-click="page.get(numPage)">
-												<span ng-bind="numPage" class="ng-binding">2</span>
-												<!-- ngIf: classNumPage(numPage) -->
-											</a>
-									    </li><!-- end ngRepeat: numPage in rangePage --><li ng-repeat="numPage in rangePage" ng-class="classNumPage(numPage)" class="ng-scope">
-											
-											<a href="" ng-click="page.get(numPage)">
-												<span ng-bind="numPage" class="ng-binding">3</span>
-												<!-- ngIf: classNumPage(numPage) -->
-											</a>
-									    </li><!-- end ngRepeat: numPage in rangePage --><li ng-repeat="numPage in rangePage" ng-class="classNumPage(numPage)" class="ng-scope">
-											
-											<a href="" ng-click="page.get(numPage)">
-												<span ng-bind="numPage" class="ng-binding">4</span>
-												<!-- ngIf: classNumPage(numPage) -->
-											</a>
-									    </li><!-- end ngRepeat: numPage in rangePage --><li ng-repeat="numPage in rangePage" ng-class="classNumPage(numPage)" class="ng-scope">
-											
-											<a href="" ng-click="page.get(numPage)">
-												<span ng-bind="numPage" class="ng-binding">5</span>
-												<!-- ngIf: classNumPage(numPage) -->
-											</a>
-									    </li><!-- end ngRepeat: numPage in rangePage -->
-									    
-										<li ng-class="classPageMaxRange" class="">
-											<a href="" ng-click="page.remaining()">»</a>
-										</li>
-									</ul>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>未通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>0学时人数</p>
+									</div>
+									
+									<div class="col-md-2 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<p class="col-md-12 text-right"><a>查看详情</a></p>
 								</div>
 							</div>
 						</div>
-	               	</div>
+						<div class="col-md-6">
+        					<div class="list">
+								<div class="row">
+									<div class="col-md-12 list-info-title">
+										<span>考核公司1</span><span class="pull-right">通过率：99%</span>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>考核人数</p>
+									</div>
+									<div class="col-md-2 list-info-count p-l-15 text-center">
+										<a class="count">450</a>
+										<p>参学人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>未通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>0学时人数</p>
+									</div>
+									
+									<div class="col-md-2 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<p class="col-md-12 text-right"><a>查看详情</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+        					<div class="list">
+								<div class="row">
+									<div class="col-md-12 list-info-title">
+										<span>考核公司1</span><span class="pull-right">通过率：99%</span>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>考核人数</p>
+									</div>
+									<div class="col-md-2 list-info-count p-l-15 text-center">
+										<a class="count">450</a>
+										<p>参学人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>未通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>0学时人数</p>
+									</div>
+									
+									<div class="col-md-2 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<p class="col-md-12 text-right"><a>查看详情</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+        					<div class="list">
+								<div class="row">
+									<div class="col-md-12 list-info-title">
+										<span>考核公司1</span><span class="pull-right">通过率：99%</span>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>考核人数</p>
+									</div>
+									<div class="col-md-2 list-info-count p-l-15 text-center">
+										<a class="count">450</a>
+										<p>参学人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>未通过人数</p>
+									</div>
+									<div class="col-md-2 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>0学时人数</p>
+									</div>
+									
+									<div class="col-md-2 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<p class="col-md-12 text-right"><a>查看详情</a></p>
+								</div>
+							</div>
+						</div>
+        			</div>
 	            </div>
 	        </div>
 	    </div>

@@ -418,6 +418,30 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 						}
 					}
 				})
+				.state('systemdemo.statisticsdetail',
+				{
+					url : "statisticsdetail/:data",
+					templateUrl : "./workbench/systemdemo/statistics/list-detail.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "statisticsctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+									.load([ {
+										name : 'Module.statistics',
+										files : [
+												'../asserts/js/plugin/echart/echarts-bar.js',
+												'../asserts/js/plugin/echart/ng-echarts.js',
+												'./workbench/systemdemo/statistics/statistics-detail.css',
+												'./workbench/systemdemo/statistics/statistics.js'
+												],
+										serie : true
+									}]);
+						}
+					}
+				})
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;
