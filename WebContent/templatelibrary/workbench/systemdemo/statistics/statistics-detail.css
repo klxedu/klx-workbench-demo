@@ -58,7 +58,8 @@
 }
 #statisticsDetail .dropdown-menu{
     top: 100%;
-    right: 100%;
+    left: -77px;
+    width: 160px;
 }
 #statisticsDetail .dropdown-menu li{
     width: 100%;
@@ -83,7 +84,7 @@
     padding: 6px 0px;
 }
 #statisticsDetail .detail{
-	margin-top: 100px;
+	margin-top: 120px;
 }
 #statisticsDetail .detail .col-md-6{
     overflow: hidden;
@@ -94,6 +95,9 @@
 	letter-spacing: -0.07px;
 	line-height: 12px;
 	margin-bottom: 5px;
+}
+#statisticsDetail .detail .col-md-6 .text-cont{
+	padding-left: 10px;
 }
 #statisticsDetail #detail{
 	position: relative;
@@ -116,4 +120,16 @@
 }
 #statisticsDetail .glyphicon {
     top: 2px;
+}
+#statisticsDetail .tree-select .text-cont{
+    padding: 6px 0 4px;
+}
+#statisticsDetail treecontrol li .tree-label{
+	white-space: nowrap;
+}
+#statisticsDetail .ibox-title input[type=checkbox]{
+	margin: 0;
+}
+#operating>div{
+	padding-left: 15px;
 }

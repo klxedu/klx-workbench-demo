@@ -73,5 +73,18 @@
 }
 #statistics .page{
     margin: 30px auto;
-    width: 450px;
+    width: 480px;
+}
+#statistics .search{
+	margin-bottom: 0;
+	margin-right: 15px;
+}
+#statistics .ibox-content{
+    padding: 15px 15px 15px 15px;
+}
+#statistics .info .conten-title{
+	padding-left: 15px;
+}
+#statistics .conten-title{
+	padding-left: 30px;
 }

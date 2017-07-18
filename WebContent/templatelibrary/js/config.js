@@ -432,6 +432,11 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 									.load([ {
 										name : 'Module.statistics',
 										files : [
+												'../asserts/css/plugins/angulartreetable/tree-control-attribute.css',
+												'../asserts/css/plugins/angulartreetable/tree-control.css',
+												'../asserts/js/plugin/angulartreetable/angular-tree-control.js',
+												'../asserts/css/plugins/selectTree/select.css',
+												'../asserts/js/plugin/selectTree/select-text.js',
 												'../asserts/js/plugin/echart/echarts-bar.js',
 												'../asserts/js/plugin/echart/ng-echarts.js',
 												'./workbench/systemdemo/statistics/statistics-detail.css',
