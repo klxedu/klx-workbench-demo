@@ -88,3 +88,6 @@
 #statistics .conten-title{
 	padding-left: 30px;
 }
+#statistics .ibox-title input{
+	margin: 0 5px;
+}
