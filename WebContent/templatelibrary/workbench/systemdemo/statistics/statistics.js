@@ -12,7 +12,7 @@ angular.module('Module.statistics',['ngEchart','selectTree'])
 	}
 	$scope.option={};
 	$scope.option.Xdata=['A', 'B', 'C', 'D', 'E', 'F', 'G', "H", "i", "K"];
-	$scope.option.data=[10, 52, 20, 34, 39, 33, 2, 10 , 55 , 60];
+	$scope.option.data=[0, 0, 0, 0, 0, 0, 0, 0 , 0 , 0];
 	$scope.option.color=['#3398DB'];
 	
 	
