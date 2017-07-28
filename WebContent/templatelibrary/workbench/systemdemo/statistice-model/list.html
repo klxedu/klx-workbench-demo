@@ -1,0 +1,534 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li class="active">
+                <strong>考核统计</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+<div id="statistics-model">
+	<div class="wrapper wrapper-content animated fadeInRight">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <div class="ibox float-e-margins">
+	            	<div class="ibox-title">
+						<h3 class="conten-title">综述</h3>
+					</div>
+	        		<div class="ibox-content">
+						<div class="row text-center">
+							<div class="col-md-3"><button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">1</button></div>
+							<div class="col-md-3"><button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg2">2</button></div>
+							<div class="col-md-3"><button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg3">3</button></div>
+						</div>
+	               	</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
+	   </div>
+	   <div class="modal-body" id="responsemodal" style="max-height: 400px;overflow-y: scroll;">
+			<div class="" tasty-table bind-resource-callback="dataGrid">
+				<table
+					class="table table-gui table-chk table-striped table-hover table-bordered">
+					<thead id="theae">
+						<tr>
+							<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名请使用时注意添加-->
+							<th class="font-6">题目</th>
+							<th class="font-4">满分</th>
+							<th class="font-10">评估得分</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-left" title="你对教师在教学过程中的专业性是否满意？">
+								<span>你对教师在教学过程中的专业性是否满意？</span>
+							</td>
+							<td>10</td>
+							<td>
+								<div class="progress-line">
+									<div class="progress">
+									  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									  </div>
+									</div>
+									<span class="count">6</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="你对教师在教学过程中的互动性是否满意？">
+								<span>你对教师在教学过程中的互动性是否满意？</span>
+							</td>
+							<td>5</td>
+							<td>
+								<div class="progress-line">
+									<div class="progress">
+									  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									  </div>
+									</div>
+									<span class="count">3</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="你对教师准备的课前辅导材料是否满意？">
+								<span>你对教师准备的课前辅导材料是否满意？</span>
+							</td>
+							<td>5</td>
+							<td>
+								<div class="progress-line">
+									<div class="progress">
+									  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+									  </div>
+									</div>
+									<span class="count">3</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="你对教师留的课后作业是否满意？？">
+								<span>你对教师留的课后作业是否满意？</span>
+							</td>
+							<td>5</td>
+							<td>
+								<div class="progress-line">
+									<div class="progress">
+									  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+									  </div>
+									</div>
+									<span class="count">4</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="你对教师在教学过程中的专业性是否满意？">
+								<span>你对教师在教学过程中的专业性是否满意？</span>
+							</td>
+							<td>5</td>
+							<td>
+								<div class="progress-line">
+									<div class="progress">
+									  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+									  </div>
+									</div>
+									<span class="count">5</span>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot class="tfoot">
+						<tr>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+	   </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bs-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="exam">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">试卷预览</h4>
+	   </div>
+	   <div class="modal-body" id="responsemodal" style="max-height: 400px;overflow-y: scroll;">
+			<h4 class="h4 text-center">试卷1</h4>
+			<p>参与人数：1500人</p>
+			<div class="item">
+				<h4 class="title">1.请问您学习的动力主要来源于以下哪些方面</h4>
+				<div class="options">
+					<p>A.自己的工作/专业领域需要</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+						  </div>
+						</div>
+						<span class="count">10%</span>
+					</div>
+					<p>B.工作环境的竞争压力</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+						  </div>
+						</div>
+						<span class="count">25%</span>
+					</div>
+					<p>C.生活环境的需要</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+						  </div>
+						</div>
+						<span class="count">20%</span>
+					</div>
+					<p>D.满足自己的兴趣和好奇心的需要</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+						  </div>
+						</div>
+						<span class="count">80%</span>
+					</div>
+					<p>E.希望能与他人沟通顺畅的需要</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+					<p>F.让自己与时代同步、不脱节的需要</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+						  </div>
+						</div>
+						<span class="count">10%</span>
+					</div>
+					<p>G.自己理想或目标追求</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+						  </div>
+						</div>
+						<span class="count">20%</span>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h4 class="title">2.请问以下哪种描述更符合您现在的学习情况</h4>
+				<div class="options">
+					<p>A.正处于脱产学习/进修阶段 </p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+						  </div>
+						</div>
+						<span class="count">10%</span>
+					</div>
+					<p>B.正利用业余时间参加系统课程学习/培训</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+						  </div>
+						</div>
+						<span class="count">25%</span>
+					</div>
+					<p>C.未参加系统学习，围绕工作或生活需要以自学为主</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+						  </div>
+						</div>
+						<span class="count">20%</span>
+					</div>
+					<p>D.未参加系统学习，也没有目标明确的学习，只是比较随性地自学</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+						  </div>
+						</div>
+						<span class="count">80%</span>
+					</div>
+					<p>E.未参加系统学习，也较少自学</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h4 class="title">3.请问以下哪项描述更符合您当前的网络学习状态</h4>
+				<div class="options">
+					<p>A.自主完成年度学习任务，同时积极利用干教网提供的资源拓宽知识面 </p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+						  </div>
+						</div>
+						<span class="count">10%</span>
+					</div>
+					<p>B.自主完成年度学习任务，但仅限于考核要求的学时量 </p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+						  </div>
+						</div>
+						<span class="count">25%</span>
+					</div>
+					<p>C.在组织人事部门的督促下，基本能完成年度学习任务</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+						  </div>
+						</div>
+						<span class="count">20%</span>
+					</div>
+					<p>D.逐步体会到在线学习的好处，并逐步习惯于在线学习</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+						  </div>
+						</div>
+						<span class="count">80%</span>
+					</div>
+					<p>E.因各种原因不能按时完成年度学习任务，只能突击学习或请他人帮忙</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h4 class="title">4.您认为影响在线学习效果的主要因素有哪些</h4>
+				<div class="options">
+					<p>A.学习资源的质量 </p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+						  </div>
+						</div>
+						<span class="count">10%</span>
+					</div>
+					<p>B.个人的努力程度 </p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+						  </div>
+						</div>
+						<span class="count">25%</span>
+					</div>
+					<p>C.内容的实用性</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+						  </div>
+						</div>
+						<span class="count">20%</span>
+					</div>
+					<p>D.考核管理的严格程度</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+						  </div>
+						</div>
+						<span class="count">80%</span>
+					</div>
+					<p>E.学习方式的多样性</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+					<p>F.学习手段（在线学习系统功能）的便捷性和易用性</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+					<p>G.管理部门对学习过程的组织管理质量</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h4 class="title">5.请问您使用网络的总体情况最符合以下哪种描述</h4>
+				<div class="options">
+					<p>A.我几乎时刻在线，没有网络我什么也做不了</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+						  </div>
+						</div>
+						<span class="count">10%</span>
+					</div>
+					<p>B.我平时经常上网，但周末尽量不上</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+						  </div>
+						</div>
+						<span class="count">25%</span>
+					</div>
+					<p>C.我更多在周末上网，平时上网的机会不多</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">
+						  </div>
+						</div>
+						<span class="count">20%</span>
+					</div>
+					<p>D.我一般只在上班的时候上网，下班的业余时间尽量不碰网络</p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+						  </div>
+						</div>
+						<span class="count">80%</span>
+					</div>
+					<p>E.我一般只在下班后/休息时上网，上班时间上网的机会不多 </p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+					<p>F.总的来说，除非必须/不得已，我很少上网 </p>
+					<div class="progress-line">
+						<div class="progress">
+						  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+						  </div>
+						</div>
+						<span class="count">30%</span>
+					</div>
+				</div>
+			</div>
+	   </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bs-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">这里是摸态框的标题</h4>
+	   </div>
+	   <div class="modal-body" id="responsemodal" style="max-height: 400px;overflow-y: scroll;">
+			<div class="">
+				<table
+					class="table table-gui table-chk table-striped table-hover table-bordered">
+					<thead id="theae">
+						<tr>
+							<th class="font-10"></th>
+							<th class="font-4">得分</th>
+							<th class="font-4">标准分</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-left" title="界定业务结果">
+								<span>界定业务结果</span>
+							</td>
+							<td>4</td>
+							<td>
+								8
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="设计完整体验">
+								<span>设计完整体验</span>
+							</td>
+							<td>4</td>
+							<td>
+								8
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="引导学以致用">
+								<span>引导学以致用</span>
+							</td>
+							<td>4</td>
+							<td>
+								8
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="推动学习转化">
+								<span>推动学习转化</span>
+							</td>
+							<td>4</td>
+							<td>
+								8
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="实施绩效支持">
+								<span>实施绩效支持</span>
+							</td>
+							<td>4</td>
+							<td>
+								8
+							</td>
+						</tr>
+						<tr>
+							<td class="text-left" title="总结培训效果">
+								<span>总结培训效果</span>
+							</td>
+							<td>4</td>
+							<td>
+								8
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="echart" id="radar" style="height: 400px;width: 838px;">
+	   		
+	   			</div>
+			</div>
+	   </div>
+	   
+    </div>
+  </div>
+</div>
+<script src="../asserts/js/plugin/echart/echarts-radar.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	var option = {
+	    tooltip: {},
+	    radar: {
+	        indicator: [
+	           { name: '界定业务结果', max: 8},
+	           { name: '设计完整体验', max: 8},
+	           { name: '引导学以致用', max: 8},
+	           { name: '推动学习转化', max: 8},
+	           { name: '实施绩效支持', max: 8},
+	           { name: '总结培训效果', max: 8}
+	        ]
+	    },
+	    series: [{
+	        name: '预算 vs 开销（Budget vs spending）',
+	        type: 'radar',
+	        data : [
+	            {
+	                value : [3, 4, 6, 7, 1, 5],
+	                name : '测评结果'
+	            }
+	        ]
+	    }]
+	};
+	var radar=echarts.init(document.getElementById('radar'));
+	radar.setOption(option);
+})
+</script>

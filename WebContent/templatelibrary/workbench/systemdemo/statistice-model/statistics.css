@@ -1,0 +1,35 @@
+.ibox-title{
+	border-bottom: 1px solid #D8D8D8;
+}
+.table > tbody > tr > td:first-child{
+	text-align: left;
+}
+.progress-line{
+	position: relative;
+	padding-right: 20px;
+}
+.progress{
+	height: 10px;
+	margin: 10px 0;
+}
+.progress-line .count{
+	position: absolute;
+    right: 2px;
+    top: -5px;
+}
+.progress .progress-bar-primary{
+	background-color: #1c84c6;
+}
+#exam p{
+	font-size: 12px;
+}
+#exam .progress-line{
+	width: 50%;
+	padding-right: 50px;
+}
+#exam .title{
+	margin-top: 20px;
+}
+#exam .echart{
+	
+}

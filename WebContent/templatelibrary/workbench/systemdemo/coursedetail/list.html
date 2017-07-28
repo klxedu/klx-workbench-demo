@@ -1,0 +1,93 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li class="active">
+                <strong>考核统计</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+<div id="courseDetail">
+	<div class="wrapper wrapper-cont animated fadeInRight detail-cont">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <div class="ibox float-e-margins">
+	            	<div class="ibox-title">
+
+						<h3 class="conten-title col-md-12">课程总数：<span class="count">100门</span>选修：<span class="count">20门</span>必修：<span class="count">80门</span></h3>
+					</div>
+	        		<div class="ibox-content" id="detail">
+	        			<div class="row">
+	        				<div class="col-md-6" id="echartBox">
+								<ng-echart-pie option="option" events='events(eobj)'></ng-echart-pie>
+	        				</div>
+	        				<div class="col-md-6" id="">
+	        					<div class="row detail">
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        					</div>
+	        				</div>
+	        			</div>
+	               	</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="wrapper wrapper-content  wrapper-cont animated fadeInRight info">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <div class="ibox float-e-margins">
+	            	<div class="ibox-title">
+						<h3 class="conten-title col-md-12">点击量排行</h3>
+					</div>
+	        		<div class="ibox-content">
+						<div class="row text-center">
+							<table
+								class="table table-gui table-chk table-striped table-hover table-bordered">
+								<thead common thead-fixed thead-state="false" id="theae">
+									<tr>
+										<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名请使用时注意添加-->
+										<th class="font-6">课程名称</th>
+										<th class="font-4">点击量</th>
+										<th class="font-3">课程分类</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><i class="iconfont icon-paihang first"></i>课程1</td>
+										<td>80</td>
+										<td>管理学员</td>
+									</tr>
+									<tr>
+										<td><i class="iconfont icon-paihang second"></i>课程1</td>
+										<td>80</td>
+										<td>管理学员</td>
+									</tr>
+									<tr>
+										<td><i class="iconfont icon-paihang thirdly"></i>课程1</td>
+										<td>80</td>
+										<td>管理学员</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+	               	</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>

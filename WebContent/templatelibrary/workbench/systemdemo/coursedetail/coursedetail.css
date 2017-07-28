@@ -1,0 +1,91 @@
+.ibox-title{
+	border-bottom: 1px solid #D8D8D8;
+}
+#courseDetail .ibox-title{
+	min-height: 60px;
+	font-size: 14px;
+}
+#courseDetail .p-l-15{
+	padding-left: 15px !important;
+}
+#courseDetail .p-r-15{
+	padding-right: 15px !important;
+}
+#courseDetail .list-info-count .default{
+	color: #333;
+	cursor: default;
+}
+#courseDetail .list-info-title{
+	padding: 15px 30px 33px;
+}
+#courseDetail .list .col-md-2{
+	padding-right: 0;
+	padding-left: 0px;
+	font-size: 12px;
+}
+#courseDetail .list .col-md-2 .count{
+	font-size: 20px;
+}
+#courseDetail .list p.col-md-12{
+	margin: 30px 0 20px;
+	font-size: 14px;
+	padding-right: 30px;
+}
+#courseDetail #list>.col-md-6{
+	margin-bottom: 15px;
+}
+#courseDetail #echartBox{
+	height: 235px;
+}
+#courseDetail .wrapper-cont{
+	padding: 15px 0 0 5px;
+}
+#courseDetail .p-t-6{
+	padding-top: 6px;
+}
+#courseDetail .form-control{
+    padding: 6px 0px;
+}
+#courseDetail .detail{
+	margin-top: 120px;
+}
+#courseDetail .detail .col-md-6{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+	color: #485465;
+	letter-spacing: -0.07px;
+	line-height: 12px;
+	margin-bottom: 5px;
+}
+#courseDetail .detail .col-md-6 .text-cont{
+	padding-left: 10px;
+}
+#courseDetail #detail{
+	position: relative;
+}
+#courseDetail .info{
+	font-size: 16px;
+}
+#courseDetail .icon-paihang{
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    background: #bbb;
+}
+#courseDetail .count{
+	padding-right: 15px;
+}
+#courseDetail .icon-paihang.first{
+	color: #FDFF00;
+}
+#courseDetail .icon-paihang.second{
+	color: #FFFFFF;
+}
+#courseDetail .icon-paihang.thirdly{
+	color: #FFC43F;
+}
+#courseDetail .detail-cont .ibox{
+	margin-bottom: 0;
+}

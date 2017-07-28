@@ -70,3 +70,66 @@ angular.module("ngEchart", [])
 		replace:true
 	}
 })
+.directive('ngEchartPie',function(){
+	return{
+		restrict:'AE',
+		scope:{
+			option:'=',
+			el:"@",
+			events : "&"
+		},
+		link:function(scope,element,attr){
+			var chart = echarts.init(document.getElementById('echartPie'));
+			var option = {
+			    series: [
+			        {
+			            name:'访问来源',
+			            type:'pie',
+			            radius: ['40%', '85%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'inside',
+			                    precision : "0",
+			                    formatter: function(a){
+			                    	return a.name+":"+parseInt(a.percent)+"%";
+			                    }
+			                },
+			                emphasis: {
+			                    show: true,
+			                    textStyle: {
+			                        fontSize: '12'
+			                    }
+			                }
+			            },
+			            labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            data:scope.option.data
+			        }
+			    ]
+			};
+			var param=null;
+			chart.setOption(option);
+			chart.on('click', function (params) {
+			    param = params;
+			});
+			$('body').on('click',function(){
+				if(param){
+					param.isClickEchart=true;
+				}else{
+					param={};
+					param.type="click";
+					param.isClickEchart=false;
+				}
+				scope.events({eobj:param});
+				param=null;
+			});
+		},
+		template:'<div id="echartPie" style="height:233px"></div>',
+		replace:true
+	}
+})

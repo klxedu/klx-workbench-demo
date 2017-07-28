@@ -447,6 +447,53 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 						}
 					}
 				})
+				.state('systemdemo.coursedetail',
+				{
+					url : "coursedetail/:data",
+					templateUrl : "./workbench/systemdemo/coursedetail/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "coursedetailctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+								.load([ {
+									name : 'Module.coursedetail',
+									files : [
+											'../asserts/js/plugin/echart/echarts.js',
+											'../asserts/js/plugin/echart/ng-echarts.js',
+											'./workbench/systemdemo/coursedetail/coursedetail.css',
+											'./workbench/systemdemo/coursedetail/coursedetail.js'
+											],
+									serie : true
+								}]);
+						}
+					}
+				})
+				.state('systemdemo.statisticsmdoel',
+				{
+					url : "statisticsmdoel/:data",
+					templateUrl : "./workbench/systemdemo/statistice-model/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "statisticsmdoelctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+								.load([{
+									name : 'Module.statisticsmodel',
+									files : [
+											'../asserts/js/plugin/echart/ng-echarts.js',
+											'./workbench/systemdemo/statistice-model/statistics.css',
+											'./workbench/systemdemo/statistice-model/statistics.js'
+											],
+									serie : true
+								}]);
+						}
+					}
+				})
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;

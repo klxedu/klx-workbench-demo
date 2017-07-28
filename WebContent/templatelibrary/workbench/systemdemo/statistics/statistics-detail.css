@@ -26,14 +26,14 @@
 	padding: 0 15px;
 }
 #statisticsDetail .list-info-title{
-	padding: 15px 30px 33px;
+	padding: 15px 15px 33px;
 }
 #statisticsDetail .list .col-md-2{
 	padding-right: 0;
 	padding-left: 0px;
 	font-size: 12px;
 }
-#statisticsDetail .list .col-md-2 .count{
+#statisticsDetail .list .col-md-4 .count{
 	font-size: 20px;
 }
 #statisticsDetail .list p.col-md-12{
@@ -132,4 +132,30 @@
 }
 #operating>div{
 	padding-left: 15px;
+}
+#statisticsDetail .list-info-count p{
+	margin-bottom: 15px;
+}
+/*处理间距过大问题*/
+#statisticsDetail .detail-cont .ibox{
+	margin-bottom: 0px;
+}
+#statisticsDetail .list{
+	position: relative;
+}
+#statisticsDetail .line1{
+	width: 1px;
+	height: 100px;
+	position: absolute;
+	top: 112px;
+	left: 33.33333%;
+	border-right: 1px solid #D8D8D8;
+}
+#statisticsDetail .line2{
+	width: 1px;
+	height: 100px;
+	position: absolute;
+	top: 112px;
+	left: 66.6666%;
+	border-right: 1px solid #D8D8D8;
 }
