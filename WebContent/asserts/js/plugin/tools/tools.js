@@ -327,6 +327,36 @@ angular.module('tools', [])
 		}
 	}
 }])
+.directive('menuNav',function(){
+	return {
+		restrict: "EA",
+		scope: true,
+		replace: true,
+		controller: function($rootScope,$scope,$state){
+			var _parent = $state.$current.parent.data;
+			var _current = $state.current;
+			var _fromState = $rootScope.$fromState;
+			$scope.menuNav = [];
+			$scope.menuNav.push({name:'首页',sref:'index.minor'});//首页 需要替换成动态获取方式
+			$scope.menuNav.push({name:_parent.menuName,sref:''});//一级菜单
+			if(_fromState.data && _current.data.parent && _fromState.data.id == _current.data.parent){
+				$scope.menuNav.push({name:_fromState.data.menuName,sref:_fromState.name});//二级菜单
+				$scope.menuNav.push({name:_current.data.menuName,sref:_current.name,current:true});//三级菜单
+			}else{
+				$scope.menuNav.push({name:_current.data.menuName,sref:_current.name,current:true});//二级菜单
+			}
+		},
+		link: function($scope,element,attrs){
+		},
+		template: function(){
+			return  ' <ol class="breadcrumb"><li ng-repeat="menu in menuNav" ng-class="{true:\'active\',false:\'\'}[menu.current]"> '
+					+' 	<strong ng-if="menu.current">{{menu.name}}</strong> '
+					+' 	<span ng-if="!menu.sref">{{menu.name}}</span> '
+					+' 	<a ng-if="menu.sref&&!menu.current" ui-sref="{{menu.sref}}">{{menu.name}}</a> '
+					+' </li></ol> ';
+		}
+	}
+})
 .directive('tableOperation',function($timeout,$filter){
 	return {
 		restrict: "EA",
@@ -344,6 +374,11 @@ angular.module('tools', [])
 //						"operate":"add",
 //						"operateText":"新增",
 //						"operateIcon":"glyphicon glyphicon-plus",
+//			            "warning":true,
+//            			"warningMsg":"确定要删除选择数据吗？",
+			//			"isHidden":function(row){
+			//				
+			//			},
 //						"event":function(row){
 //							
 //						}
@@ -363,18 +398,6 @@ angular.module('tools', [])
 			//点击事件
 			$scope.onClickEvent = function(event){
 				event($scope.row);
-//				if(angular.isArray(arrs)){
-//					var _func,_params = [];
-//					angular.forEach(arrs,function(elt, i, array) {
-//						if(angular.isFunction(elt)){
-//							_func = elt;
-//						} else{
-//							//获取作用域的值
-//							_params.push(_doGetScopeValue($scope,elt));
-//						}
-//					})
-					//_func(_params.slice());
-//				}
 			}
 			//获取scope中的实际值
 			var _doGetScopeValue = function($scope,k){
@@ -402,6 +425,11 @@ angular.module('tools', [])
 					}
 					
 				}
+				if(!col.isHidden){
+					col.isHidden = function(row){
+						return false;
+					}
+				}
 				arr.push(col);
 			}
 			if($scope.isMore && $scope.cols.length-$scope.showNum>1){
@@ -421,13 +449,19 @@ angular.module('tools', [])
 		},
 		template: function(){
 			return " <div class=\"btn-group manage\"> " 
-			+" 	<a ng-repeat=\"col in displayCols\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\" title=\"{{col.operateText}}\">{{showModel=='icon'?'':col.operateText}}</a> " 
+			+" 	<span ng-repeat=\"col in displayCols\">" 
+			+"  <a ng-if=\"!col.warning&&!col.isHidden(row)\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\" title=\"{{col.operateText}}\">{{showModel=='icon'?'':col.operateText}}</a>" 
+			+" 	<a ng-if=\"col.warning&&!col.isHidden(row)\" confirm=\"{{col.warningMsg}}\" confirm-cancel=\"取消\" confirm-title=\"确认\" confirm-settings=\"{size: 'sm'}\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\" title=\"{{col.operateText}}\">{{showModel=='icon'?'':col.operateText}}</a> "
+			+"  </span> "
 			+" 	<a title=\"更多\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" ng-if=\"isMore&&moreCols.length>0\"> " 
 			+" 			<span ng-class=\"{'icon':'glyphicon glyphicon-cog',false:''}[showModel]\">{{showModel=='icon'?'':'更多'}}</span> " 
 			+" 			<span class=\"caret\"></span> " 
 			+" 	</a> " 
 			+" 	<ul class=\"dropdown-menu dropdown-menu-right\" ng-if=\"isMore&&moreCols.length>0\"> " 
-			+"         <li ng-repeat=\"col in moreCols\"><a ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\">{{showModel=='icon'?'':col.operateText}}</a></li> " 
+			+"     <li ng-repeat=\"col in moreCols\">"
+			+" 		 <a ng-if=\"!col.warning&&!col.isHidden(row)\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\">{{col.operateText}}</a>"
+			+" 		 <a ng-if=\"col.warning&&!col.isHidden(row)\" confirm=\"{{col.warningMsg}}\" confirm-cancel=\"取消\" confirm-title=\"确认\" confirm-settings=\"{size: 'sm'}\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\">{{col.operateText}}</a>"
+			+"	   </li> " 
 			+" 	</ul> " 
 			+" </div> " ;
 		}

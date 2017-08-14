@@ -5,6 +5,8 @@ app.controller('StandardListCtrl', function($scope, StandardListService, $timeou
 			"operate" : "add",
 			"operateText":"新增",
 			"operateIcon":"glyphicon glyphicon-plus",
+			"warningMsg":"确定要删除吗？",
+			"warning":true,
 			"event" : function(row) {
 				console.log(row);
 			}
