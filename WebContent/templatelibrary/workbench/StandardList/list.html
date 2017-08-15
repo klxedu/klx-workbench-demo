@@ -1,6 +1,6 @@
 <div class="row wrapper border-bottom white-bg page-heading">
 	<div class="col-lg-10">
-		<ol class="breadcrumb" menu-nav>
+		<ol class="breadcrumb">
 			<li><a href="index.html">主页</a></li>
 			<li class="active"><a>课程列表</a></li>
 		</ol>
@@ -153,20 +153,25 @@
 									<tr>
 										<!--请注意，此处使用时为避免表格表现与预期不符，请在每个th上使用类名表明需要几个字不换行，目前有font_2-font_11类名请使用时注意添加-->
 										<th class="font-1"></th>
-										<th class="font-6">课程名称</th>
+										<th >课程名称</th>
 										<th class="font-4">时长</th>
 										<th class="font-3">学时</th>
 										<th class="font-4">状态</th>
 										<th class="font-3">启用</th>
 										<th class="font-2">年份</th>
-										<th class="font-5">操作</th>
+										<th class="font-9">操作</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr ng-repeat="row in rows">
 										<td><input type="checkbox"/></td>
-										<td class="title-pointer" title-fit-cut="row.name">
-											<a class="pull-left">{{row.name}}</a></td>
+										<td class="title-pointer" title-fit-cut="row.name" title-pre-icon='[{"cls":"glyphicon glyphicon-plus","color":"red","title":"添加"}]'>
+											<a class="title-fit">{{row.name}}</a>
+											<p>
+												<i class="p-r-sm"></i>
+												<small>2017-08-15 12:12:12</small>
+											</p>
+										</td>
 										<td>{{row.length}}</td>
 										<td>{{row.score}}</td>
 										<td>{{row.state}}</td>
@@ -177,7 +182,7 @@
 										</td>
 									</tr>
 								</tbody>
-								<tfoot tfoot-fixed common tfoot-state="tfootState" class="tfoot">
+								<tfoot tfoot-fixed common tfoot-state="tfootState" class="tfoot" tfoot-control="tfootControl">
 									<tr>
 										<td class="check text-center">
 											<input type="checkbox" style="margin-top: 13px;"/>

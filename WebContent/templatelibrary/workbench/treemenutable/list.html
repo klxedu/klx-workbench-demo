@@ -23,7 +23,7 @@
 		<div class="col-md-3 over-w-h h-500">
 			<div class="white-bg treecontrol">
 				<h4 class="tree-title">组织结构树</h4>
-				<treecontrol class="tree-light" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node)" selected-node="node1" expanded-nodes="expandedNodes">
+				<treecontrol class="tree-light" tree-model="dataForTheTree" options="treeOptions" on-selection="showSelected(node,selected)" selected-node="node1" expanded-node-id="expandedNodeId">
 					{{node.name}}
 				</treecontrol>
 			</div>			
@@ -455,7 +455,7 @@
 										</td>
 									</tr>
 								</tbody>
-								<tfoot tfoot-fixed common class="tfoot">
+								<tfoot class="tfoot">
 									<tr>
 										<td class="check text-center">
 											<input type="checkbox" style="margin-top: 13px;"/>

@@ -112,6 +112,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                     selectedNode: "=?",
                     selectedNodes: "=?",
                     expandedNodes: "=?",
+                    expandedNodeId: "=?",//展开节点ID
                     onSelection: "&",
                     onNodeToggle: "&",
                     options: "=?",
@@ -129,11 +130,43 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                     $scope.selectedNodes = $scope.selectedNodes || [];
                     $scope.expandedNodes = $scope.expandedNodes || [];
                     $scope.expandedNodesMap = {};
+                    //构造树的treepath
+                    function setTreePath(treepath,children){
+                    	angular.forEach(children,function(ele){
+                    		ele._treepath=treepath + ele.id + "/";
+                    		if($scope.expandedNodeId && ele.id == $scope.expandedNodeId){
+                    			$scope._expandNodePath = ele._treepath;
+                    		}
+                    		if(ele.children && ele.children.length>0){
+                    			setTreePath(ele._treepath,ele.children);
+                    		}
+                    	});
+                    }
+                    $scope.expandedSelectedNode = function(){
+                    	if($scope.expandedNodeId && $scope.treeModel){//展开指定ID
+                        	setTreePath('/',$scope.treeModel);//设置treepath
+                        	setExpandedNodes($scope._expandNodePath,$scope.treeModel);
+                        }
+                    }
                     for (var i=0; i < $scope.expandedNodes.length; i++) {
                         $scope.expandedNodesMap["a"+i] = $scope.expandedNodes[i];
                     }
                     $scope.parentScopeOfTree = $scope.$parent;
-
+                    //设置展开nodes
+                    function setExpandedNodes(treePath,children){
+                    	for(var i=0;i<children.length;i++){
+                    		var ele = children[i];
+                    		if(treePath.indexOf(ele._treepath)!=-1){
+                				$scope.expandedNodes.push(ele);
+                    		}
+                    		if(ele.id == $scope.expandedNodeId){
+                    			$scope.selectedNode = ele;
+                    			break;
+                    		}else if(ele.children && ele.children.length>0){
+                    			setExpandedNodes(treePath,ele.children);
+                    		}
+                    	}
+                    }
 
                     function isSelectedNode(node) {
                         if (!$scope.options.multiSelection && ($scope.options.equality(node, $scope.selectedNode , $scope)))
@@ -310,6 +343,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
                     return function ( scope, element, attrs, treemodelCntr ) {
 
                         scope.$watch("treeModel", function updateNodeOnRootScope(newValue) {
+                        	scope.expandedSelectedNode();
                             if (angular.isArray(newValue)) {
                                 if (angular.isDefined(scope.node) && angular.equals(scope.node[scope.options.nodeChildren], newValue))
                                     return;

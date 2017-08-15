@@ -134,22 +134,27 @@ angular.module('tools', [])
 		replace:false,
 		scope:{
 			tfootState:"=",
-			tfootInit:"&"//当外界改变界面时可自行调用init方法
+			tfootInit:"&",//当外界改变界面时可自行调用init方法
+			tfootControl:"="
 		},
 		require:"common",
 		link:function(scope,element,attr,common){
 			var Wheight=$(window).height();
-			var elTop="",elWidth="",checkTdW="";
-			//scope.tfootState=false;//用于处理元素当前是否为定位状态，用于判断是否重新获取元素offset
+			var elTop="",elWidth="",checkTdW="",tfoot;
+			tfoot = scope.tfootControl;
+			scope.tfootState=false;//用于处理元素当前是否为定位状态，用于判断是否重新获取元素offset
 			scope.tfootInit=function(){
 				Wheight=$(window).height();
 				elWidth="";checkTdW="";
-				
-				element.attr("style","").find("td").attr("style","");
+				footHandleScroll();
 				if(!scope.tfootState){
 					elTop=element.offset().top;
 				}
-				scope.tfootState=true;
+			}
+			scope.tfootInit();
+			tfoot.reCalculateScroll = function(){
+				scope.tfootState=false;
+				element.attr("style","").find("td").attr("style","");
 			}
 			function footHandleScroll() {
 				//获取滚动条滚动距离
@@ -158,9 +163,10 @@ angular.module('tools', [])
 				if(!elWidth||!checkTdW){
 					elWidth=element.parent("table").outerWidth();
 					checkTdW=$(".font-1").outerWidth();
+					
 				}
 				if(!elTop || !scope.tfootState){
-					scope.tfootInit();
+					elTop=element.offset().top;
 				}
 				//判断元素位置
 				if(sTop+Wheight<=elTop){
@@ -168,6 +174,7 @@ angular.module('tools', [])
 					element.css({"position":"fixed","bottom":"0px","background":"#fff","z-index":"100","width":elWidth,"box-shadow": "0px -2px 5px #ccc"}).find(".Ribbon").css({"width":elWidth});
 					element.find(".check").css({"width":checkTdW});
 				}else{
+					scope.tfootState=false;
 					element.attr("style","").find("td").attr("style","");
 				}
 			}
@@ -215,7 +222,7 @@ angular.module('tools', [])
 		restrict:'AE',
 		replace:false,
 		scope:{
-			theadState:"=",
+//			theadState:"=",
 			theadInit:"&"//当外界改变界面时可自行调用init方法
 		},
 		link:function(scope,element,attr){
@@ -310,18 +317,44 @@ angular.module('tools', [])
 			$timeout(function(){
 				if(attrs.titleFitCut){
 					var attrArr = attrs.titleFitCut.split('.');
-					var value,display,fontNum;
+					var value,display,fontNum,paddingSize,minWidth,actualWidth,fontSize,preIcons,minSize=15;
+					if(attrs.titlePreIcon){
+						preIcons = angular.fromJson(attrs.titlePreIcon);
+					}
 					angular.forEach(attrArr,function(data){
 						value = value?value[data]:scope[data];
 					});
-					fontNum = (element.width()-parseInt(element.css("padding"))*2)/parseInt(element.css("font-size"))-3;
-				}
-				display = $filter('strCut')(value,fontNum);
-				element.attr("title",value);
-				if(element.children().length>0){
-					element.children().first().html(display);
-				}else{
-					element.html(display);
+					fontSize= parseInt(element.css("font-size"));
+					paddingSize = 16;
+					minWidth = fontSize*minSize + paddingSize;//15字+...
+					actualWidth = element[0].offsetWidth;
+					console.log(actualWidth);
+					if(actualWidth-minWidth<paddingSize){
+						element.css("min-width",minWidth+ paddingSize + "px");//最小宽度
+						fontNum = minWidth/fontSize;
+						element.css("width",minWidth+ paddingSize + "px");
+					}else{
+						fontNum = (actualWidth-paddingSize)/fontSize;
+						element.css("width",actualWidth + "px");
+					}
+					//字体图标逻辑
+					var _icon = "";
+					if(preIcons && preIcons.length>0){
+						fontNum = fontNum-preIcons.length;
+						angular.forEach(preIcons,function(elt, i, array) {
+							_icon += "<span title='"+elt.title+"' class='"+elt.cls+"' style='color:"+elt.color+"'></span>";
+						})
+					}
+					element.css("text-align","left");
+					display = _icon+$filter('strCut')(value,fontNum-1);
+					element.attr("title",value);
+					if(element.children().length==1){
+						element.children().first().html(display);
+					}else if(element.children().length>1){
+						element.find(".title-fit").html(display);
+					}else{
+						element.html(display);
+					}
 				}
 			});
 		}
@@ -337,7 +370,7 @@ angular.module('tools', [])
 			var _current = $state.current;
 			var _fromState = $rootScope.$fromState;
 			$scope.menuNav = [];
-			$scope.menuNav.push({name:'首页',sref:'index.minor'});//首页 需要替换成动态获取方式
+			$scope.menuNav.push({name:'首页',sref:$rootScope.swbConfiguration.indexPage});//首页 需要替换成动态获取方式
 			$scope.menuNav.push({name:_parent.menuName,sref:''});//一级菜单
 			if(_fromState.data && _current.data.parent && _fromState.data.id == _current.data.parent){
 				$scope.menuNav.push({name:_fromState.data.menuName,sref:_fromState.name});//二级菜单
@@ -376,7 +409,7 @@ angular.module('tools', [])
 //						"operateIcon":"glyphicon glyphicon-plus",
 //			            "warning":true,
 //            			"warningMsg":"确定要删除选择数据吗？",
-			//			"isHidden":function(row){
+			//			"hidden":function(row){
 			//				
 			//			},
 //						"event":function(row){
@@ -389,7 +422,7 @@ angular.module('tools', [])
 			//是否包含更多 默认是
 			$scope.isMore = $scope.options.isMore==undefined?true:$scope.options.isMore;
 			//显示形式  图标/文字 默认图标
-			$scope.showModel = $scope.options.showModel || 'icon';
+			$scope.showModel = $scope.options.showModel || 'text';
 			$scope.cols = $scope.options.cols;
 			//显示操作数组
 			$scope.displayCols = [];
@@ -399,6 +432,13 @@ angular.module('tools', [])
 			$scope.onClickEvent = function(event){
 				event($scope.row);
 			}
+			//重新计算显示操作
+			var _displayCols = [];
+			angular.forEach($scope.cols,function(elt,i,array){
+				if(!elt.isHidden || !elt.isHidden($scope.row)){
+					_displayCols.push(elt);
+				}
+			});
 			//获取scope中的实际值
 			var _doGetScopeValue = function($scope,k){
 				//属性分割并获取最终值对象
@@ -432,26 +472,26 @@ angular.module('tools', [])
 				}
 				arr.push(col);
 			}
-			if($scope.isMore && $scope.cols.length-$scope.showNum>1){
+			if($scope.isMore && _displayCols.length-$scope.showNum>1){
 				for(var i=0;i<$scope.showNum;i++){
-					_arrayPush($scope.displayCols, $scope.cols[i]);
+					_arrayPush($scope.displayCols, _displayCols[i]);
 				}
-				for(var i=$scope.showNum;i<$scope.cols.length;i++){
-					_arrayPush($scope.moreCols, $scope.cols[i]);
+				for(var i=$scope.showNum;i<_displayCols.length;i++){
+					_arrayPush($scope.moreCols, _displayCols[i]);
 				}
 			}else{
-				for(var i=0;i<$scope.cols.length;i++){
-					_arrayPush($scope.displayCols, $scope.cols[i]);
+				for(var i=0;i<_displayCols.length;i++){
+					_arrayPush($scope.displayCols, _displayCols[i]);
 				}
 			}
 		},
 		link: function($scope,element,attrs){
 		},
 		template: function(){
-			return " <div class=\"btn-group manage\"> " 
+			return " <div class=\"btn-group manage pull-left\"> " 
 			+" 	<span ng-repeat=\"col in displayCols\">" 
 			+"  <a ng-if=\"!col.warning&&!col.isHidden(row)\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\" title=\"{{col.operateText}}\">{{showModel=='icon'?'':col.operateText}}</a>" 
-			+" 	<a ng-if=\"col.warning&&!col.isHidden(row)\" confirm=\"{{col.warningMsg}}\" confirm-cancel=\"取消\" confirm-title=\"确认\" confirm-settings=\"{size: 'sm'}\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\" title=\"{{col.operateText}}\">{{showModel=='icon'?'':col.operateText}}</a> "
+			+" 	<a ng-if=\"col.warning&&!col.isHidden(row)\" confirm=\"{{col.warningMsg}}\" confirm-ok=\"确定\"  confirm-cancel=\"取消\" confirm-title=\"确认\" confirm-settings=\"{size: 'sm'}\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\" title=\"{{col.operateText}}\">{{showModel=='icon'?'':col.operateText}}</a> "
 			+"  </span> "
 			+" 	<a title=\"更多\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" ng-if=\"isMore&&moreCols.length>0\"> " 
 			+" 			<span ng-class=\"{'icon':'glyphicon glyphicon-cog',false:''}[showModel]\">{{showModel=='icon'?'':'更多'}}</span> " 
@@ -460,7 +500,7 @@ angular.module('tools', [])
 			+" 	<ul class=\"dropdown-menu dropdown-menu-right\" ng-if=\"isMore&&moreCols.length>0\"> " 
 			+"     <li ng-repeat=\"col in moreCols\">"
 			+" 		 <a ng-if=\"!col.warning&&!col.isHidden(row)\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\">{{col.operateText}}</a>"
-			+" 		 <a ng-if=\"col.warning&&!col.isHidden(row)\" confirm=\"{{col.warningMsg}}\" confirm-cancel=\"取消\" confirm-title=\"确认\" confirm-settings=\"{size: 'sm'}\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\">{{col.operateText}}</a>"
+			+" 		 <a ng-if=\"col.warning&&!col.isHidden(row)\" confirm=\"{{col.warningMsg}}\" confirm-ok=\"确定\"  confirm-cancel=\"取消\" confirm-title=\"确认\" confirm-settings=\"{size: 'sm'}\" ng-click=\"onClickEvent(col.event)\" ng-class=\"{'icon':col.operateIcon,false:''}[showModel]\">{{col.operateText}}</a>"
 			+"	   </li> " 
 			+" 	</ul> " 
 			+" </div> " ;

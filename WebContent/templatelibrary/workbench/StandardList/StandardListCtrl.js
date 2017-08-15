@@ -24,7 +24,9 @@ app.controller('StandardListCtrl', function($scope, StandardListService, $timeou
 			"event" : function(row) {}
 		} ]
 	};
+	
 	$scope.searchCriteria = "1";
+	$scope.tfootControl = {};
 	$scope.tfootState = false;
 	$scope.dataGrid = function(params, paramsObj) {
 		//重置全选
