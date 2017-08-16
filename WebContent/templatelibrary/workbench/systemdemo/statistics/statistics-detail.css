@@ -1,0 +1,161 @@
+#statisticsDetail .ibox-title{
+	border-bottom: 0px solid #D8D8D8;
+	min-height: 60px;
+	font-size: 14px;
+}
+#statisticsDetail .ibox-title .col-md-9 .row>div{
+	padding-left: 0;
+	padding-right: 0;
+}
+#statisticsDetail .p-l-15{
+	padding-left: 15px !important;
+}
+#statisticsDetail .p-r-15{
+	padding-right: 15px !important;
+}
+#statisticsDetail .list-info-count .default{
+	color: #333;
+	cursor: default;
+}
+#statisticsDetail .list{
+	border-top: 3px solid #e7eaec;
+	background: #fff;
+	padding: 0 15px;
+}
+#statisticsDetail .list>.row{
+	padding: 0 15px;
+}
+#statisticsDetail .list-info-title{
+	padding: 15px 15px 33px;
+}
+#statisticsDetail .list .col-md-2{
+	padding-right: 0;
+	padding-left: 0px;
+	font-size: 12px;
+}
+#statisticsDetail .list .col-md-4 .count{
+	font-size: 20px;
+}
+#statisticsDetail .list p.col-md-12{
+	margin: 30px 0 20px;
+	font-size: 14px;
+	padding-right: 30px;
+}
+#statisticsDetail #list>.col-md-6:nth-child(even){
+	padding-left: 0;
+}
+#statisticsDetail #list>.col-md-6{
+	margin-bottom: 15px;
+}
+#statisticsDetail #echartBox{
+	height: 235px;
+}
+#statisticsDetail .wrapper-cont{
+	padding: 15px 0 0 5px;
+}
+#statisticsDetail #loca{
+	cursor: pointer;
+}
+#statisticsDetail .dropdown-menu{
+    top: 100%;
+    left: -77px;
+    width: 160px;
+}
+#statisticsDetail .dropdown-menu li{
+    width: 100%;
+    height: 34px;
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 34px;
+    cursor: pointer;
+}
+#statisticsDetail .dropdown-menu li:hover{
+    background: #0571BF;
+    color: #fff;
+}
+#statisticsDetail .p-t-6{
+	padding-top: 6px;
+}
+#statisticsDetail .search{
+	margin: 0;
+}
+#statisticsDetail .form-control{
+    padding: 6px 0px;
+}
+#statisticsDetail .detail{
+	margin-top: 120px;
+}
+#statisticsDetail .detail .col-md-6{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+	color: #485465;
+	letter-spacing: -0.07px;
+	line-height: 12px;
+	margin-bottom: 5px;
+}
+#statisticsDetail .detail .col-md-6 .text-cont{
+	padding-left: 10px;
+}
+#statisticsDetail #detail{
+	position: relative;
+}
+#statisticsDetail .next{
+	position: absolute;
+	font-size: 24px;
+	top: 100px;
+	right: 20px;
+	color: #BBBBBB;
+	cursor: pointer;
+}
+#statisticsDetail .prev{
+	position: absolute;
+	font-size: 24px;
+	top: 100px;
+	left: 20px;
+	color: #BBBBBB;
+	cursor: pointer;
+}
+#statisticsDetail .glyphicon {
+    top: 2px;
+}
+#statisticsDetail .tree-select .text-cont{
+    padding: 6px 0 4px;
+}
+#statisticsDetail treecontrol li .tree-label{
+	white-space: nowrap;
+}
+#statisticsDetail .ibox-title input[type=checkbox]{
+	margin: 0;
+}
+#operating>div{
+	padding-left: 15px;
+}
+#statisticsDetail .list-info-count p{
+	margin-bottom: 15px;
+}
+/*处理间距过大问题*/
+#statisticsDetail .detail-cont .ibox{
+	margin-bottom: 0px;
+}
+#statisticsDetail .list{
+	position: relative;
+}
+#statisticsDetail .line1{
+	width: 1px;
+	height: 100px;
+	position: absolute;
+	top: 112px;
+	left: 33.33333%;
+	border-right: 1px solid #D8D8D8;
+}
+#statisticsDetail .line2{
+	width: 1px;
+	height: 100px;
+	position: absolute;
+	top: 112px;
+	left: 66.6666%;
+	border-right: 1px solid #D8D8D8;
+}

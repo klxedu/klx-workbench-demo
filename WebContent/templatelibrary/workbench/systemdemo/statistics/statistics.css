@@ -1,0 +1,93 @@
+.ibox-title{
+	border-bottom: 1px solid #D8D8D8;
+}
+#statistics .info{
+	padding-bottom: 0;
+}
+#statistics .info .ibox{
+	margin-bottom: 0;
+}
+#statistics .text-primary{
+	color: #0571BE;
+}
+#statistics .text-info{
+	color: #1DCDF8;
+}
+#statistics .text-success{
+	color: #18A689;
+}
+#statistics .text-danger{
+	color: #FA2929;
+}
+#statistics .list-info-title{
+	margin-top: 15px;
+    padding-left: 30px;
+}
+#statistics .info .count{
+	font-size: 30px;
+}
+#statistics .list-info-title p:first-child{
+	font-size: 14px;
+	color: #666666;
+	line-height: 14px;
+}
+#statistics .list-info-title p:first-child +p{
+	font-size: 12px;
+	color: #999999;
+	line-height: 12px;
+}
+#statistics .list-info-rate{
+	padding: 36px 15px;
+	border-right: 1px dashed #D8D8D8;
+}
+#statistics .list-info-rate .rate{
+	font-size: 48px;
+	padding: 0 20px;
+}
+#statistics .list-info-detail a{
+    padding-right: 20px;
+}
+#statistics .list-info-detail p:first-child{
+	padding-top: 14px;
+}
+#statistics .list-info-detail .default{
+	color: #333;
+	cursor: default;
+}
+#statistics .list-info-detail .default:hover{
+	color: #333;
+}
+#statistics .list{
+	border: 1px solid #D8D8D8;
+	border-radius: 4px;
+	font-size: 14px;
+	overflow: hidden;
+	margin: 10px 15px;
+}
+#statistics .list p.col-md-12{
+	margin-bottom: 20px;
+}
+#statistics .list p.col-md-12 a{
+	padding-right: 30px;
+	color: #0571BE;
+}
+#statistics .page{
+    margin: 30px auto;
+    width: 480px;
+}
+#statistics .search{
+	margin-bottom: 0;
+	margin-right: 15px;
+}
+#statistics .ibox-content{
+    padding: 15px 15px 15px 15px;
+}
+#statistics .info .conten-title{
+	padding-left: 15px;
+}
+#statistics .conten-title{
+	padding-left: 30px;
+}
+#statistics .ibox-title input{
+	margin: 0 5px;
+}

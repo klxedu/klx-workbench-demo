@@ -1,0 +1,156 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">这里是主页</a>
+            </li>
+            <li class="active">
+                <strong>考核统计</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+	<!-- 这里为留白区域如无特殊用途，请勿在此处填写内容-->
+    </div>
+</div>
+<div id="statisticsDetail">
+	<div class="wrapper wrapper-cont animated fadeInRight detail-cont">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <div class="ibox float-e-margins">
+	            	<div class="ibox-title">
+
+						<h3 class="conten-title col-md-3">单位排行榜</h3>
+						<div class="col-md-9" id="operating">
+								<div class="pull-right">
+									<div style="position: relative;">
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										   <i class="glyphicon glyphicon-save"></i> 导出 <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+										    <li>Action</li>
+										    <li>Another action</li>
+										    <li>Something else here</li>
+										</ul>
+									</div>
+								</div>
+								<div class="pull-right">
+									<div class="form-inline">
+										<select name="" class="form-control">
+											<option value="1">搜索条件</option>
+										</select>
+										<input class="form-control" type="text" name="" id="" value="" />
+										<button type="button" class="btn btn-primary search">搜索</button>
+									</div>
+								</div>
+								<div class="pull-right">
+									<div class="form-inline">
+									    <input type="checkbox" class="form-control"> 
+									    <label>查询子部门</label>
+									</div>
+								</div>
+								<div class="pull-right tree-select">
+									<select-tree-text
+										tree-data="dataForTheTree"
+										select-tree-options="selectTreeOptions"
+										search-criteria="searchCriteria"
+										selected-tree-node="selectedTreeNode"
+										show-direction="'bottom'"
+										on-select="onSelect()"
+										show-lable="name"
+										>
+									</select-tree-text>
+								</div>
+						</div>
+					</div>
+	        		<div class="ibox-content" id="detail">
+	        			<div class="row">
+	        				<div class="col-md-6" id="echartBox">
+								<ng-echart-bar count="count" option="option" el="#btnaaa"></ng-echart-bar>
+	        				</div>
+	        				<div class="col-md-6" id="">
+	        					<div class="row detail">
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        						<div class="col-md-6" title="支部生活杂志社">A<span class="text-cont">支部生活杂志社</span></div>
+	        						<div class="col-md-6">B<span class="text-cont">中国电子北京公司</span></div>
+	        					</div>
+	        				</div>
+	        			</div>
+	        			<div class="next">
+	        				<span class="glyphicon glyphicon-chevron-right" ng-click="add()"></span>
+	        			</div>
+	        			<div class="prev">
+	        				<span class="glyphicon glyphicon-chevron-left"></span>
+	        			</div>
+	               	</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="wrapper wrapper-content animated fadeInRight">
+	    <div class="row">
+	        <div class="col-lg-12">
+	            <div class="ibox float-e-margins">
+        			<div class="row" id="list">
+        				<div class="col-md-6">
+        					<div class="list">
+        						<div class="line1"></div>
+        						<div class="line2"></div>
+								<div class="row">
+									<div class="col-md-12 list-info-title">
+										<span>考核公司1</span>
+									</div>
+									<div class="col-md-4 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>考核人数</p>
+									</div>
+									<div class="col-md-4 list-info-count p-l-15 text-center">
+										<a class="count">450</a>
+										<p>参学人数</p>
+									</div>
+									<div class="col-md-4 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>通过人数</p>
+									</div>
+									<div class="col-md-4 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>未通过人数</p>
+									</div>
+									<div class="col-md-4 list-info-count text-center">
+										<a class="count default">450</a>
+										<p>0学时人数</p>
+									</div>
+									
+									<div class="col-md-4 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<div class="col-md-4 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<div class="col-md-4 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<div class="col-md-4 list-info-count p-r-15 text-center">
+										<a class="count default">450</a>
+										<p>平均学时</p>
+									</div>
+									<p class="col-md-12 text-right"><a>查看详情</a></p>
+								</div>
+							</div>
+						</div>
+        			</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>

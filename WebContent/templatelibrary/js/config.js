@@ -456,6 +456,82 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,
 					}
 				}
 			})
+			.state('systemdemo.statisticsdetail',
+				{
+					url : "statisticsdetail/:data",
+					templateUrl : "./workbench/systemdemo/statistics/list-detail.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "statisticsctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+									.load([ {
+										name : 'Module.statistics',
+										files : [
+												'../asserts/css/plugins/angulartreetable/tree-control-attribute.css',
+												'../asserts/css/plugins/angulartreetable/tree-control.css',
+												'../asserts/js/plugin/angulartreetable/angular-tree-control.js',
+												'../asserts/css/plugins/selectTree/select.css',
+												'../asserts/js/plugin/selectTree/select-text.js',
+												'../asserts/js/plugin/echart/echarts-bar.js',
+												'../asserts/js/plugin/echart/ng-echarts.js',
+												'./workbench/systemdemo/statistics/statistics-detail.css',
+												'./workbench/systemdemo/statistics/statistics.js'
+												],
+										serie : true
+									}]);
+						}
+					}
+				})
+				.state('systemdemo.coursedetail',
+				{
+					url : "coursedetail/:data",
+					templateUrl : "./workbench/systemdemo/coursedetail/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "coursedetailctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+								.load([ {
+									name : 'Module.coursedetail',
+									files : [
+											'../asserts/js/plugin/echart/echarts.js',
+											'../asserts/js/plugin/echart/ng-echarts.js',
+											'./workbench/systemdemo/coursedetail/coursedetail.css',
+											'./workbench/systemdemo/coursedetail/coursedetail.js'
+											],
+									serie : true
+								}]);
+						}
+					}
+				})
+				.state('systemdemo.statisticsmdoel',
+				{
+					url : "statisticsmdoel/:data",
+					templateUrl : "./workbench/systemdemo/statistice-model/list.html",
+					data : {
+						pageTitle : ''
+					},
+					controller : "statisticsmdoelctrl",
+					resolve : {
+						loadPlugin : function($ocLazyLoad) {
+							return $ocLazyLoad
+								.load([{
+									name : 'Module.statisticsmodel',
+									files : [
+											'../asserts/js/plugin/echart/ng-echarts.js',
+											'./workbench/systemdemo/statistice-model/statistics.css',
+											'./workbench/systemdemo/statistice-model/statistics.js'
+											],
+									serie : true
+								}]);
+						}
+					}
+				})
 }
 angular.module('klxTemplate').config(config).run(function($rootScope, $state) {
 	$rootScope.$state = $state;
