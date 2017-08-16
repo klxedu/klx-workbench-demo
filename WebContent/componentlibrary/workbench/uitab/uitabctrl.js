@@ -1,7 +1,8 @@
 app.controller('uitabctrl', function($scope, uitabservice) {
 	$scope.tabContrl = {
 			"showBtn":true,
-			"tabsHeaderSwitch":true
+			"tabsHeaderSwitch":true,
+			"isShareTabBody":true
 			
 	};
 	$scope.preTab = function(){

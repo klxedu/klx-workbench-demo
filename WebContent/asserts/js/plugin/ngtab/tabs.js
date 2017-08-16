@@ -79,10 +79,15 @@ angular.module('tabs', []).directive('ngTabs', function() {
 				restrict : 'EAC',
 				require : '^ngTabs',
 				link : function(scope, element, attributes, controller) {
-					var index = controller.getTabBodyIndex();
-					scope.$watch('tabs.index', function() {
-						element.toggleClass(attributes.ngTabBody + ' ng-show', scope.tabs.index === index);
-					});
+					var _share = attributes.share == 'true';
+					if(_share){//共享内容区
+						element.css("display","block");
+					}else{
+						var index = controller.getTabBodyIndex();
+						scope.$watch('tabs.index', function() {
+							element.toggleClass(attributes.ngTabBody + ' ng-show', scope.tabs.index === index);
+						});
+					}
 				}
 			};
 		});
